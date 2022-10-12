@@ -1,0 +1,35 @@
+:root{
+  --c-code: rgb(74, 84, 106);
+  --c-quote: rgb(166, 144, 32);
+}
+
+code{
+  background-color: var(--c-code);
+  border-radius: 5px;
+  padding: 0 .5em;
+}
+
+a{
+  color: var(--c-quote);
+  transition: .3s;
+}
+a:hover{
+  opacity: .7;
+}
+
+pre:has(code){
+  background-color: var(--c-code);
+  border-radius: 5px;
+  padding: 1em;
+}
+
+blockquote{
+  border: 1px solid var(--c-quote);
+  border-left: 5px solid var(--c-quote);
+  padding: 0 1em;
+}
+/* blockquote p:first-child{
+  background-color: var(--c-quote);
+  padding: 0;
+  margin: 0;
+} */

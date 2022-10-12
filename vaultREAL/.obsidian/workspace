@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "1ae9e13bb8b5697f",
+    "type": "split",
+    "children": [
+      {
+        "id": "94b7a532e25a4600",
+        "type": "split",
+        "children": [
+          {
+            "id": "ee2ec79a5fa4d8ec",
+            "type": "leaf",
+            "dimension": 61.96319018404907,
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "017e15b04b80447a",
+            "type": "split",
+            "dimension": 38.036809815950924,
+            "children": [
+              {
+                "id": "d3d296baa369a8cb",
+                "type": "leaf",
+                "dimension": 58.96678966789668,
+                "pinned": true,
+                "state": {
+                  "type": "graph",
+                  "state": {},
+                  "pinned": true
+                }
+              },
+              {
+                "id": "7d1d77d54137dcfa",
+                "type": "split",
+                "dimension": 41.03321033210332,
+                "children": [
+                  {
+                    "id": "d62c8aea1a647ef1",
+                    "type": "leaf",
+                    "dimension": 51.10732538330494,
+                    "pinned": true,
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "hotkeys.md",
+                        "mode": "source",
+                        "source": false
+                      },
+                      "pinned": true
+                    }
+                  },
+                  {
+                    "id": "22f0deeb0743fb40",
+                    "type": "leaf",
+                    "dimension": 48.89267461669506,
+                    "pinned": true,
+                    "state": {
+                      "type": "empty",
+                      "state": {},
+                      "pinned": true
+                    }
+                  }
+                ],
+                "direction": "vertical"
+              }
+            ],
+            "direction": "horizontal"
+          }
+        ],
+        "direction": "vertical"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "120e48dd38a7182e",
+    "type": "split",
+    "children": [
+      {
+        "id": "7b388a18a5077ba7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9d4acc865ba3fc13",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "3352d8c2e6461bd0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "white dark",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "byModifiedTime"
+              }
+            }
+          },
+          {
+            "id": "e1d2f4a48d140bf2",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 364.5
+  },
+  "right": {
+    "id": "d3ddbdb4acb87a1c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ce6e39696216b05a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0c4874a718fb7dc8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "hotkeys.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4f9dc9387d277d79",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "hotkeys.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "88d429d85a84fb13",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "260e3bf5f01fc28a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "hotkeys.md"
+              }
+            }
+          },
+          {
+            "id": "4fc545b5b431c92c",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 342.5
+  },
+  "active": "ee2ec79a5fa4d8ec",
+  "lastOpenFiles": [
+    "📁developer/Home Lab 🏠/Obsidian-Livesync.md",
+    "📁developer/Projects📐/There's a Will There's a Website.md",
+    "📁music/DJ_William🎛/2022.10.08 Linnea.md",
+    "📁developer/N10-008 CompTIA Network+/2.3.5 Straight-Through and Crossover Cable.md",
+    "📁developer/Home Lab 🏠/Hyperion.md",
+    "📁developer/N10-008 CompTIA Network+/Terminal Commands.md",
+    "📁developer/N10-008 CompTIA Network+/2.3.4 Interface Configurations.md",
+    "📁developer/N10-008 CompTIA Network+/2.3.3 Spanning Tree Protocol.md",
+    "📁developer/N10-008 CompTIA Network+/2.3.2 VLANs and Trunking.md",
+    "hotkeys.md"
+  ]
+}

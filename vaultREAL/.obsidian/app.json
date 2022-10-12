@@ -1,0 +1,11 @@
+{
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "spellcheck": true,
+  "newLinkFormat": "absolute",
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./_attachments",
+  "useMarkdownLinks": true,
+  "readableLineLength": false,
+  "showFrontmatter": true
+}
