@@ -1,25 +1,25 @@
-// import * as fs from 'fs';
 const { promises: fs } = require("fs")
-import { cloneAFile } from "./clonefile";
 const path = require("path")
+import { cloneAFile } from "./clonefile";
 
-const contentDynamic = 'pages/vault/[slug].jsx'
+const contentDynamic = 'pages/dynamic/[[...slug]].jsx'
 
 export async function copyDir(src, dest) {
 
   await fs.mkdir(dest, { recursive: true });
   let entries = await fs.readdir(src, { withFileTypes: true });
-
-  for (let entry of entries) {
+  
+  for (const entry of entries) {
     let srcPath = path.join(src, entry.name);
     let destPath = path.join(dest, entry.name);
-
+    
     if(entry.isDirectory()){
       
+      // TODO do i need to clean a cleaned vault?
       let cleanPath = destPath.replaceAll( ' ', '_')
 
       await copyDir(srcPath, cleanPath)
-      cloneAFile(contentDynamic, `${cleanPath}/[slug].jsx`)
+      cloneAFile(contentDynamic, `${cleanPath}/[[...slug]].jsx`)
       
     } else {
       null;

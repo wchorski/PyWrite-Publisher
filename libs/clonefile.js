@@ -1,4 +1,5 @@
-const fs = require('fs')
+// const fs = require('fs')
+import * as fs from 'fs';
 
 export function cloneAFile(src, dest){
 
@@ -13,8 +14,5 @@ export function cloneAFile(src, dest){
       }
     });
   });
-
-  // const dynamicContent = fs.readFile('copyme.txt', 'utf8')
-  // fs.writeFile('ZZZTHISISCOPIEDFILE.txt', dynamicContent)
   
 }
