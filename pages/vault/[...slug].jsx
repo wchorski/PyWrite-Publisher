@@ -99,26 +99,13 @@ export async function getStaticPaths(){
   // const files = getAllFilepaths('./vaultClean/') //? NEEDS TRAILING SLASH
   const files = fakeData
 
-  // const paths = files.map(file => ({
-  //   params: {
-  //     slug: file.path
-  //   }
-  // }))
+  const paths = files.map(file => {
+    file.path.shift()
+    file.path.shift() // cut off first 2 array elements so [...slug] can be read
 
-  const otherpaths = files.map(file => {
-    console.log('file.path: ', file.path);
+    return ({params: { slug: file.path }})
+    // return ({params: { slug: ['special', 'test']}}) //! having ['.', 'vvaultClean'] is throwing error?
   })
-    
-  console.log("--otherpaths", otherpaths);
-
-  // temp bypass 
-  const paths = [{
-    params: {
-      //    THIS NEEDS TO BE AN ARRAY OF STRINGS ['special', 'test']
-      slug: ['special', 'test']
-    }
-  }]
-
 
   return{ paths, fallback: false}
 }
