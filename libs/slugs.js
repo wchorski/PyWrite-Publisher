@@ -10,7 +10,7 @@ const vaultDir = "./vaultClean"
 export function getAllSlugs() {
 
   console.log('getAllslugs');
-  // const fileNames = fs.readdirSync(vaultDir);
+  const fileNames = fs.readdirSync(vaultDir);
 
   // ----------------------------------------------
   // Returns an array that looks like this:
@@ -27,16 +27,17 @@ export function getAllSlugs() {
   //   }
   // ] ----------------------------------------------
   
-  // return fileNames.map((fileName) => {
+  return fileNames.map((fileName) => {
 
-  //   const prettyName = fileName.replace(/\.md$/, '')
+    const prettyName = fileName.replace(/\.md$/, '')
 
-  //   return {
-  //     params: {
-  //       slug: [prettyName , 'secondparam'],
-  //     },
-  //   };
-  // });
+    return {
+      params: {
+        slug: prettyName ,
+        path: '/this/is/the/path'
+      },
+    };
+  });
 }
 
 export async function getSlugData(slug) {
