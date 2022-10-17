@@ -1,10 +1,17 @@
 :root{
-  --c-code: rgb(74, 84, 106);
+  --c-code: rgb(40, 44, 52);
+  --c-code-txt: rgb(204, 203, 190);
   --c-quote: rgb(166, 144, 32);
+  --c-body: #242424
+}
+
+body{
+  background-color: var(--c-body) ;
 }
 
 code{
   background-color: var(--c-code);
+  color: var(--c-code-txt);
   border-radius: 5px;
   padding: 0 .5em;
 }
@@ -17,11 +24,11 @@ a:hover{
   opacity: .7;
 }
 
-pre:has(code){
+/* pre:has(code){
   background-color: var(--c-code);
   border-radius: 5px;
   padding: 1em;
-}
+} */
 
 blockquote{
   border: 1px solid var(--c-quote);

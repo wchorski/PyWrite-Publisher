@@ -1,3 +1,3 @@
 const { cleanVault } = require('./cleanVault')
 
-cleanVault('./vaultTest', './vaultClean')
+cleanVault('./vaultREAL', './vaultClean')

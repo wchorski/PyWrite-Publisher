@@ -1,183 +1,119 @@
+const process = require('process');
+const __basedir = process.cwd();
 import fs from 'fs'
-// const { readdir } = require('fs/promises');
-import path from 'path'
-import { remark } from 'remark';
-import html from 'remark-html';
+const { resolve, join } = require('path');
+const { readdir } = require('fs').promises;
 import matter from "gray-matter";
-// import { fileURLToPath } from 'url';
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
-// import { getAllFilepaths } from "libs/filePaths";
-// import { getMarkdownData } from "libs/filePaths";
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
 
-const Test = (props) => {
+const Post = ( {slug, frontmatter, fileTitle, markdown} ) => {
 
-  const {frontmatter, slug, contentHtml} = props
+  // const {title, date, desc, description} = frontmatter
 
   return (
-    <>
+    <div className='page-cont'>
+      <h1>{
+        frontmatter.title 
+        ? frontmatter.title
+        : fileTitle
+      }</h1>
 
-      {/* use for ARRAY */}
-      {/* {props.filepath.map((path, i) =>{
-        return <span key={i}>{path}/</span> 
-      })} */}
+      <div className='frontmatter'>
+        <small>slug: {slug}</small> <br/>
+        <small>date: {frontmatter?.date}</small> <br/>
+        <small>description: {frontmatter?.description}</small> <br/>
+      </div>
 
-      <h1>{slug}</h1>
-      <br />
-      <small>{frontmatter?.title}</small> | <small>{frontmatter?.date}</small>
+      <section className='content-cont'>
+        <ReactMarkdown 
+          children={markdown} 
+          remarkPlugins={[remarkGfm]} 
+          components={{
+            code({node, inline, className, children, ...props}) {
+              const match = /language-(\w+)/.exec(className || '')
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  children={String(children).replace(/\n$/, '')}
+                  style={syntaxStyle}
+                  language={match[1]}
+                  PreTag="div"
+                  {...props}
+                />
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              )
+            }
+          }}
+        />
+      </section>
 
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-
-    
-    </>
-  );
-};
-
-const fakeData = [
-  {
-    path: [ '.', 'vaultClean', 'Home_Lab_🏠' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'hotkeys' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'one' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'space_in_name' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', '.obsidian', 'justatest' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'folder_w_space_3', 'Home_Lab_🏠' ],
-  
-  },
-  {
-    path: [
-      '.',
-      'vaultClean',
-      'folder_w_space_3',
-      'nestedfolder',
-      'nestedTest'
-    ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'special', 'apostropy~.' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'special', 'comma.~speration' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'special', 'linkpage' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'special', 'test' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'special', 'this~+~that' ],
-  
-  },
-  {
-    path: [ '.', 'vaultClean', 'special', 'two_spaces_here' ],
-  
-  }
-]
-
-// ===== BACKEND ===== 
-export async function getStaticPaths(){
-  console.log('----getstaticpaths');
-  // const files = getAllFilepaths('./vaultClean/') //? NEEDS TRAILING SLASH
-  const files = fakeData
-
-  const paths = files.map(file => {
-    file.path.shift()
-    file.path.shift() // cut off first 2 array elements so [...slug] can be read
-
-    return ({params: { slug: file.path }})
-    // return ({params: { slug: ['special', 'test']}}) //! having ['.', 'vvaultClean'] is throwing error?
-  })
-
-  return{ paths, fallback: false}
+    </div>
+  )
 }
 
 
-export async function getStaticProps({ params: { slug } }) {
+export const getStaticPaths = async () => {
 
-  console.log('===== static props');
-  console.log("----slugyyyy: ",slug);
-
-  const joinedSlug = slug.join("/") 
+  const filePathStrings = await getFiles('./vaultClean/')
   
-  // const fullPath = path.join('./vaultClean/', `${slug}.md`);
-  const fullPath = `./vaultClean/${joinedSlug}.md`
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const filePathArrays = filePathStrings.map(filepath => {
+    const absolutePath = filepath.replace(__basedir, '').replace(/\.md$/, '') //? remove path to app, & .md extension
+    const pathArray = absolutePath.split("\\").filter(Boolean)
+    pathArray.shift() //? SHIFT = remove vault folder so catch all route can read path correctly
+    return pathArray 
+  })
+  
+  // console.log('+++ filePathArrays: ', filePathArrays );
 
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents);
-
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark().use(html).process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  const paths = filePathArrays.map(pathArray => ({
+    params: {
+      slug: pathArray
+    }
+  }))
 
   return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps = async ({params: {slug}}) => {
+  const joinedSlug = slug.join("/") 
+
+  const markdown =  fs.readFileSync(join('./vaultClean/', joinedSlug + '.md'), 'utf8').toString()
+
+  const frontM = matter(markdown);
+
+  // TODO prettyTitle.js
+
+  return{
     props: {
-      slug,
-      ...matterResult.data,
-      contentHtml,
-    },
-  }
-}
-
-async function getAllFilepaths(path) {
-  
-  const entries = await readdir(path, { withFileTypes: true });
-  
-  // Get files within the current directory and add a path key to the file objects
-  const files = entries
-    .filter(entry => !entry.isDirectory())
-    .map(file => {
-      const pathArray = path.split("/").filter(Boolean) //? cleans up empty array entries -> ''
-      pathArray.push(file.name.replace(/\.md$/, ''))
-
-      const convertedFile = ({ ...file, path: pathArray })
-      return convertedFile
-    });
-
-
-  // Get folders within the current directory
-  const folders = entries.filter(entry => entry.isDirectory());
-
-
-  for (const folder of folders){
-    /*
-    Add the found files within the subdirectory to the files array by calling the
-    current function itself
-    */  
-    files.push(...await getAllFilepaths(`${path}${folder.name}/`));
-  }
-  
-  // console.log('=====files', files);
-  // return files; //this prints out correctly
-
-  return files.map(file =>{
-    return{
-      params: {
-        slug: file.path
-      }
+      slug: joinedSlug,
+      frontmatter: frontM.data,
+      fileTitle: slug[slug.length-1],
+      markdown,
     }
-  })
+  }
+}
 
+async function getFiles(dir) {
+
+  const entries = await readdir(dir, { withFileTypes: true });
+
+  const files = await Promise.all(entries.map((entry) => {
+
+    const path = resolve(dir, entry.name);
+    return entry.isDirectory() ? getFiles(path) : path;
+  }));
+
+  return Array.prototype.concat(...files);
 }
 
 
-export default Test;
+export default Post

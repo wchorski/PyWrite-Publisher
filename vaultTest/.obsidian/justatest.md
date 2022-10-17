@@ -1,1 +1,0 @@
-## this is just a test folder. working on how to publish plugins and themes

@@ -29,3 +29,17 @@ installed on [Raspberry Pi 4 Model B  4GB](https://www.raspberrypi.com/products/
 10. HACS
 
 ---
+
+## troubleshooting 
+> [!warning]
+> I'm running the [home-assistant/supervised](https://github.com/home-assistant/supervised-installer) installation because I want to utilize my [Pi4](📁developer/Hardware/Pi4.md) for multiple apps.
+> 
+> I encountered a boot loop error from one of the Home Assistant services, effectively freezing any other service running on my [Pi4](📁developer/Hardware/Pi4.md)
+
+```shell
+... entered blocking state
+... entered forwarding state
+... entered disabled state
+```
+
+I don't update my Home Assistant very often so I thought why not reinstall it. The [reinstall](https://github.com/home-assistant/supervised-installer)  brought my **Home Assistant** back to life 😅. 
