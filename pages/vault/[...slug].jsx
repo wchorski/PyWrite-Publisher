@@ -7,6 +7,10 @@ import matter from "gray-matter";
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
+import Head from 'next/head'
+import Link from "next/link";
+import { useState, useEffect } from "react"; 
+import { Layout_Markdown } from "components/Layouts";
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
 
@@ -14,46 +18,89 @@ const Post = ( {slug, frontmatter, fileTitle, markdown} ) => {
 
   // const {title, date, desc, description} = frontmatter
 
+  const [isLoading, setIsLoading] = useState(true)
+  const [content, setContent] = useState({})
+  const [headings, setHeadings] = useState([])
+
+  useEffect(() => {
+
+
+    setContent(<ReactMarkdown 
+      children={markdown} 
+      remarkPlugins={[remarkGfm]} 
+      components={{
+        code({node, inline, className, children, ...props}) {
+          const match = /language-(\w+)/.exec(className || '')
+          return !inline && match ? (
+            <SyntaxHighlighter
+              children={String(children).replace(/\n$/, '')}
+              style={syntaxStyle}
+              language={match[1]}
+              PreTag="div"
+              {...props}
+            />
+          ) : (
+            <code className={className} {...props}>
+              {children}
+            </code>
+          )
+        }
+      }}
+    />)
+
+    isLoading(false)
+  }, [])
+
+  // useEffect(() => {
+  //   console.log('useeffectt');
+
+  //   setHeadings(Array.from(document.getElementsByTagName('h2')))
+  //   console.log('headings', headings);
+  
+  //   return () => {
+  //     console.log('finishedddd');
+  //   }
+  // }, [])
+  
+
   return (
-    <div className='page-cont'>
-      <h1>{
-        frontmatter.title 
-        ? frontmatter.title
-        : fileTitle
-      }</h1>
+    <>
+     <Head>
+        <title> {frontmatter.title ? frontmatter.title : fileTitle} </title>
+        <meta name={frontmatter.description} content="tawtaw" />
+        <link rel="icon" href="/favicon.ico" />
+     </Head>
+      <Layout_Markdown >
+        <h1>{
+          frontmatter.title 
+          ? frontmatter.title
+          : fileTitle
+        }</h1>
 
-      <div className='frontmatter'>
-        <small>slug: {slug}</small> <br/>
-        <small>date: {frontmatter?.date}</small> <br/>
-        <small>description: {frontmatter?.description}</small> <br/>
-      </div>
+        <div className='frontmatter'>
+          <small>slug: {slug}</small> <br/>
+          <small>date: {frontmatter?.date}</small> <br/>
+          <small>description: {frontmatter?.description}</small> <br/>
+        </div>
 
-      <section className='content-cont'>
-        <ReactMarkdown 
-          children={markdown} 
-          remarkPlugins={[remarkGfm]} 
-          components={{
-            code({node, inline, className, children, ...props}) {
-              const match = /language-(\w+)/.exec(className || '')
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, '')}
-                  style={syntaxStyle}
-                  language={match[1]}
-                  PreTag="div"
-                  {...props}
-                />
-              ) : (
-                <code className={className} {...props}>
-                  {children}
-                </code>
-              )
-            }
-          }}
-        />
-      </section>
+        <section className='content-cont'>
+          {content}
+        </section>
+        
+        <aside >
+            <Link href={`/portfolio`}>
+              <a> <h2>Header 2</h2> </a>
+            </Link>
+            <Link href={`/portfolio`}>
+              <a> <h3>Header 3</h3> </a>
+            </Link>
+            <Link href={`/portfolio`}>
+              <a> <h4>Header 4</h4> </a>
+            </Link>
+        </aside>
 
-    </div>
+      </Layout_Markdown>
+    </>
   )
 }
 

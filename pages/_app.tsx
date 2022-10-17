@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
 // import  '../styles/Sandstorm.css'
 import  '../styles/Sandstorm-wchor.css'
 

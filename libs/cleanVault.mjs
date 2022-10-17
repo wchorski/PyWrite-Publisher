@@ -1,6 +1,8 @@
 // const { promises: fs } = require("fs")
-const path = require("path")
-const fs = require("fs")
+// const fs = require("fs")
+import * as fs from 'fs'
+import * as path from 'path'
+// const path = require("path")
 // import * as fs from 'fs';
 // import * as path from 'path';
 
@@ -25,6 +27,7 @@ const fs = require("fs")
 //       : await fs.copyFile(srcPath, cleanPath);
 //   }
 // }
+
 export function cleanVault(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
 
@@ -106,3 +109,4 @@ export function cleanLink(link){
   return cleaned
 }
 
+export default cleanVault
