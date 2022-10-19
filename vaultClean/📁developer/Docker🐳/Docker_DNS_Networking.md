@@ -1,6 +1,6 @@
 #docker #docker-compose #DNS
 
-[Docker Networks  DNS and How Containers Find Each Other](https://www.youtube.com/watch?v=2Fg2NfDZhmE)
+[Docker Networks  DNS and How Containers Find Each Other](/vault/https://www.youtube.com/watch?v=2Fg2NfDZhmE)
 
 - using docker-compose, a container automatically gets a **DNS name** matching it's **container name** 
 - join containers together with a common network i.e.

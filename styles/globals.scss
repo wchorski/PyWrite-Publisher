@@ -1,5 +1,5 @@
 :root{
-  --c-1: rgb(147, 192, 166);
+  --c-1: #b4b633;
   --c-2: #3d5243;
   --c-nav: #4d6454;
   --c-dark: #ffffff;
@@ -7,12 +7,13 @@
   --width-cont: 1000px;
   --c-code: rgb(40, 44, 52);
   --c-code-txt: rgb(204, 203, 190);
-  --c-quote: rgb(166, 144, 32);
-  --c-bg: #242424
+  --c-quote: #a69020;
+  --c-bg: #242424;
+  --c-head: #332f19;
 }
 
 body{
-  background-color: var(--c-body) ;
+  background-color: var(--c-bg) ;
 }
 
 code{
@@ -20,6 +21,18 @@ code{
   color: var(--c-code-txt);
   border-radius: 5px;
   padding: 0 .5em;
+}
+
+h2, h3 {
+  scroll-margin-top: 16px;
+}
+
+/* Safari-only */
+@supports (-webkit-hyphens:none) {
+  h2, h3 {
+    padding-top: 16px;
+    margin-top: -16px;
+  }
 }
 
 a{
@@ -119,3 +132,28 @@ button {
     /* background: black; */
   }
 } 
+
+hr{
+  border: solid rgba(148, 148, 148, 0.418) 1px;
+}
+
+hr.title-bottom-line{
+  border: solid var(--c-1) 1px;
+}
+
+// * markdown content
+.markdown-title{
+  font-size: 3em;
+  background-color: #50421e;
+  background:
+  linear-gradient(63deg, var(--c-head) 23%, transparent 23%) 7px 0,
+  linear-gradient(63deg, transparent 74%, var(--c-head) 78%),
+  linear-gradient(63deg, transparent 34%, var(--c-head) 98%, #29270f 58%, transparent 62%),
+  #444;
+  background-size: 16px 48px;
+
+  padding: .1em;
+  margin-bottom: 15px;
+  border-radius: 10px 10px / 20px;
+  // filter: blur(3px);
+}

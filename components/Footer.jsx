@@ -11,12 +11,12 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Powered by{' '}
+        Powered by{''}
         <span className={styles.logo}>
           <Image 
             loader={imageLoader}
             unoptimized
-            src="/tawtaw-logo-3.svg" 
+            src="/vercel.svg" 
             alt="There a Will There a Website Logo" 
             width={72} height={32} 
           />

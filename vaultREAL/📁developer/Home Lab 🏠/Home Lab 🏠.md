@@ -17,6 +17,7 @@
 - [Docker](Docker.md)
 	- [Nextcloud](Nextcloud.md)
 	- [Nginx Proxy Manager](Nginx%20Proxy%20Manager.md)
+	- [Nginx Proxy Manager](📁developer/Home%20Lab%20🏠/Nginx%20Proxy%20Manager.md)
 	- [vaultwarden](vaultwarden.md)
 	- [Wordpress](Wordpress.md)
 	- [ReactJS](ReactJS.md)
@@ -64,3 +65,6 @@
 - [ ] Add hyperion into the mix
 - [ ] tryout jellyfin in home assistant integration 
 
+[Obsidian Publish with NextJS](📁developer/Projects📐/Obsidian%20Publish%20with%20NextJS.md)
+[Nginx Proxy Manager](📁developer/Home%20Lab%20🏠/Nginx%20Proxy%20Manager.md)
+[Melt & Murder](📁music/split_skream/Melt%20&%20Murder.md)

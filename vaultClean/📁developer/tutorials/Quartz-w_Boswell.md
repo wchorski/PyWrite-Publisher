@@ -1,18 +1,18 @@
-[Publishing your Obsidian Vault Online with Quartz (brandonkboswell.com)](https://brandonkboswell.com/blog/Publishing-your-Obsidian-Vault-Online-with-Quartz/)
+[Publishing your Obsidian Vault Online with Quartz (brandonkboswell.com)](/vault/https://brandonkboswell.com/blog/Publishing-your-Obsidian-Vault-Online-with-Quartz/)
 
 - also try [[📁developer/tutorials/Obsidian-Zola]] for a more plug n play way to publish Obsidian Vaults
 
-1. clone [jackyzha0/quartz: 🌱](https://github.com/jackyzha0/quartz)
+1. clone [jackyzha0/quartz: 🌱](/vault/https://github.com/jackyzha0/quartz)
 2. create repo for your **Public Garden**
 3. make **Public Garden** a submodule of your **Quartz** repo 
 4. Install **Hugo** for local server
 	- `brew install hugo`
-5. clone [brandonkboswell/obsidian-export](https://github.com/brandonkboswell/obsidian-export/tree/title_frontmatter) in `libs` folder
-	- install [Rust](https://www.rust-lang.org/tools/install)
+5. clone [brandonkboswell/obsidian-export](/vault/https://github.com/brandonkboswell/obsidian-export/tree/title_frontmatter) in `libs` folder
+	- install [Rust](/vault/https://www.rust-lang.org/tools/install)
 	- `cd ./libs/obsidian-export`
 	- `cargo build`
-6. clone [Obsidian-Hugo]([jackyzha0/hugo-obsidian](https://github.com/jackyzha0/hugo-obsidian)in `libs` folder
-	- install [How to Install Go on Windows](https://golangdocs.com/install-go-windows)
+6. clone [Obsidian-Hugo](/vault/[jackyzha0/hugo-obsidian](/vault/https://github.com/jackyzha0/hugo-obsidian)in `libs` folder
+	- install [How to Install Go on Windows](/vault/https://golangdocs.com/install-go-windows)
 	- add to machine `PATH`
 
 ### Directory
@@ -46,7 +46,7 @@ screenshots/*
 ideas/*
 .trash/*
 .obsidian/*
-_content_calendar.md
+_content_calendar
 ```
 
 10. Start hugo server from **Quartz** dir `./serve.sh`****

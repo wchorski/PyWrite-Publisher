@@ -9,5 +9,13 @@ export const StyledMainCont = styled.div`
   padding-top: 1em;
   min-height: 90vh;
 
+  display: flex;
+
+  .markdown-body{
+    flex-grow: 1;
+  }
+
+  
+
 
 `

@@ -25,7 +25,7 @@ export function Layout_Markdown ( {children}: {children: React.ReactNode} ) {
   return (
 
     <div className='layout-wrap'>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <StyledMainCont>
         {children}

@@ -1,4 +1,15 @@
 ## Tips & Tricks
+
+### get app root directory consistently - [source](https://flaviocopes.com/fix-dirname-not-defined-es-module-scope/)
+```js
+import * as path from 'path'
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export const __rootDir = __dirname //import this to use in any file
+```
 ### Copy / Clone directory and files
 - [source - KyleMit](https://stackoverflow.com/a/64255382/15579591)
 ```javascript
@@ -70,3 +81,56 @@ async function getFiles(dir) {
 	// C:\\users\\you\\app\\folder2\\file2
 // ]
 ```
+
+### run a javascript (js) module via command line
+being able to to run any `js` file via a terminal inside of your [ReactJS](📁developer/Home%20Lab%20🏠/ReactJS.md) app seems simple, but requires special file naming
+
+`serverScript.mjs` --> *notice the `.mjs` as we'll need that for the import*
+```js
+export function printToConsole(string) {
+
+  console.log(string)
+
+}
+```
+
+`runMe.mjs`
+```js
+import {printToConsole} from './`serverScript.mjs';
+
+printToConsole('Hello World')
+```
+
+`node runMe.mjs` --> don't forget the file extension `.mjs` when running this node file
+
+
+### Get current running operating system
+```javascript
+let osValue = process.platform;
+
+if (osValue == 'darwin') {
+    console.log("Mac OS");
+}else if(osValue == 'win32'){
+    console.log("Window OS")
+}else if(osValue== 'android') {
+    console.log("Android OS")
+}else if(osValue== 'linux') {
+    console.log("Linux OS")
+}
+else{
+    console.log("Other os")
+}
+```
+
+```javascript
+import * as Os from 'os'
+
+
+console.log(Os.release()); 
+console.log(Os.platform()); 
+
+// output 
+// 10.0.21996
+// win32
+```
+

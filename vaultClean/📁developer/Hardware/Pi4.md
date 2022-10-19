@@ -23,10 +23,10 @@ A great start for anyone who wants to start running digital services
               `"""
 ```
 
-Surprised that it isn't **Raspberry Pi OS**? I run the Debian 64 bit version as recommended by [Home Assistant](📁developer/Home%20Lab%20🏠/Home%20Assistant.md) **Supervised** install
+Surprised that it isn't **Raspberry Pi OS**? I run the Debian 64 bit version as recommended by [Home Assistant](/vault/📁developer/Home__Lab__🏠/Home__Assistant) **Supervised** install
 
 ---
 ## What Do I Run on it?
-1. [Pi-hole](📁developer/Home%20Lab%20🏠/Pi-hole.md)
-2. [PiVPN](📁developer/Home%20Lab%20🏠/PiVPN.md)
-3. [Home Assistant](📁developer/Home%20Lab%20🏠/Home%20Assistant.md)
+1. [Pi-hole](/vault/📁developer/Home__Lab__🏠/Pi-hole)
+2. [PiVPN](/vault/📁developer/Home__Lab__🏠/PiVPN)
+3. [Home Assistant](/vault/📁developer/Home__Lab__🏠/Home__Assistant)
