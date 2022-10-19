@@ -1,6 +1,6 @@
-[Publishing your Obsidian Vault Online with Quartz (brandonkboswell.com)](/vault/https://brandonkboswell.com/blog/Publishing-your-Obsidian-Vault-Online-with-Quartz/)
+[Publishing your Obsidian Vault Online with Quartz (brandonkboswell.com)](/vault/brandonkboswell.com))
 
-- also try [[📁developer/tutorials/Obsidian-Zola]] for a more plug n play way to publish Obsidian Vaults
+- also try [Obsidian-Zola](/vault/%F0%9F%93%81developer/tutorials/Obsidian-Zola) for a more plug n play way to publish Obsidian Vaults
 
 1. clone [jackyzha0/quartz: 🌱](/vault/https://github.com/jackyzha0/quartz)
 2. create repo for your **Public Garden**
@@ -11,7 +11,7 @@
 	- install [Rust](/vault/https://www.rust-lang.org/tools/install)
 	- `cd ./libs/obsidian-export`
 	- `cargo build`
-6. clone [Obsidian-Hugo](/vault/[jackyzha0/hugo-obsidian](/vault/https://github.com/jackyzha0/hugo-obsidian)in `libs` folder
+6. clone [Obsidian-Hugo](/vault/%5Bjackyzha0/hugo-obsidian)in `libs` folder
 	- install [How to Install Go on Windows](/vault/https://golangdocs.com/install-go-windows)
 	- add to machine `PATH`
 

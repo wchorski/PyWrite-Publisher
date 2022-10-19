@@ -9,8 +9,8 @@ but wasn't satisfied. **OnlyOffice** has some great features and compatibility r
 ---
 
 ### connections
-- I keep all docs in my [Nextcloud](📁developer/Home%20Lab%20🏠/Nextcloud.md) instance to have them always accessible and synced between devices
-- might later look into hosting a server and hook into [Nextcloud](📁developer/Home%20Lab%20🏠/Nextcloud.md) for cloud side editing. 
+- I keep all docs in my [Nextcloud](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nextcloud.md) instance to have them always accessible and synced between devices
+- might later look into hosting a server and hook into [Nextcloud](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nextcloud.md) for cloud side editing. 
 
 ### installation
 
@@ -19,6 +19,6 @@ but wasn't satisfied. **OnlyOffice** has some great features and compatibility r
 
 ---
 ## backlinks
-[Home Lab 🏠](📁developer/Home%20Lab%20🏠/Home%20Lab%20🏠.md)
+[Home Lab 🏠](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Lab%20%F0%9F%8F%A0.md)
 
 ---

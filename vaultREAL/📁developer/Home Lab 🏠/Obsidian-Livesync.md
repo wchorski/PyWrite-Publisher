@@ -1,6 +1,6 @@
 #github #netlify 
 
-## [vrtmrz/obsidian-livesync (github.com)](https://github.com/vrtmrz/obsidian-livesync/)
+## [vrtmrz/obsidian-livesync (github.com)](github.com))
 > Self-hosted LiveSync is a community implemented  synchronization plugin.  
 > A self-hosted or purchased CouchDB acts as the intermediate server. 
 
@@ -13,7 +13,7 @@ This is how I keep my [pywriter](../../pywriter.md) vault in sync between my **p
 
 ## installation
 ### backend
-1. spin up a [CouchDB](📁developer/Home%20Lab%20🏠/CouchDB.md) server and make it public facing via [Nginx Proxy Manager](Nginx%20Proxy%20Manager.md). **vrtmrz** also has an [all in one solution](https://github.com/vrtmrz/self-hosted-livesync-server) if your are not currently using a **Reverse Proxy**
+1. spin up a [CouchDB](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/CouchDB.md) server and make it public facing via [Nginx Proxy Manager](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md). **vrtmrz** also has an [all in one solution](https://github.com/vrtmrz/self-hosted-livesync-server) if your are not currently using a **Reverse Proxy**
 2. `./compose.yml`
 ```yaml
 version: "3.7"
@@ -64,7 +64,7 @@ max_age = 3600
 ```
 
 > [!note] I prefer a central server
-> **Obsidian-livesync** only syncs when 2 client instances of Obsidian are open *(i.e. the mobile app and desktop app)*. I like to think of [vrtmrz/filesystem-livesync](https://github.com/vrtmrz/filesystem-livesync) as the #headless version of [Obsidian](📁developer/Home%20Lab%20🏠/Obsidian.md) that makes sure all the other are up-to-date
+> **Obsidian-livesync** only syncs when 2 client instances of Obsidian are open *(i.e. the mobile app and desktop app)*. I like to think of [vrtmrz/filesystem-livesync](https://github.com/vrtmrz/filesystem-livesync) as the #headless version of [Obsidian](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Obsidian.md) that makes sure all the other are up-to-date
 
 4. `git clone --recursive https://github.com/vrtmrz/filesystem-livesync `
 5. `cp dat/config.sample.json dat/config.json`
@@ -106,9 +106,9 @@ your directory should look like
 	  └─ second_note.md
 ```
 
-Notice I don't have a `.obsidian` folder in here. The [Obsidian-Livesync](📁developer/Obsidian-Livesync.md) plugin handles syncing other plugins. Then I copy over Themes and settings. 
+Notice I don't have a `.obsidian` folder in here. The [Obsidian-Livesync](%F0%9F%93%81developer/Obsidian-Livesync.md) plugin handles syncing other plugins. Then I copy over Themes and settings. 
 
-7. This is an add from me to the [vrtmrz/filesystem-livesync](https://github.com/vrtmrz/filesystem-livesync) repo. If I can [Docker](📁developer/Home%20Lab%20🏠/Docker.md) **Compose** it, I will.
+7. This is an add from me to the [vrtmrz/filesystem-livesync](https://github.com/vrtmrz/filesystem-livesync) repo. If I can [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md) **Compose** it, I will.
 `compose.yml`
 ```yaml
 version: "3.7"
@@ -131,7 +131,7 @@ services:
 ### Regex to ignore files
 1. follow the plugin [obsidian-livesync](https://github.com/vrtmrz/obsidian-livesync)'s instructions
 	- add URL of hosted **CouchDB** server
-	- [creds](📁shower_thoughts/creds.md) should match "auth" in `config.json`
+	- [creds](%F0%9F%93%81shower_thoughts/creds.md) should match "auth" in `config.json`
 2. check the setting under the "🔁 **Sync Settings**" tab **Regular expression to ignore files**
 	- I wanted to ignore 2 things: any `Untitled.md` files and anything in a `private` directory
 	- regex copy pasta: `Untitled.*\.md$|private`
@@ -171,7 +171,7 @@ services:
 
 ---
 ## backlinks
-[Home Lab 🏠](Home%20Lab%20🏠.md)
+[Home Lab 🏠](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Lab%20%F0%9F%8F%A0.md)
 
 #todo 
 - [ ] add code here

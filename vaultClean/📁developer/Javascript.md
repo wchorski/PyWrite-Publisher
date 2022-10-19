@@ -2,7 +2,7 @@ Here are my little tidbits and rants about my love hate relationship with **JS**
 
 ## Es6
 
-### get all header tags on a page and display - [source](/vault/https://softauthor.com/get-element-by-tag-name-in-javascript/#:~:text=Get__Element__%28s%29__By__Tag__Name__In__JavaScript,Get__Element__%28s%29__By__Tag__Name__From__Parent)
+### get all header tags on a page and display - [](/vault/https://softauthor.com/get-element-by-tag-name-in-javascript/#:~:text=Get__Element__(s)__By__Tag__Name__In__JavaScript,Get__Element__(s)__By__Tag__Name__From__Parent)
 ```html
 <div>div <br>box 1</div>
 <div>div <br>box 2</div>

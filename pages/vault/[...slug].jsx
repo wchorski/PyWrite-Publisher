@@ -1,5 +1,6 @@
 const process = require('process');
 const __basedir = process.cwd();
+// import { __rootDir } from "root-path.mjs";
 import fs from 'fs'
 const { resolve, join } = require('path');
 const { readdir } = require('fs').promises;
@@ -10,30 +11,22 @@ import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 
 import Head from 'next/head'
-import Link from "next/link";
-import { useState, useEffect } from "react"; 
+import Link from 'next/link';
+// import Link from "next/link";
+// import { useState, useEffect } from "react"; 
 import { Layout_Markdown } from "components/Layouts";
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
 import { TableOfContents } from '../../components/TableOfContents';
 import { StyledMarkdownContent } from '../../styles/MarkdownContent.styled';
+import { NavSidebar } from 'components/NavSidebar'
 
-const Post = ( {slug, frontmatter, fileTitle, markdown} ) => {
+const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
+  // console.log('*** Slug: ', slug);
 
   // const {title, date, desc, description} = frontmatter
 
-  const [isLoading, setIsLoading] = useState(true)
-
-  // useEffect(() => {
-  //   console.log('useeffectt');
-
-  //   setHeadings(Array.from(document.getElementsByTagName('h2')))
-  //   console.log('headings', headings);
-  
-  //   return () => {
-  //     console.log('finishedddd');
-  //   }
-  // }, [])
+  // const [isLoading, setIsLoading] = useState(true)
 
   const HeadingRenderer = ({ level, children }) => {
 
@@ -81,13 +74,17 @@ const Post = ( {slug, frontmatter, fileTitle, markdown} ) => {
     code({node, inline, className, children, ...props}) {
       const match = /language-(\w+)/.exec(className || '')
       return !inline && match ? (
-        <SyntaxHighlighter
-          children={String(children).replace(/\n$/, '')}
-          style={syntaxStyle}
-          language={match[1]}
-          PreTag="div"
-          {...props}
-        />
+        <div className="codeblock-cont">
+          <span className='code-language'>{match[1]}</span>
+          <SyntaxHighlighter
+            children={String(children).replace(/\n$/, '')}
+            style={syntaxStyle}
+            language={match[1]}
+            PreTag="div"
+            {...props}
+          />
+        </div>
+        
       ) : (
         <code className={className} {...props}>
           {children}
@@ -95,43 +92,84 @@ const Post = ( {slug, frontmatter, fileTitle, markdown} ) => {
       )
     },
   }
-  
+
+  const cleanTitle = fileTitle.replaceAll('__', ' ')
 
   return (
     <>
       <Head>
-        <title> {frontmatter.title ? frontmatter.title : fileTitle} </title>
-        <meta name={frontmatter.desc} content="tawtaw" />
+        {/*  A title element received an array with more than 1 element as children. In browsers title Elements can only have Text Nodes as children */}
+        {/* <title> {frontmatter.title ? frontmatter.title  : cleanTitle} </title>  */}
+        <title> Dev Garden </title>
+        <meta name={frontmatter?.desc} content="tawtaw" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
       <Layout_Markdown >
-        <div className="markdown-body">
-          <h1 className='markdown-title'>{
-            frontmatter.title 
-            ? frontmatter.title
-            : fileTitle
-          }</h1>
-          <hr className='title-bottom-line'/>
 
-          <div className='frontmatter'>
-            <small>slug: {slug}</small> <br/>
-            <small>date: {frontmatter?.date?.toString()}</small> <br/>
-            <small>description: {frontmatter?.description}</small> <br/>
-          </div>
+        <NavSidebar />
 
-          <StyledMarkdownContent className='content-cont'>
-            <ReactMarkdown 
-              children={markdown} 
-              remarkPlugins={[remarkGfm, remarkFrontmatter]} 
-              components={components}
-            />
-          </StyledMarkdownContent>
-        </div>
+        {!folderChildren && (<>
+            <div className="markdown-body">
+              <div className="header-cont">
+                <h1 className='markdown-title'>{
+                  frontmatter?.title 
+                  ? frontmatter?.title
+                  : cleanTitle
+                }</h1>
+              </div>
+              <hr className='title-bottom-line'/>
 
-        <aside >
-          <TableOfContents />
-        </aside>
+              <div className='frontmatter'>
+                <small>{slug}</small> <br/>
+                <small>date: {frontmatter?.date?.toString()}</small> <br/>
+                <small>desc: {frontmatter?.description}</small> <br/>
+              </div>
+
+              <StyledMarkdownContent className='content-cont'>
+                <ReactMarkdown 
+                  children={markdown} 
+                  remarkPlugins={[remarkGfm, remarkFrontmatter]} 
+                  components={components}
+                />
+              </StyledMarkdownContent>
+            </div>
+
+            <aside >
+              <TableOfContents />
+            </aside>
+          </>)}
+
+          {folderChildren && (<>
+            
+            <div className="markdown-body">
+              <div className="header-cont">
+                <h1 className='markdown-title'>{
+                  frontmatter?.title 
+                  ? frontmatter?.title
+                  : cleanTitle
+                }</h1>
+              </div>
+              <hr className='title-bottom-line'/>
+              
+              <ul>
+                {folderChildren.map((child, i) =>{
+                  const url = (slug+'/'+child).replace(/\.md$/, '')
+
+                  return(
+                    <li key={i}>
+                      <Link href={url}>
+                        <a> 
+                          {child} 
+                        </a>
+                      </Link> 
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </>)}
 
       </Layout_Markdown>
     </>
@@ -145,7 +183,9 @@ const Post = ( {slug, frontmatter, fileTitle, markdown} ) => {
 
 export const getStaticPaths = async () => {
 
+  
   const filePathStrings = await getFiles('./vaultClean/')
+  // console.log('-- filePathStrings: ', filePathStrings);
   
   const filePathArrays = filePathStrings.map(filepath => {
     const absolutePath = filepath.replace(__basedir, '').replace(/\.md$/, '') //? remove path to app, & .md extension
@@ -171,33 +211,65 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({params: {slug}}) => {
   const joinedSlug = slug.join("/") 
 
-  const markdown =  fs.readFileSync(join('./vaultClean/', joinedSlug + '.md'), 'utf8').toString()
+  try { 
+    // check to see if .md file exists
+    const markdown =  fs.readFileSync(join('./vaultClean/', joinedSlug + '.md'), 'utf8').toString()
+    const frontM = matter(markdown);
 
-  const frontM = matter(markdown);
-
-  // TODO prettyTitle.js
-
-  return{
-    props: {
-      slug: joinedSlug,
-      frontmatter: frontM.data,
-      fileTitle: slug[slug.length-1],
-      markdown,
+    return{
+      props: {
+        slug: joinedSlug,
+        frontmatter: frontM.data,
+        fileTitle: slug[slug.length-1],
+        markdown,
+      }
     }
+
+  } catch (err) {
+    // if not an .md file it means it's a FOLDER 
+    const folderChildren = []
+    fs.readdirSync(join('./vaultClean/', joinedSlug), { withFileTypes: true }).forEach((entry) => {
+
+      folderChildren.push(entry.name)
+
+    })
+
+    return{
+      props: {
+        slug: joinedSlug,
+        fileTitle: slug[slug.length-1],
+        folderChildren
+      }
+    }
+    
   }
+  
+
 }
 
 async function getFiles(dir) {
-
+  
   const entries = await readdir(dir, { withFileTypes: true });
 
+  const folders = []
+  
   const files = await Promise.all(entries.map((entry) => {
-
+    
     const path = resolve(dir, entry.name);
-    return entry.isDirectory() ? getFiles(path) : path;
+
+    if(fs.existsSync(path) && fs.lstatSync(path).isDirectory()){
+      folders.push(path)
+      return getFiles(path)
+  
+    } else if(fs.existsSync(path) && fs.lstatSync(path).isFile()) {
+
+      return path
+    }
+
+    // return entry.isDirectory() ? getFiles(path) : path;
   }));
 
-  return Array.prototype.concat(...files);
+  return Array.prototype.concat(...files, ...folders);
 }
 
 

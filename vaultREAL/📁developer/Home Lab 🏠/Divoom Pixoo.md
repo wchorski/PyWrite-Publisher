@@ -1,16 +1,16 @@
-## [Divoom Pixoo (divoom.com)](https://divoom.com/products/divoom-pixoo?_pos=9&_sid=9523eaa72&_ss=r)
+## [Divoom Pixoo (divoom.com)](divoom.com))
 > Pixel Art Digital Picture Frame with 16x16 LED Display
 
-this cool lil gadget can light up any nightstand with fun interchangeable animations, but if you're like me and have a never ending thirst for control then this community [Home Assistant](Home%20Assistant.md) plugin will get you there [d03n3rfr1tz3/hass-divoom: Divoom Integration for Home Assistant (github.com)](https://github.com/d03n3rfr1tz3/hass-divoom) 
+this cool lil gadget can light up any nightstand with fun interchangeable animations, but if you're like me and have a never ending thirst for control then this community [Home Assistant](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Assistant.md) plugin will get you there [d03n3rfr1tz3/hass-divoom: Divoom Integration for Home Assistant (github.com)](github.com)) 
 
 ---
 ### connections
-- [Home Assistant](Home%20Assistant.md)
+- [Home Assistant](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Assistant.md)
 - email IMAP
 - smart **Phone** (Android - Galaxy S9)
 
 ### installation
-1. [d03n3rfr1tz3/hass-divoom: Divoom Integration for Home Assistant (github.com)](https://github.com/d03n3rfr1tz3/hass-divoom) 
+1. [d03n3rfr1tz3/hass-divoom: Divoom Integration for Home Assistant (github.com)](github.com)) 
 ```yaml
 HA_home_ass_config
 ```
@@ -32,7 +32,7 @@ I also took the time to make some 16x16 pixel gifs to coincide with each notific
 
 ---
 ## backlinks
-[Home Lab 🏠](Home%20Lab%20🏠.md)
+[Home Lab 🏠](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Lab%20%F0%9F%8F%A0.md)
 
 ---
 

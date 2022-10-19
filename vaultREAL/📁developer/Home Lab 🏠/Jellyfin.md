@@ -3,16 +3,16 @@
 ## [Jellyfin](https://jellyfin.org/)
 The Free Software Media System.
 
-I use this exclusively for music hosting because [Plex.tv](Plex.tv.md) has more restrictions on client music playback. Plus, with a little shell magic -> [iTunes playlist Sync](#iTunes%20playlist%20Sync)
+I use this exclusively for music hosting because [Plex.tv](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Plex.tv.md) has more restrictions on client music playback. Plus, with a little shell magic -> [iTunes playlist Sync](#iTunes%20playlist%20Sync)
 
 ---
 
 ### Connections
-- [Home Assistant](Home%20Assistant.md)
+- [Home Assistant](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Assistant.md)
 - Android Phone (Galaxy s9)
 
 ## installation
-### [Docker](Docker.md)
+### [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md)
 1. `./compose.yml`
 ```yaml
 version: "3.7"
@@ -47,7 +47,7 @@ services:
 ```powershell
 put_script_here
 ```
-2. copy files over to jellyfin's media folder via [FreeFileSync](FreeFileSync.md). Connected through a [SAMBA](SAMBA.md) share
+2. copy files over to jellyfin's media folder via [FreeFileSync](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/FreeFileSync.md). Connected through a [SAMBA](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/SAMBA.md) share
 3. **Bash** script that cleans up the **.m3u** files from _absolute path_ -> _relative path_
 ```bash
 put_script_here
@@ -56,4 +56,4 @@ put_script_here
 
 
 ---
-[Home Lab 🏠](Home%20Lab%20🏠.md)
+[Home Lab 🏠](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Lab%20%F0%9F%8F%A0.md)

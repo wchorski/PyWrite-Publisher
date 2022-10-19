@@ -19,6 +19,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  background-color: #1d1b1a;
 }
 
 .footer a {
@@ -123,7 +124,7 @@
   .code {
     background: #111;
   }
-  .logo img {
+  /* .logo img {
     filter: invert(1);
-  }
+  } */
 }

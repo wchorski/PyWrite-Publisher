@@ -1,6 +1,17 @@
 ## Tips & Tricks
 
+### does the path lead to a file or directory? - [source](https://stackoverflow.com/a/15630832/15579591)
+```js
+if(fs.existsSync(srcPath) && fs.lstatSync(srcPath).isDirectory()){
+	// returns true if path leads to DIRECTORY
+
+} else if(fs.existsSync(srcPath) && fs.lstatSync(srcPath).isFile()) {
+	// returns true if path leads to FILE
+}
+```
+
 ### get app root directory consistently - [source](https://flaviocopes.com/fix-dirname-not-defined-es-module-scope/)
+`root-path.mjs` -> put this file in the root of your project
 ```js
 import * as path from 'path'
 import { fileURLToPath } from 'url';
@@ -83,7 +94,7 @@ async function getFiles(dir) {
 ```
 
 ### run a javascript (js) module via command line
-being able to to run any `js` file via a terminal inside of your [ReactJS](📁developer/Home%20Lab%20🏠/ReactJS.md) app seems simple, but requires special file naming
+being able to to run any `js` file via a terminal inside of your [ReactJS](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/ReactJS.md) app seems simple, but requires special file naming
 
 `serverScript.mjs` --> *notice the `.mjs` as we'll need that for the import*
 ```js

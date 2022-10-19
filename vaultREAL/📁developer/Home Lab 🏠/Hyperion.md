@@ -1,8 +1,8 @@
-## [Install Hyperion | Hyperion (hyperion-project.org)](https://docs.hyperion-project.org/en/user/Installation.html)
+## [Install Hyperion | Hyperion (hyperion-project.org)](hyperion-project.org))
 
 ### connections
-- [WLED](WLED.md)
-- [Home Assistant](Home%20Assistant.md)
+- [WLED](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/WLED.md)
+- [Home Assistant](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Assistant.md)
 
 ## Hardware
 | device                              | link                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | price |

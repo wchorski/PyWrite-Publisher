@@ -4,18 +4,18 @@
 > a note taking app for people who are obsessed with Markdown 
 
 
-I've dabbled in blogging / tutorial making, but was always bogged down with the speed of [Wordpress](Home%20Lab%20🏠/Wordpress.md). with **Obsidian** I get 
+I've dabbled in blogging / tutorial making, but was always bogged down with the speed of [Wordpress](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Wordpress.md). with **Obsidian** I get 
 
 - the speed of a local text editor, 
 - extensibility of an [IDE](https://social.technet.microsoft.com/wiki/contents/articles/29057.the-small-basic-environment-ide.aspx),  
 - simplicity that [Markdown](https://daringfireball.net/projects/markdown/) offers. 
 
-Plus I can use it for client tracking, tutorial making, and idea generation. I'd recommend anybody that knows more than 5 keyboard shortcuts to ditch whatever blogging tool they currently use [In Flavor](📁shower_thoughts/In%20Flavor.md) of **Obsidian**
+Plus I can use it for client tracking, tutorial making, and idea generation. I'd recommend anybody that knows more than 5 keyboard shortcuts to ditch whatever blogging tool they currently use [In Flavor](%F0%9F%93%81shower_thoughts/In%20Flavor.md) of **Obsidian**
 
 ---
 ### connections
-- easily convert and publish with [Obsidian-Zola](tutorials/Obsidian-Zola.md) or [Quartz-w_Boswell](tutorials/Quartz-w_Boswell.md) 
-- Live Sync instances with [Obsidian-Livesync](📁developer/Obsidian-Livesync.md) 
+- easily convert and publish with [Obsidian-Zola](%F0%9F%93%81developer/tutorials/Obsidian-Zola.md) or [Quartz-w_Boswell](%F0%9F%93%81developer/tutorials/Quartz-w_Boswell.md) 
+- Live Sync instances with [Obsidian-Livesync](%F0%9F%93%81developer/Obsidian-Livesync.md) 
 
 ### installation
 - [https://obsidian.md/](https://obsidian.md/)
@@ -26,8 +26,8 @@ Plus I can use it for client tracking, tutorial making, and idea generation. I'd
 
 ---
 ## Plugins I use
-- [vrtmrz/obsidian-livesync (github.com)](https://github.com/vrtmrz/obsidian-livesync)
-	- explained in detail [Obsidian-Livesync](📁developer/Obsidian-Livesync.md)
+- [vrtmrz/obsidian-livesync (github.com)](github.com))
+	- explained in detail [Obsidian-Livesync](%F0%9F%93%81developer/Obsidian-Livesync.md)
 - [pjeby/quick-explorer](https://github.com/pjeby/quick-explorer)
 	- Perform file explorer operations (and see your current file path) from the Obsidian.md title bar
 - [deathau/cm-editor-syntax-highlight-obsidian](https://github.com/deathau/cm-editor-syntax-highlight-obsidian)
@@ -53,12 +53,12 @@ Plus I can use it for client tracking, tutorial making, and idea generation. I'd
 3. how I organize via directories
 
 ## Publish Vault
-1. As of now I use [Obsidian-Zola](../tutorials/Obsidian-Zola.md) because it's dead simple and has nice out of the box features. Publish to **Netlify**
-2. I have experimented with [Quartz-w_Boswell](../tutorials/Quartz-w_Boswell.md). I like the ability to compile locally but looking into how to add more features. Publish to **Github Pages**
+1. As of now I use [Obsidian-Zola](%F0%9F%93%81developer/tutorials/Obsidian-Zola.md) because it's dead simple and has nice out of the box features. Publish to **Netlify**
+2. I have experimented with [Quartz-w_Boswell](%F0%9F%93%81developer/tutorials/Quartz-w_Boswell.md). I like the ability to compile locally but looking into how to add more features. Publish to **Github Pages**
 
 ---
 ## backlinks
-[Home Lab 🏠](📁developer/Home%20Lab%20🏠/Home%20Lab%20🏠.md)
+[Home Lab 🏠](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Lab%20%F0%9F%8F%A0.md)
 
 ---
 #todo 

@@ -7,7 +7,7 @@ Password manager. Unofficial [Bitwarden](https://bitwarden.com/) compatible serv
 - Desktop App (cross platform)
 
 ## installation
-### [Docker](Docker.md)
+### [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md)
 ```
 version: '3'
 

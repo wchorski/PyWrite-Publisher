@@ -6,7 +6,7 @@ Docker and Kubernetes Management. A no-code solution for spinning up containers.
 - one
 
 ## installation
-### [Docker](Docker.md)
+### [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md)
 1. `./compose.yml`
 ```
 version: "3.2"
@@ -33,15 +33,15 @@ services:
 2. `./upgrade.sh`
 ```
 #! /bin/bash
-echo "[[ upgrading portainer ]]"
+echo "[ upgrading portainer ](%20upgrading%20portainer%20)"
 
-echo "[[ stop portainer docker ]]"
+echo "[ stop portainer docker ](%20stop%20portainer%20docker%20)"
 sudo docker stop portainer
 
-echo "[[ remove old portainer docker ]]"
+echo "[ remove old portainer docker ](%20remove%20old%20portainer%20docker%20)"
 sudo docker rm portainer
 
-echo "[[ sudo docker-compose u -d ]]"
+echo "[ sudo docker-compose u -d ](%20sudo%20docker-compose%20u%20-d%20)"
 cd /home/<username>/docker/portainer
 
 sudo docker-compose up -d

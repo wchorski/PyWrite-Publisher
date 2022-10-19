@@ -4,11 +4,21 @@ import styled from 'styled-components'
 export const StyledTableOfContents = styled.div`
   position: sticky;
   position: -webkit-sticky; /* For Safari */
-  top: 24px; /* How far down the page you want your ToC to live */
+  top: 0px; 
 
   /* Give table of contents a scrollbar */
   max-height: calc(100vh - 40px);
   overflow: auto;
+  margin-left: 1em;
+
+  & > hr {
+    margin-top: 0;
+  }
+
+  h5{
+    font-size: 20px;
+    margin-bottom: .1em;
+  }
 
   nav {
 
@@ -16,6 +26,15 @@ export const StyledTableOfContents = styled.div`
       color: grey;
       text-decoration: none;
     }
+
+    ul {  
+      list-style: none; 
+      // width: 200px; 
+      text-indent: -25px; // MUST MATCH key property
+      margin-left: 25px; //  MUST MATCH key property  */
+      margin-bottom: 5px;
+    }
+    li { margin-bottom: 1px; }
 
     li.active {
 
@@ -35,11 +54,14 @@ export const StyledTableOfContents = styled.div`
 
     ul{
       list-style: none;
-      font-weight: 900;
+      /* font-weight: 900; */
+      padding: 0;
+
+  
 
       li:before {
         content: "#";
-        width:20px;
+        width:10px;
         height:20px;
         /* background:red; */
         color: #ffffff59;
@@ -47,6 +69,10 @@ export const StyledTableOfContents = styled.div`
         float: left;
         margin-right: 5px;
       } 
+      li ul{
+        padding-left: 1em;
+      }
+
     }
   }
 `

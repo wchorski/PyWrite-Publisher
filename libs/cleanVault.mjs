@@ -2,16 +2,13 @@
 // const fs = require("fs")
 import * as fs from 'fs'
 import * as path from 'path'
-import { __rootDir } from "../root-path.mjs";
+// import { __rootDir } from "../root-path.mjs";
 // const path = require("path")
 // import * as fs from 'fs';
 // import * as path from 'path';
 
 
 export function cleanVault(src, dest) {
-  // console.log("***** __rootDir+src: ", __rootDir+src);
-  // console.log("***** __rootDir+dest: ", __rootDir+dest);
-
   try{
     fs.mkdirSync(dest, { recursive: true });
   
@@ -26,6 +23,7 @@ export function cleanVault(src, dest) {
         cleanVault(srcPath, cleanPath)
 
       } else if(fs.existsSync(srcPath) && fs.lstatSync(srcPath).isFile()) {
+        console.log("File to Convert: ", srcPath);
         fs.copyFileSync(srcPath, cleanPath);
         cleanLinks(srcPath, cleanPath); 
       }
@@ -37,6 +35,8 @@ export function cleanVault(src, dest) {
   }
         
 }
+
+// TODO could create a index.md inside each folder as it's "directory" home
 
 // TODO do more
 // allowed in URLs =>           $ – _ . + ! * ‘ ( ) , &

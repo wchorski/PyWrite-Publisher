@@ -1,15 +1,15 @@
-## [Nginx Proxy Manager](https://nginxproxymanager.com/)
-Expose your services easily and securely
 
-Gotta be honest, writing Nginx code was always a headache, but once I found this I never want to go back. This makes routing and SSL certificates a breeze.  
+> Expose your services easily and securely [https://nginxproxymanager.com/](https://nginxproxymanager.com/)
+
+Gotta be honest, writing Nginx code was always a headache, but once I found this I never want to go back. This makes **routing** and **SSL** certificates a breeze.  
 
 ---
 
 ### connections
-- [Pi-hole](Pi-hole.md) for local DNS. Make pretty URLs for local or public services
+- [Pi-hole](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Pi-hole.md) for local DNS. Make pretty URLs for local or public services
 
 ### installation
-1. [Docker](Docker.md) `compose.yml`
+1. `compose.yml` via [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md) 
 ```yaml
 version: '3'
 services:
@@ -37,7 +37,7 @@ Password: changeme
 1. 
 
 ## Pretty URLs for Local Apps
-1. [Pi-hole](Pi-hole.md) DNS setup
+1. [Pi-hole](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Pi-hole.md) DNS setup
 2. **Nginx** to link Port number 
 
 ---

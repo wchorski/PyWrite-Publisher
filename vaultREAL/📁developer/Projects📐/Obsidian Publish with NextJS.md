@@ -1,13 +1,13 @@
-Create a statically generated site with [NextJS](📁developer/Home%20Lab%20🏠/NextJS.md), and pump in my [Obsidian](📁developer/Home%20Lab%20🏠/Obsidian.md) vault as the content. 
-- convert [Markdown](📁developer/Markdown.md) into html via [remarkjs/remark-html](https://github.com/remarkjs/remark-html) or [remarkjs/react-markdown](https://github.com/remarkjs/react-markdown)
+Create a statically generated site with [NextJS](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/NextJS.md), and pump in my [Obsidian](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Obsidian.md) vault as the content. 
+- convert [Markdown](%F0%9F%93%81developer/Markdown.md) into html via [remarkjs/remark-html](https://github.com/remarkjs/remark-html) or [remarkjs/react-markdown](https://github.com/remarkjs/react-markdown)
 
 ### syntax highlighting styles
-[react-syntax-highlighter/AVAILABLE_STYLES_PRISM.MD at master · react-syntax-highlighter/react-syntax-highlighter (github.com)](https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/master/AVAILABLE_STYLES_PRISM.MD)
+[react-syntax-highlighter/AVAILABLE_STYLES_PRISM.MD at master · react-syntax-highlighter/react-syntax-highlighter (github.com)](github.com))
 
 #todo 
 - [x] Covert **Markdown** to show in NextJS
 - [x] import and use frontmatter optionally 
-- [x] [React Hook to Run Code After Render (daveceddia.com)](https://daveceddia.com/react-hook-after-render/)
+- [x](daveceddia.com))
 - [x] Dynamically create pages based on .md Files
 - [x] drill down the **Vault's** directory to retain Obsidian's file structure in NextJS's routing
 	- [x] use node to copy directory structure from `./vault` -> `./pages`
@@ -33,7 +33,7 @@ Create a statically generated site with [NextJS](📁developer/Home%20Lab%20🏠
 - [ ] use **chokedar** to watch and update app's vault 
 - [x] pretty up any **slug** (exp: change 'space' to underscore, '&' to 'and', etc) (possibly do this after file has been found, then pretty the URL for user. sounds dangerous tho)
 - [x] emoji's work in URL thank god
-- [x] absolute links - [Next.js Absolute Imports and Aliases (ahmadawais.com)](https://ahmadawais.com/next-js-absolute-imports-aliases/#:~:text=Next.js%20Absolute%20Imports%20%23%20Basically%20you%20only%20need,via%20jsconfig.json%20%28JS%20projects%29%20or%20tsconfig.json%20%28TS%20projects%29.)
+- [](https://ahmadawais.com/next-js-absolute-imports-aliases/#:~:text=Next.js%20Absolute%20Imports%20%2523%20Basically%20you%20only%20need,via%20jsconfig.json%20(JS%20projects)%20or%20tsconfig.json%20(TS%20projects).)
 - [ ] search bar with autocomplete 
 - [ ] shortcut `/` that focus search bar
 - [ ] delete / remove files folders when not building from scratch
@@ -42,6 +42,17 @@ Create a statically generated site with [NextJS](📁developer/Home%20Lab%20🏠
 - [x] can i fix dynamic routing with `./pages/[...folder]/[...slug]`? - NO, CATCH ALLs CAN ONLY BE AT END
 - [ ] make tags clickable links
 - [ ] primitive sanataion of 
+- [ ] does grabbing images work?
+- [x] fix list indentation when words wrap in Table of Contents
+- [ ] home page
+	- [ ] recently added notes carousel
+- [x] show language used in codeblock
+- [ ] one click copy code block or snippet
+- [ ] do i need to even remove '.md' for NextJS routing?
+- [ ] tags
+	- [ ] [[Solved] Regex to find words that start with a specific | 9to5Answer](https://9to5answer.com/regex-to-find-words-that-start-with-a-specific-character)
+	- [ ] strip tags out of .md
+	- [ ] put them in <a> tags in the sidebar
 
 
 ## Other Tutorials 
@@ -65,5 +76,5 @@ Create a statically generated site with [NextJS](📁developer/Home%20Lab%20🏠
 1. don't forget this file. sometimes it doesn't copy over -> `./pages/vault/[slug].jsx`
 
 ## just messin
-[Nginx Proxy Manager](📁developer/Home%20Lab%20🏠/Nginx%20Proxy%20Manager.md)
-[2022.10.28 Teresa & Thomas](📁music/DJ_William🎛/2022.10.28%20Teresa%20&%20Thomas.md)
+[Nginx Proxy Manager](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md)
+[2022.10.28 Teresa & Thomas](%F0%9F%93%81music/DJ_William%F0%9F%8E%9B/2022.10.28%20Teresa%20&%20Thomas.md)

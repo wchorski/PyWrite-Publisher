@@ -135,7 +135,7 @@ export const TableOfContents = () => {
   return (
     <StyledTableOfContents>
       <hr />
-        <h1>Table of Contents</h1>
+        <h5>Table of Contents</h5>
         <nav aria-label="Table of contents">
           <Headings headings={nestedHeadings} activeId={activeId}/>
         </nav>
@@ -144,7 +144,11 @@ export const TableOfContents = () => {
         <button aria-label='search button'>
           <RiFileSearchLine />
         </button>
-        <input type="text" placeholder='[ / ] to search'/>
+        <input type="search" placeholder='[ / ] to search'/>
+      </div>
+      <div className="tags-cont">
+        <h5>tags</h5>
+        <a href="#" className='tag'>#tagOne</a>
       </div>
     </StyledTableOfContents>
   )

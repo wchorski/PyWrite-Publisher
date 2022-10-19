@@ -2,15 +2,15 @@
 # [Plex](https://www.plex.tv/)
 Stream Movies & TV Shows.
 
-Why do I use this for movies when I have [Jellyfin](Jellyfin.md)? Because movie playback seems more stable, it's easy to share libraries, and I don't watch movies on mobile 
+Why do I use this for movies when I have [Jellyfin](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Jellyfin.md)? Because movie playback seems more stable, it's easy to share libraries, and I don't watch movies on mobile 
 
 ## connections
 - one
 
 ## installation
-1. - the repo we'll be using -> [plexinc/pms-docker: Plex Media Server Docker repo, for all your PMS docker needs. (github.com)](https://github.com/plexinc/pms-docker)
+1. - the repo we'll be using -> [plexinc/pms-docker: Plex Media Server Docker repo, for all your PMS docker needs. (github.com)](github.com))
 2. get token from [Claim | Plex](https://www.plex.tv/claim/)
-3. [Docker](📁developer/Home%20Lab%20🏠/Docker.md) `./compose.yml`
+3. [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md) `./compose.yml`
 ```
 version: '2'
 services:

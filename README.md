@@ -15,6 +15,9 @@ alternative to Obsidian Publish
 > all contents of file that match `](` are replaced with `](/vault/` as to make all links work. if anywhere you reference a `](` in your notes (or code) it will be ?yanked 
 
 > [!warning]
+> don't use links/tags in headers. It will screw up the "Table of Contents" widget
+
+> [!warning]
 > if you use **ANY** of the following character combos **ANYWHERE** in your *file > names* or *content*, then this will replace it
 
 ```js

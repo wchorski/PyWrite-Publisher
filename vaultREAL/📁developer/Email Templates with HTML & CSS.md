@@ -112,7 +112,7 @@
 </html>
 ```
 
-6. now copy / paste everything in your editor to [CSS Inliner Tool (mailchimp.com)](https://templates.mailchimp.com/resources/inline-css/) and see what it spits out
+6. now copy / paste everything in your editor to [CSS Inliner Tool (mailchimp.com)](mailchimp.com)) and see what it spits out
 
 ### result after CSS Inliner Tool
 ```html
@@ -171,7 +171,7 @@ I checked what the _received mail_ looked like in different clients
 ---
 
 ## resources
-- [CSS Inliner Tool | Email Design Reference (mailchimp.com)](https://templates.mailchimp.com/resources/inline-css/)
+- [CSS Inliner Tool | Email Design Reference (mailchimp.com)](mailchimp.com))
 - [Live Server - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 - [css - Best practices for styling HTML emails - Stack Overflow](https://stackoverflow.com/questions/4829254/best-practices-for-styling-html-emails)
 - [Common HTML Mistakes | Mailchimp](https://mailchimp.com/help/common-html-mistakes/)
@@ -182,4 +182,4 @@ I checked what the _received mail_ looked like in different clients
 
 ---
 ## backlinks
-[_developer_box📦](📁developer/_developer_box📦.md)
+[_developer_box📦](%F0%9F%93%81developer/_developer_box%F0%9F%93%A6.md)

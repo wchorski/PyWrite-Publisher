@@ -13,14 +13,14 @@
 
 ---
 ### connections
-- publicly face app with [Nginx](Nginx%20Proxy%20Manager.md#Publicly%20Facing%20App)
-- syncs pictures for [PhotoPrism](PhotoPrism.md) to read my every growing photo gallery
+- publicly face app with [](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md#Publicly%20Facing%20App)
+- syncs pictures for [PhotoPrism](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/PhotoPrism.md) to read my every growing photo gallery
 - used as my calendar server
 - backup phone contacts
 
 ### installation
 1. note that I use an external drive. You must set up your other drive first.
-2. [Docker](Docker.md) `compose.yml`
+2. [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md) `compose.yml`
 ```yaml
 version: '2'
 

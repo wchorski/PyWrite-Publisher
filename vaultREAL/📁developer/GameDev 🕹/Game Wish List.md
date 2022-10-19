@@ -1,4 +1,4 @@
 - [ ] https://gx.games/games/gteg2c/in-the-hall-of-the-copper-king/
-- [ ] [The Beginner's Guide on Steam (steampowered.com)](https://store.steampowered.com/app/303210/The_Beginners_Guide/)
-- [ ] [Typing of the Date (Game) - Giant Bomb](https://www.giantbomb.com/typing-of-the-date/3030-80383/#:~:text=Game%20details%20%20%20Name%20%20%20Typing,Publisher%20Pub%20...%20%204%20more%20rows%20)
+- [ ](steampowered.com))
+- [](https://www.giantbomb.com/typing-of-the-date/3030-80383/#:~:text=Game%20details%20%20%20Name%20%20%20Typing,Publisher%20Pub%20...%20%204%20more%20rows%20)
 - [ ] 

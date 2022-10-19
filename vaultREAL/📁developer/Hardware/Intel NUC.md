@@ -21,14 +21,14 @@
 ```
 
 ## What Do I Run on it?
-[Docker](📁developer/Home%20Lab%20🏠/Docker.md) containers such as
-1. [Nginx Proxy Manager](📁developer/Home%20Lab%20🏠/Nginx%20Proxy%20Manager.md)
-2. [vaultwarden](📁developer/Home%20Lab%20🏠/vaultwarden.md)
-5. [Nextcloud](📁developer/Home%20Lab%20🏠/Nextcloud.md)
-3. [Obsidian-Livesync](📁developer/Home%20Lab%20🏠/Obsidian-Livesync.md)
-4. [PhotoPrism](📁developer/Home%20Lab%20🏠/PhotoPrism.md)
-6. [SFTP Server](📁developer/Home%20Lab%20🏠/SFTP%20Server.md)
-7. [SFTP](📁developer/Home%20Lab%20🏠/SFTP.md)
+[Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md) containers such as
+1. [Nginx Proxy Manager](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md)
+2. [vaultwarden](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/vaultwarden.md)
+5. [Nextcloud](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nextcloud.md)
+3. [Obsidian-Livesync](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Obsidian-Livesync.md)
+4. [PhotoPrism](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/PhotoPrism.md)
+6. [SFTP Server](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/SFTP%20Server.md)
+7. [SFTP](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/SFTP.md)
 8. 
-9. [Wordpress](📁developer/Home%20Lab%20🏠/Wordpress.md)
-10. [NextJS](📁developer/Home%20Lab%20🏠/NextJS.md)
+9. [Wordpress](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Wordpress.md)
+10. [NextJS](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/NextJS.md)

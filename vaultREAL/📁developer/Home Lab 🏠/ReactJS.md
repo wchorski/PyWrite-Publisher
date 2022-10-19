@@ -1,14 +1,14 @@
 #javascript #reactjs 
-# [React –(reactjs.org)](https://reactjs.org/)
+# [React –(reactjs.org)](reactjs.org))
 A JavaScript library for building user interfaces. "client"
 
 ## connections
-- [Nginx Proxy Manager](Nginx%20Proxy%20Manager.md) for home routing
-- [Node.js (nodejs.org)](https://nodejs.org/en/)
-- example full stack app: [wchorski/node-signage: Digital Signage on a MERN stack (github.com)](https://github.com/wchorski/node-signage)
+- [Nginx Proxy Manager](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md) for home routing
+- [Node.js (nodejs.org)](nodejs.org))
+- example full stack app: [wchorski/node-signage: Digital Signage on a MERN stack (github.com)](github.com))
 
 ## installation
-### [Docker](Docker.md) - full stack app
+### [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md) - full stack app
 1. `./compose.yml`
 	1. "client" - React App
 	2. "server" - [Express](http://expressjs.com/) as the API
@@ -164,4 +164,4 @@ npm-debug.log
 
 ## Tutorials
 ### Dynamic table of contents - sticky navigation
-[How to build a table of contents in React - Emma Goto (emgoto.com)](https://www.emgoto.com/react-table-of-contents/#:~:text=How%20to%20build%20a%20table%20of%20contents%20in,Creating%20a%20table%20of%20contents%20with%20Gatsby%20)
+[](https://www.emgoto.com/react-table-of-contents/#:~:text=How%20to%20build%20a%20table%20of%20contents%20in,Creating%20a%20table%20of%20contents%20with%20Gatsby%20)

@@ -1,43 +1,43 @@
 ## Pi4 (Debian 11 Bullseye 64bit)
-- [Glances](Glances.md)
-- [Pi-hole](Pi-hole.md)
+- [Glances](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Glances.md)
+- [Pi-hole](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Pi-hole.md)
 	- Unbound DNS
 	- DHCP list
-- [PiVPN](PiVPN.md)
+- [PiVPN](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/PiVPN.md)
 	- .config files for each client
-- [DuckDNS](DuckDNS.md)
-- [Home Assistant](Home%20Assistant.md)
-- [Hyperion](Hyperion.md)
+- [DuckDNS](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/DuckDNS.md)
+- [Home Assistant](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Assistant.md)
+- [Hyperion](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Hyperion.md)
 
 ---
 ## Icicle - Intel NUC (Debian 11 Bullseye 64bit)
-- [Glances](Glances.md)
-- [Duplicati](Duplicati.md)
-- [SFTP](SFTP.md)
-- [Docker](Docker.md)
-	- [Nextcloud](Nextcloud.md)
-	- [Nginx Proxy Manager](Nginx%20Proxy%20Manager.md)
-	- [Nginx Proxy Manager](📁developer/Home%20Lab%20🏠/Nginx%20Proxy%20Manager.md)
-	- [vaultwarden](vaultwarden.md)
-	- [Wordpress](Wordpress.md)
-	- [ReactJS](ReactJS.md)
-	- [NextJS](NextJS.md)
-	- [portainer](portainer.md)
+- [Glances](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Glances.md)
+- [Duplicati](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Duplicati.md)
+- [SFTP](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/SFTP.md)
+- [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md)
+	- [Nextcloud](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nextcloud.md)
+	- [Nginx Proxy Manager](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md)
+	- [Nginx Proxy Manager](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md)
+	- [vaultwarden](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/vaultwarden.md)
+	- [Wordpress](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Wordpress.md)
+	- [ReactJS](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/ReactJS.md)
+	- [NextJS](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/NextJS.md)
+	- [portainer](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/portainer.md)
 
 ---
 ## Spearmint - (custom PC) (Linux Mint)
-- [Glances](Glances.md)
-- [Duplicati](Duplicati.md)
-- [Docker](Docker.md)
-	- [Plex.tv](Plex.tv.md)
-	- [Jellyfin](Jellyfin.md)
-	- [portainer](portainer.md)
-- [XMRig](XMRig.md)
-- [SAMBA](SAMBA.md)
+- [Glances](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Glances.md)
+- [Duplicati](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Duplicati.md)
+- [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md)
+	- [Plex.tv](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Plex.tv.md)
+	- [Jellyfin](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Jellyfin.md)
+	- [portainer](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/portainer.md)
+- [XMRig](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/XMRig.md)
+- [SAMBA](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/SAMBA.md)
 
 ---
 ## Frostbyte
-- [Duplicati](Duplicati.md) 
+- [Duplicati](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Duplicati.md) 
 - FL Studio
 - Davinci Resolve
 - Unity3D
@@ -46,16 +46,16 @@
 
 ---
 ## Sn0flake
-- [Duplicati](Duplicati.md)
+- [Duplicati](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Duplicati.md)
 - Serato
-- [Hyperion](Hyperion.md)
+- [Hyperion](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Hyperion.md)
 - Unity3D
 
 ---
 ## Milkywave
-- [Nextcloud](Nextcloud.md)
-- [SAMBA](SAMBA.md)
-- [K-9 Mail (k9mail.app)](https://k9mail.app/)
+- [Nextcloud](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nextcloud.md)
+- [SAMBA](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/SAMBA.md)
+- [K-9 Mail (k9mail.app)](k9mail.app)))
 
 ---
 #todo
@@ -65,6 +65,6 @@
 - [ ] Add hyperion into the mix
 - [ ] tryout jellyfin in home assistant integration 
 
-[Obsidian Publish with NextJS](📁developer/Projects📐/Obsidian%20Publish%20with%20NextJS.md)
-[Nginx Proxy Manager](📁developer/Home%20Lab%20🏠/Nginx%20Proxy%20Manager.md)
-[Melt & Murder](📁music/split_skream/Melt%20&%20Murder.md)
+[Obsidian Publish with NextJS](%F0%9F%93%81developer/Projects%F0%9F%93%90/Obsidian%20Publish%20with%20NextJS.md)
+[Nginx Proxy Manager](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md)
+[Melt & Murder](%F0%9F%93%81music/split_skream/Melt%20&%20Murder.md)

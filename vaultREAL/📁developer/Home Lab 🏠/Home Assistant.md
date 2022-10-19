@@ -1,4 +1,4 @@
-## [Home Assistant (home-assistant.io)](https://www.home-assistant.io/)
+## [Home Assistant (home-assistant.io)](home-assistant.io))
 
 > Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts.
 
@@ -7,14 +7,14 @@ installed on [Raspberry Pi 4 Model B  4GB](https://www.raspberrypi.com/products/
 ---
 
 ### connections
-- securely accessed via [PiVPN](PiVPN.md) (I don't forward face any apps that I solo use)
-- [Hyperion](Hyperion.md)
-- [WLED](WLED.md)
-- [Divoom Pixoo (divoom.com)](https://divoom.com/products/divoom-pixoo?_pos=9&_sid=9523eaa72&_ss=r) digital sign (via bluetooth)
-- [Glances](Glances.md) - via Grafana & InfluxDB
+- securely accessed via [PiVPN](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/PiVPN.md) (I don't forward face any apps that I solo use)
+- [Hyperion](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Hyperion.md)
+- [WLED](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/WLED.md)
+- [Divoom Pixoo (divoom.com)](divoom.com)) digital sign (via bluetooth)
+- [Glances](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Glances.md) - via Grafana & InfluxDB
 
 ### installation 
-1. installation **Supervised** [Linux - Home Assistant (home-assistant.io)](https://www.home-assistant.io/installation/linux#install-home-assistant-supervised)
+1. installation **Supervised** [](https://www.home-assistant.io/installation/linux#install-home-assistant-supervised)
 
 ### plugins
 1. ESPHome
@@ -32,9 +32,9 @@ installed on [Raspberry Pi 4 Model B  4GB](https://www.raspberrypi.com/products/
 
 ## troubleshooting 
 > [!warning]
-> I'm running the [home-assistant/supervised](https://github.com/home-assistant/supervised-installer) installation because I want to utilize my [Pi4](📁developer/Hardware/Pi4.md) for multiple apps.
+> I'm running the [home-assistant/supervised](https://github.com/home-assistant/supervised-installer) installation because I want to utilize my [Pi4](%F0%9F%93%81developer/Hardware/Pi4.md) for multiple apps.
 > 
-> I encountered a boot loop error from one of the Home Assistant services, effectively freezing any other service running on my [Pi4](📁developer/Hardware/Pi4.md)
+> I encountered a boot loop error from one of the Home Assistant services, effectively freezing any other service running on my [Pi4](%F0%9F%93%81developer/Hardware/Pi4.md)
 
 ```shell
 ... entered blocking state

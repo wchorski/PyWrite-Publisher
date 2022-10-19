@@ -1,13 +1,13 @@
 #javascript #reactjs
-# [Next.js by Vercel(nextjs.org)](https://nextjs.org/)
+# [Next.js by Vercel(nextjs.org)](nextjs.org))
 The React Framework. hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.
 
 ## connections
-- [Nginx Proxy Manager](Nginx%20Proxy%20Manager.md) for home routing
-- example app: [wchorski/heart-chart: cute app to make affection competitive (github.com)](https://github.com/wchorski/heart-chart)
+- [Nginx Proxy Manager](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Nginx%20Proxy%20Manager.md) for home routing
+- example app: [wchorski/heart-chart: cute app to make affection competitive (github.com)](github.com))
 
 ## installation
-### [Docker](Docker.md)
+### [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md)
 1. `./compose.yml`
 	1. "app" - NextJS App
 	2. "mongo" - MongoDB database
@@ -101,7 +101,7 @@ npm-debug.log
 - [Multi Nested Dynamic Routes in NextJs - DEV Community 👩‍💻👨‍💻](https://dev.to/willholmes/multi-nested-dynamic-routes-in-nextjs-30f7)
 
 ### absolute imports
-- absolute paths instead of relative paths. Especially helpful when doing more automation / generation of links - [Next.js Absolute Imports and Aliases (ahmadawais.com)](https://ahmadawais.com/next-js-absolute-imports-aliases/#:~:text=Next.js%20Absolute%20Imports%20%23%20Basically%20you%20only%20need,via%20jsconfig.json%20%28JS%20projects%29%20or%20tsconfig.json%20%28TS%20projects%29.)
+- absolute paths instead of relative paths. Especially helpful when doing more automation / generation of links - [](https://ahmadawais.com/next-js-absolute-imports-aliases/#:~:text=Next.js%20Absolute%20Imports%20%2523%20Basically%20you%20only%20need,via%20jsconfig.json%20(JS%20projects)%20or%20tsconfig.json%20(TS%20projects).)
 ```js
 // Your jsconfig.json or tsconfig.json 
 { 

@@ -9,7 +9,7 @@ So far I've only used this for [Obsidian-Livesync](../Obsidian-Livesync.md) but 
 - [Obsidian-Livesync](../Obsidian-Livesync.md)
 
 ### installation
-1. [Docker](Docker.md) `compose.yml`
+1. [Docker](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Docker.md) `compose.yml`
 ```yaml
 compose_file_here
 ```
@@ -18,7 +18,7 @@ compose_file_here
 
 ---
 ## backlinks
-[Home Lab 🏠](Home%20Lab%20🏠.md)
+[Home Lab 🏠](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Home%20Lab%20%F0%9F%8F%A0.md)
 
 ---
 

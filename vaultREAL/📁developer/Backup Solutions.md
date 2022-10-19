@@ -1,7 +1,7 @@
 #Thunderbird #
 
-- [FreeFileSync](Home%20Lab%20🏠/FreeFileSync.md)
-- [Duplicati](Home%20Lab%20🏠/Duplicati.md)
+- [FreeFileSync](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/FreeFileSync.md)
+- [Duplicati](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Duplicati.md)
 
 ### Linux Disk Image with DD Command and Compress
 - tutorial
