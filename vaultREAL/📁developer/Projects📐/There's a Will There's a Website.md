@@ -1,3 +1,0 @@
-#headless #Wordpress #NextJS #ReactJS #WooCommerce #WooGraphQL #WPGraphQL #GraphQL
-
-creating a ECommerce website for selling any web apps I design. I'm using a headless [Wordpress](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Wordpress.md) instance with a [NextJS](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/NextJS.md) framework to build the frontend. I tap into the [Wordpress](%F0%9F%93%81developer/Home%20Lab%20%F0%9F%8F%A0/Wordpress.md) data with [WPGraphQL](https://www.wpgraphql.com/). 

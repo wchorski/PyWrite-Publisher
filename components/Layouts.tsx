@@ -7,7 +7,7 @@ export function Layout_Full_Width ( {children}: {children: React.ReactNode} ) {
   return (
 
     <div className='layout-wrap'>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <StyledMainCont>
         {children}
@@ -25,7 +25,7 @@ export function Layout_Markdown ( {children}: {children: React.ReactNode} ) {
 
     <div className='layout-wrap'>
 
-      <StyledMainCont>
+      <StyledMainCont className="content-cont">
         {children}
       </StyledMainCont>
 

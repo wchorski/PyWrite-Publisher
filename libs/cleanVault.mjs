@@ -83,7 +83,7 @@ export function cleanLinks(filepath, dest){
     const content = fs.readFileSync(filepath, 'utf8')
 
     const cleanedContent = content
-      .replaceAll('.md', '') // remove file extension
+      // .replaceAll('.md', '') // remove file extension
       .replaceAll( '%20', space) 
       .replaceAll('](', '](/vault/')
       // .replaceAll( '%27', apostrophy) 

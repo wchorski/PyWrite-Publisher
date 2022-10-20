@@ -12,6 +12,8 @@ import remarkGfm from 'remark-gfm'
 
 import Head from 'next/head'
 import Link from 'next/link';
+import { AiFillFolderOpen } from "react-icons/ai";
+import { TbMarkdown } from "react-icons/tb";
 // import Link from "next/link";
 // import { useState, useEffect } from "react"; 
 import { Layout_Markdown } from "components/Layouts";
@@ -123,8 +125,10 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
 
               <div className='frontmatter'>
                 <small>{slug}</small> <br/>
-                <small>date: {frontmatter?.date?.toString()}</small> <br/>
-                <small>desc: {frontmatter?.description}</small> <br/>
+                {frontmatter.title && (<>
+                  <small>date: {frontmatter.date?.toString()}</small> <br/>
+                  <small>desc: {frontmatter.description}</small> <br/>
+                </>)}
               </div>
 
               <StyledMarkdownContent className='content-cont'>
@@ -153,12 +157,31 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
               </div>
               <hr className='title-bottom-line'/>
               
-              <ul>
+              <ul className='folder-contents'>
                 {folderChildren.map((child, i) =>{
-                  const url = (slug+'/'+child).replace(/\.md$/, '')
+                  const url = (slug+'/'+child)
+                  console.log(child);
+
+                  const regexMD = /.md/
+
+                  let icon = ''
+
+                  switch (regexMD.test(child)) {
+                    case true:
+                      icon = <TbMarkdown />
+                      break;
+                      
+                    case false:
+                      icon = <AiFillFolderOpen style={{color: "var(--c-1)"}} />
+                      break;
+
+                    default:
+                      console.warn(`WHAT AM I?.`);
+                  }
 
                   return(
                     <li key={i}>
+                      {icon}
                       <Link href={url}>
                         <a> 
                           {child} 
@@ -188,7 +211,7 @@ export const getStaticPaths = async () => {
   // console.log('-- filePathStrings: ', filePathStrings);
   
   const filePathArrays = filePathStrings.map(filepath => {
-    const absolutePath = filepath.replace(__basedir, '').replace(/\.md$/, '') //? remove path to app, & .md extension
+    const absolutePath = filepath.replace(__basedir, '') //? remove path to app, & .md extension
     const pathArray = process.platform === 'win32' ? absolutePath.split("\\").filter(Boolean) : absolutePath.split("/").filter(Boolean) //? if winodows split with back slashes everything else is forward slash
     pathArray.shift() //? SHIFT = remove vault folder so catch all route can read path correctly
     return pathArray 
@@ -213,7 +236,7 @@ export const getStaticProps = async ({params: {slug}}) => {
 
   try { 
     // check to see if .md file exists
-    const markdown =  fs.readFileSync(join('./vaultClean/', joinedSlug + '.md'), 'utf8').toString()
+    const markdown =  fs.readFileSync(join('./vaultClean/', joinedSlug), 'utf8').toString()
     const frontM = matter(markdown);
 
     return{

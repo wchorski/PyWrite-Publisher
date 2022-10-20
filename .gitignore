@@ -2,7 +2,9 @@
 
 ./vaultREAL/*
 vaultREAL/*
+vaultOriginal/*
 vaultClean/*
+tmp
 
 # dependencies
 /node_modules

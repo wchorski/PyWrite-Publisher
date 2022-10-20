@@ -14,6 +14,25 @@
 
 body{
   background-color: var(--c-bg) ;
+  overflow: overlay;
+}
+
+/* width */  
+::-webkit-scrollbar { 
+  background: transparent;
+  width: 5px;
+  height: 10px;
+}  
+  
+::-webkit-scrollbar-track { 
+	// box-shadow: inset 0 0 5px grey; 
+  background: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}  
+  
+::-webkit-scrollbar-thumb {  
+	background:var(--c-1);  
+	border-radius: 20px;
 }
 
 code{
@@ -204,6 +223,13 @@ hr.title-bottom-line{
   border-right: solid rgb(59, 59, 59) 1px;
   background-color: #1d1b1a;
   box-shadow: #000000 -10px 3px 10px inset;
+  min-width: 5em;
+
+  nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
 
   ul{
     list-style: none;
@@ -211,10 +237,41 @@ hr.title-bottom-line{
 
     display: flex;
     flex-direction: column;
+    font-size: 25px;
 
     li{
       padding: 1em 0;
       text-align: center;
     }
+  }
+}
+
+ul.folder-contents{
+  list-style: none;
+
+
+  li{
+    margin-bottom: .2em;
+    svg{
+      font-size: 20px;
+      margin-right: .3em;
+    }
+  }
+}
+
+//* LAYOUT
+.layout-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  .content-cont{
+    flex-grow: 1;
+  }
+
+  footer{
+    width: 100%;
   }
 }
