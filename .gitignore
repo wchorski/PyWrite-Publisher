@@ -1,9 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-./vaultREAL/*
-vaultREAL/*
+
 vaultOriginal/*
+!vaultOriginal/README.md
 vaultClean/*
+!vaultClean/README.md
 tmp
 
 # dependencies
