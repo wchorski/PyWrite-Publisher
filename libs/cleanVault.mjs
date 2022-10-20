@@ -65,7 +65,7 @@ export function cleanLinks(filepath, dest){
 
   // console.log("== dest: ", dest);
   
-  // const fakeFile = 'C:\\Users\\wchorski\\vscode\\nextjs-obsidian-publish\\vaultREAL\\private\\linkpage.md'
+  // const fakeFile = 'C:\\Users\\wchorski\\vscode\\nextjs-obsidian-publish\\vaultOriginal\\private\\linkpage.md'
   // const regExp = /\]\(([^)]+)\)/g; //? find anything inside ]( ... )
   // const regExp = /\(([^)]+)\)/g; //? find anything inside ( ... )
 
