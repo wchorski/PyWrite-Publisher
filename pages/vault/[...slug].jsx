@@ -7,6 +7,9 @@ const { readdir } = require('fs').promises;
 import matter from "gray-matter";
 
 import ReactMarkdown from 'react-markdown'
+const wikiLinkPlugin = require('remark-wiki-link');
+import directive from "remark-directive";
+
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 
@@ -53,6 +56,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
       <>{children}</>
     );
   
+    // TODO check for headers with same string and incriment anchor
     switch (level) {
       case 1:
         return <h1 id={`${anchor}`}>{container(children)}</h1>;
@@ -65,9 +69,22 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
         return <h6 id={`${anchor}`}>{container(children)}</h6>;
     }
   };
+
+  const LinkRenderer = ({href, children}) => {
+
+    console.log(href);
+
+    const trueLink = ((/^http/).test(href))
+      ? href
+      : '/vault/' + href 
+
+    return  <a href={trueLink}>{children[0]}</a>
+  }
   
 
   const components = {
+    // TODO add something for quote block Callouts
+    a: LinkRenderer,
     h2: HeadingRenderer,
     h3: HeadingRenderer,
     h4: HeadingRenderer,
@@ -95,7 +112,8 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
     },
   }
 
-  const cleanTitle = fileTitle.replaceAll('__', ' ')
+  // TODO don't need this is not initially cleaning vault
+  const cleanTitle = fileTitle.replaceAll('_.', ' ')
 
   return (
     <>
@@ -158,12 +176,10 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
               <hr className='title-bottom-line'/>
               
               <ul className='folder-contents'>
+
                 {folderChildren.map((child, i) =>{
                   const url = (slug+'/'+child)
-                  console.log(child);
-
                   const regexMD = /.md/
-
                   let icon = ''
 
                   switch (regexMD.test(child)) {

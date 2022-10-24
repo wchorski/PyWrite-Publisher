@@ -23,9 +23,9 @@ export function cleanVault(src, dest) {
         cleanVault(srcPath, cleanPath)
 
       } else if(fs.existsSync(srcPath) && fs.lstatSync(srcPath).isFile()) {
-        console.log("File to Convert: ", srcPath);
+        console.log("-- File Converted: ", srcPath);
         fs.copyFileSync(srcPath, cleanPath);
-        cleanLinks(srcPath, cleanPath); 
+        // cleanLinks(srcPath, cleanPath); 
       }
     });
 
@@ -42,7 +42,7 @@ export function cleanVault(src, dest) {
 // allowed in URLs =>           $ – _ . + ! * ‘ ( ) , &
 //! NOT allowed in URLs =>      [ ] { } | \ ” % ~ # ^ < >
 // not allowed in obsidian =>   * " \/ < > : | ? # ^ [ ] | 
-const space = '__' 
+const space = '_.' 
 // const apostrophy = '~.' 
 // const ampersand = '~+~'
 // const comma = '.~'
@@ -51,7 +51,7 @@ const space = '__'
 export function cleanName(name){
   
   const cleaned =  name
-  .replaceAll( ' ', space) // space
+  // .replaceAll( ' ', space) // space //TODO maybe bring this back if it isn't a headache
   // .replaceAll( "'", apostrophy) // apostrophy
   // .replaceAll('&', ampersand) // ampersand
   // .replaceAll(',', comma) // comma
@@ -62,30 +62,14 @@ export function cleanName(name){
 }
 
 export function cleanLinks(filepath, dest){
-
-  // console.log("== dest: ", dest);
-  
-  // const fakeFile = 'C:\\Users\\wchorski\\vscode\\nextjs-obsidian-publish\\vaultOriginal\\private\\linkpage.md'
-  // const regExp = /\]\(([^)]+)\)/g; //? find anything inside ]( ... )
-  // const regExp = /\(([^)]+)\)/g; //? find anything inside ( ... )
-
-  // const content = fs.readFileSync(filepath, 'utf8')
-  // console.log(content);
-  // const matches = regExp.exec(content)
-  // console.log(matches[0]);
-  
-  // TODO reverse fs.readFileSync with fs.copyFileSync
-  // find any string inside ( ... )
-  // loop through found array and cleanLink()
-  // return file ocntents as new to 'cleanpath'
   
   try{
     const content = fs.readFileSync(filepath, 'utf8')
 
     const cleanedContent = content
+    // .replaceAll( '%20', space) //TODO maybe bring this back if it isn't a headache
       // .replaceAll('.md', '') // remove file extension
-      .replaceAll( '%20', space) 
-      .replaceAll('](', '](/vault/')
+      // .replaceAll('](myVault/', '](/vault/')
       // .replaceAll( '%27', apostrophy) 
       // .replaceAll( '%26', ampersand) 
       // .replaceAll( '%2C', comma) 

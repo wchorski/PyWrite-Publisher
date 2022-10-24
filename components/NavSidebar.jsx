@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 import imageLoader from "libs/imageLoader"
+import { NavTree } from './NavTree'
 
 export const NavSidebar = () => {
   return (
@@ -23,11 +24,13 @@ export const NavSidebar = () => {
 
           </li>
           <li>
-              <Link href={'/vault/📁shower_thoughts'}>
+              <Link href={'/vault/🚿shower_thoughts'}>
                 <a>🚿</a>
               </Link>
           </li>
         </ul>
+        
+        <NavTree />
       </nav>
     </div>
   )

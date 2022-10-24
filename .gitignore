@@ -4,6 +4,7 @@
 vaultOriginal/*
 !vaultOriginal/README.md
 vaultClean/*
+vaultTest
 !vaultClean/README.md
 tmp
 

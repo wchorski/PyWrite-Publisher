@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import { NavSidebar } from "componenets/NavSidebar";
 
 const Home: NextPage = () => {
 
@@ -22,23 +23,7 @@ const Home: NextPage = () => {
           Welcome to my Dev Garden
         </h1>
 
-        <Link href={'/vault/📁developer'}>
-          <a > 
-            <Image 
-              loader={imageLoader}
-              unoptimized
-              src="/pywriter-logo-v1@2x.svg" 
-              alt="There a Will There a Website Logo" 
-              width={72} height={32} 
-            />
-
-            Developer Notes
-          </a>
-        </Link>
-        
-        <Link href={'/vault/📁shower_thoughts'}>
-          <a>🚿 Shower Thoughts</a>
-        </Link>
+        <NavSidebar />
 
       </main>
     </div>
