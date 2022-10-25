@@ -14,6 +14,7 @@ export const StyledMainCont = styled.div`
 
   .markdown-body{
     flex-grow: 1;
+    min-width: 800px;
   }
 
   

@@ -1,6 +1,7 @@
 :root{
   --c-1: #b4b633;
   --c-2: #3d5243;
+  --c-3: #4e483d;
   --c-nav: #4d6454;
   --c-dark: #ffffff;
   --c-light: #000000;
@@ -33,6 +34,15 @@ body{
 ::-webkit-scrollbar-thumb {  
 	background:var(--c-1);  
 	border-radius: 20px;
+}
+
+strong{
+  font-size: large;
+  color: rgb(255, 255, 189);
+}
+
+i{
+  color: rgb(179, 179, 179);
 }
 
 code{
@@ -224,6 +234,7 @@ hr.title-bottom-line{
   background-color: #1d1b1a;
   box-shadow: #000000 -10px 3px 10px inset;
   min-width: 5em;
+  transition: .3s;
 
   nav{
     position: sticky;
@@ -273,5 +284,38 @@ ul.folder-contents{
 
   footer{
     width: 100%;
+  }
+}
+
+// * TABLES
+table{
+  width: 100%;
+  border-bottom: 2px solid var(--c-3);
+
+  thead{
+    background-color: var(--c-3);
+    color: var(--c-1);
+    tr{
+
+      th{
+        padding: .5em;
+        border-bottom: 2px solid var(--c-1);
+      }
+    }
+  }
+
+  tbody{
+    tr{
+      &:nth-child(even){
+        background-color: rgba(255, 255, 255, 0.096);
+      }
+      
+      &:hover{
+        background-color: rgba(255, 255, 0, 0.123);
+      }
+      td{
+        padding: .3em;
+      }
+    }
   }
 }

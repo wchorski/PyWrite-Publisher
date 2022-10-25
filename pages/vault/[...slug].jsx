@@ -25,6 +25,7 @@ import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/p
 import { TableOfContents } from '../../components/TableOfContents';
 import { StyledMarkdownContent } from '../../styles/MarkdownContent.styled';
 import { NavSidebar } from 'components/NavSidebar'
+import { BreadCrumb } from '../../components/BreadCrumb';
 
 const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   // console.log('*** Slug: ', slug);
@@ -142,7 +143,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
               <hr className='title-bottom-line'/>
 
               <div className='frontmatter'>
-                <small>{slug}</small> <br/>
+                <BreadCrumb slug={slug}/><br/>
                 {frontmatter.title && (<>
                   <small>date: {frontmatter.date?.toString()}</small> <br/>
                   <small>desc: {frontmatter.description}</small> <br/>

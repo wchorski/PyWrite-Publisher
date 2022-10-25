@@ -1,12 +1,33 @@
+import { useState } from "react";
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 import imageLoader from "libs/imageLoader"
 import { NavTree } from './NavTree'
+import { AiOutlineShrink, AiOutlineExpandAlt } from "react-icons/ai";
 
 export const NavSidebar = () => {
+
+  const [isOpen, setIsOpen] = useState(true)
+  const [styleState, setStyleState] = useState({width: 'auto'})
+
+
+  const toggleNav = () => {
+
+    setIsOpen(!isOpen)
+
+    isOpen
+      ? setStyleState({width: '20em'})
+      : setStyleState({width: '2em'})
+  }
+
   return (
-    <div className="navsidebar-cont">
+    <div className="navsidebar-cont" style={styleState}>
+
+      <button onPointerDown={toggleNav}>
+        {isOpen ? <AiOutlineExpandAlt /> : <AiOutlineShrink />}
+      </button>
+
       <nav>
         <ul>
           <li>
