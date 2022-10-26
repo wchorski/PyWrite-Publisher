@@ -37,9 +37,6 @@ export function Layout_Markdown ( {children}: {children: React.ReactNode} ) {
 
         
       </div>
-
-
-      {/* <Footer /> */}
       
     </div>
   )

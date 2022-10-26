@@ -18,7 +18,7 @@ import Link from 'next/link';
 import { AiFillFolderOpen } from "react-icons/ai";
 import { TbMarkdown } from "react-icons/tb";
 // import Link from "next/link";
-// import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react"; 
 import { Layout_Markdown } from "components/Layouts";
 import { TableOfContents } from 'components/TableOfContents';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
@@ -31,7 +31,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
 
   // const {title, date, desc, description} = frontmatter
 
-  // const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   const HeadingRenderer = ({ level, children }) => {
 
@@ -72,7 +72,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
 
   const LinkRenderer = ({href, children}) => {
 
-    console.log(href);
+    // console.log(href);
     if(!children) return <strike>broken link</strike>
 
     const trueLink = ((/^http/).test(href))
@@ -97,6 +97,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
         <div className="codeblock-cont">
           <span className='code-language'>{match[1]}</span>
           <SyntaxHighlighter
+            // eslint-disable-next-line
             children={String(children).replace(/\n$/, '')}
             style={syntaxStyle}
             language={match[1]}
@@ -115,6 +116,18 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
 
   // TODO don't need this is not initially cleaning vault
   const cleanTitle = fileTitle.replaceAll('_.', ' ')
+
+
+  useEffect(() => {
+
+
+    setIsLoading(false)
+  
+    return () => {
+      
+    }
+  }, [slug])
+  
 
   return (
     <>
@@ -142,15 +155,19 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
               <hr className='title-bottom-line'/>
 
               <div className='frontmatter'>
+
                 <BreadCrumb slug={slug}/><br/>
+
                 {frontmatter.title && (<>
                   <small>date: {frontmatter.date?.toString()}</small> <br/>
                   <small>desc: {frontmatter.description}</small> <br/>
                 </>)}
               </div>
-
+              
               <StyledMarkdownContent className='content-cont'>
+                
                 <ReactMarkdown 
+                  // eslint-disable-next-line 
                   children={markdown} 
                   remarkPlugins={[remarkGfm, remarkFrontmatter]} 
                   components={components}
@@ -160,7 +177,12 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
             </div>
 
             <aside >
-              <TableOfContents />
+              {!isLoading && (
+                <TableOfContents key={slug}/>
+              )}
+              {isLoading && (
+                <p>LOADING...</p>
+              )}
             </aside>
           </div>
           )}

@@ -10,9 +10,8 @@ export default function TreeFolder({ explorer }) {
 
   const [isExpand, setExpand] = useState(false);
 
-  const expandFolder = (e) => {
+  const expandFolder = () => {
     setExpand(!isExpand)
-    console.log(e);
   }
 
   return (

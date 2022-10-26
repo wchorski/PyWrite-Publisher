@@ -14,6 +14,7 @@ const useHeadingsData = () => {
     setNestedHeadings(newNestedHeadings);
   }, []);
 
+
   return { nestedHeadings };
 };
 
@@ -128,6 +129,7 @@ const useIntersectionObserver = (setActiveId) => {
 };
 
 export const TableOfContents = () => {
+
   const [activeId, setActiveId] = useState();
   const { nestedHeadings } = useHeadingsData();
   useIntersectionObserver(setActiveId);
