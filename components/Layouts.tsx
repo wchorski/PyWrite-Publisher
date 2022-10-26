@@ -1,6 +1,8 @@
 import React from 'react'
+import { NavSidebar } from 'components/NavSidebar'
+// import { TableOfContents } from 'components/TableOfContents';
 import Footer from './Footer'
-import { StyledMainCont } from '../styles/MainCont.styled'
+import { StyledMainCont } from 'styles/MainCont.styled'
 
 export function Layout_Full_Width ( {children}: {children: React.ReactNode} ) {
 
@@ -25,12 +27,19 @@ export function Layout_Markdown ( {children}: {children: React.ReactNode} ) {
 
     <div className='layout-wrap'>
 
-      <StyledMainCont className="content-cont">
-        {children}
-      </StyledMainCont>
+      <div className="horizontal-wrap">
+        <NavSidebar />
+
+        <StyledMainCont className="content-cont">
+          {children}
+          <Footer />
+        </StyledMainCont>
+
+        
+      </div>
 
 
-      <Footer />
+      {/* <Footer /> */}
       
     </div>
   )

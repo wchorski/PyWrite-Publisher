@@ -20,11 +20,10 @@ import { TbMarkdown } from "react-icons/tb";
 // import Link from "next/link";
 // import { useState, useEffect } from "react"; 
 import { Layout_Markdown } from "components/Layouts";
+import { TableOfContents } from 'components/TableOfContents';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
-import { TableOfContents } from '../../components/TableOfContents';
 import { StyledMarkdownContent } from '../../styles/MarkdownContent.styled';
-import { NavSidebar } from 'components/NavSidebar'
 import { BreadCrumb } from '../../components/BreadCrumb';
 
 const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
@@ -74,6 +73,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   const LinkRenderer = ({href, children}) => {
 
     console.log(href);
+    if(!children) return <strike>broken link</strike>
 
     const trueLink = ((/^http/).test(href))
       ? href
@@ -129,9 +129,8 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
 
       <Layout_Markdown >
 
-        <NavSidebar />
-
-        {!folderChildren && (<>
+        {!folderChildren && (
+          <div className='body-aside-cont'>
             <div className="markdown-body">
               <div className="header-cont">
                 <h1 className='markdown-title'>{
@@ -157,13 +156,16 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
                   components={components}
                 />
               </StyledMarkdownContent>
+
             </div>
 
             <aside >
               <TableOfContents />
             </aside>
-          </>)}
+          </div>
+          )}
 
+          {/* //* if slug is a folder */}
           {folderChildren && (<>
             
             <div className="markdown-body">

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-export const StyledMainCont = styled.div`
+export const StyledMainCont = styled.main`
 
   background-color: var(--c-bg);
   /* max-width: var(--width-cont); */
@@ -11,6 +11,20 @@ export const StyledMainCont = styled.div`
   min-height: 90vh;
 
   display: flex;
+  flex-direction: column;
+
+
+  /* height: 100vh; */
+  
+  overflow: hidden;
+  &:hover{
+    overflow: overlay;
+  }
+
+  .body-aside-cont{
+    display: flex;
+    flex-grow: 1;
+  }
 
   .markdown-body{
     flex-grow: 1;
@@ -18,6 +32,5 @@ export const StyledMainCont = styled.div`
   }
 
   
-
 
 `

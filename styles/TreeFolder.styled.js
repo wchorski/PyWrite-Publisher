@@ -10,7 +10,7 @@ export const StyledTreeFolder = styled.nav`
     padding: .15em 0;
 
     &:hover{
-      background-color: var(--c-2);
+      background-color: var(--c-3);
     }
     
     a{

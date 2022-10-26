@@ -11,7 +11,9 @@ export const StyledNavBar = styled.div`
   background-color: var(--c-nav);
   width: 100%;
 
-  position: sticky;
+  /* position: sticky; */
+  position: static;
+  overflow: auto;
   top: 0rem;
 
   z-index: 500;

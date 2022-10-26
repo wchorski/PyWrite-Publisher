@@ -5,6 +5,7 @@ import Image from 'next/image'
 import imageLoader from "libs/imageLoader"
 import { NavTree } from './NavTree'
 import { AiOutlineShrink, AiOutlineExpandAlt } from "react-icons/ai";
+import { StyledNavSidebar } from "styles/NavSidebar.styled";
 
 export const NavSidebar = () => {
 
@@ -22,13 +23,14 @@ export const NavSidebar = () => {
   }
 
   return (
-    <div className="navsidebar-cont" style={styleState}>
-
-      <button onPointerDown={toggleNav}>
-        {isOpen ? <AiOutlineExpandAlt /> : <AiOutlineShrink />}
-      </button>
+    // <StyledNavSidebar style={styleState}>
+    <StyledNavSidebar>
 
       <nav>
+        <button onPointerDown={toggleNav}>
+          {isOpen ? <AiOutlineExpandAlt /> : <AiOutlineShrink />}
+        </button>
+
         <ul>
           <li>
             <Link href={'/vault/📁developer'}>
@@ -53,6 +55,6 @@ export const NavSidebar = () => {
         
         <NavTree />
       </nav>
-    </div>
+    </StyledNavSidebar>
   )
 }
