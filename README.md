@@ -1,6 +1,10 @@
 # nextjs-obsidian-publish
 alternative to Obsidian Publish
 
+codename: Obsidian Pywrite 
+
+## 🎁 Features
+
 ## 🏭 Production Setup
 0. copy any notes into `./vaultOriginal`
 0. run `node ./libs/cleanMyVault.mjs`

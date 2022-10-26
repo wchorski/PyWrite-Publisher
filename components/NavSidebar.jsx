@@ -18,13 +18,13 @@ export const NavSidebar = () => {
     setIsOpen(!isOpen)
 
     isOpen
-      ? setStyleState({width: '20em'})
+      ? setStyleState({width: '27em'})
       : setStyleState({width: '2em'})
   }
 
   return (
-    // <StyledNavSidebar style={styleState}>
-    <StyledNavSidebar>
+    <StyledNavSidebar style={styleState}>
+    {/* <StyledNavSidebar> */}
 
       <nav>
         <button onPointerDown={toggleNav}>
