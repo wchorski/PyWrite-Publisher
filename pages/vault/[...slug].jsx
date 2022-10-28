@@ -8,7 +8,7 @@ import matter from "gray-matter";
 
 import ReactMarkdown from 'react-markdown'
 const wikiLinkPlugin = require('remark-wiki-link');
-import directive from "remark-directive";
+// import directive from "remark-directive";
 
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
@@ -21,6 +21,7 @@ import { TbMarkdown } from "react-icons/tb";
 import { useState, useEffect } from "react"; 
 import { Layout_Markdown } from "components/Layouts";
 import { TableOfContents } from 'components/TableOfContents';
+import { SearchFuse } from 'components/SearchFuse';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
 import { StyledMarkdownContent } from '../../styles/MarkdownContent.styled';
@@ -81,10 +82,45 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
 
     return  <a href={trueLink}>{children[0]}</a>
   }
+
+  const BlockQuoteRenderer = ({children}) => {
+
+    const quote = children[1].props.children[0]
+    // console.log('props string: ', string)
+
+    const regex = /(?<=\[).*(?=\])/
+
+    const type = quote.match(regex)
+    console.log(type[0])
+    console.log(type === '!quote');
+
+
+
+    switch (type) {
+      case '!TIP':
+        return <blockquote>TIP</blockquote>;
+
+      case '!FAQ':
+        return <blockquote>FAQ</blockquote>;
+
+      case '!question':
+        return <blockquote>question</blockquote>;
+
+      case '!quote':
+        return <blockquote>quote</blockquote>;
+
+      case null:
+        return <blockquote>Null</blockquote>;
+  
+      default:
+        return ;
+    }
+  }
   
 
   const components = {
     // TODO add something for quote block Callouts
+    blockquote: BlockQuoteRenderer,
     a: LinkRenderer,
     h2: HeadingRenderer,
     h3: HeadingRenderer,
@@ -177,9 +213,11 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
             </div>
 
             <aside >
-              {!isLoading && (
+              {!isLoading && (<>
                 <TableOfContents key={slug}/>
-              )}
+
+                <SearchFuse />
+                </>)}
               {isLoading && (
                 <p>LOADING...</p>
               )}

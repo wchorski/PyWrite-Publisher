@@ -68,6 +68,12 @@ export function buildVaultTree(src) {
     });
 
     // console.log('vaultTree: ', vaultTree);
+    const jsonString = JSON.stringify(vaultTree)
+    fs.writeFileSync('../public/vaultTreeFlat.json', jsonString, 'utf8', function (err) {
+      if (err) return console.warn("An error occured while writing vaultTreeFlat.json Object to File. ", err);
+   
+      console.log("vaultTreeFlat.json file has been saved.");
+    })
     return vaultTree
 
   } catch(err) {
@@ -113,12 +119,10 @@ export function unFlatten(data){
   // const jsonString = JSON.stringify(tree)
 
   fs.writeFileSync('../public/vaultTree.json', jsonString, 'utf8', function (err) {
-    if (err) {
-        console.log("An error occured while writing JSON Object to File.");
-        return console.log(err);
-    }
+
+    if (err) return console.warn("An error occured while writing vaultTree.json Object to File. ", err);
  
-    console.log("JSON file has been saved.");
+    console.log("vaultTree.json file has been saved.");
   })
 }
 

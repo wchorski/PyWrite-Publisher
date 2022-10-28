@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useRef} from 'react'
-import {RiFileSearchLine} from 'react-icons/ri'
 import { StyledTableOfContents } from '../styles/TableOfContents.styled'
 
 const useHeadingsData = () => {
@@ -142,12 +141,7 @@ export const TableOfContents = () => {
           <Headings headings={nestedHeadings} activeId={activeId}/>
         </nav>
       <hr />
-      <div className="searchbar-cont">
-        <button aria-label='search button'>
-          <RiFileSearchLine />
-        </button>
-        <input type="search" placeholder='[ / ] to search'/>
-      </div>
+
       <div className="tags-cont">
         <h5>tags</h5>
         <a href="#" className='tag'>#tagOne</a>
