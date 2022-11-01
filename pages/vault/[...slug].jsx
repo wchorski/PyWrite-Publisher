@@ -26,6 +26,8 @@ import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
 import { StyledMarkdownContent } from '../../styles/MarkdownContent.styled';
 import { BreadCrumb } from '../../components/BreadCrumb';
+import { CalloutBlockQuote } from '../../components/CalloutBlockQuote';
+import { MarkdownLink } from '../../components/MarkdownLink';
 
 const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   // console.log('*** Slug: ', slug);
@@ -72,56 +74,19 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   };
 
   const LinkRenderer = ({href, children}) => {
-
-    // console.log(href);
-    if(!children) return <strike>broken link</strike>
-
-    const trueLink = ((/^http/).test(href))
-      ? href
-      : '/vault/' + href 
-
-    return  <a href={trueLink}>{children[0]}</a>
+    // eslint-disable-next-line react/no-children-prop
+    return <MarkdownLink href={href} children={children}/>
   }
 
   const BlockQuoteRenderer = ({children}) => {
-
-    const quote = children[1].props.children[0]
-    // console.log('props string: ', string)
-
-    const regex = /(?<=\[).*(?=\])/
-
-    const type = quote.match(regex)
-    console.log(type[0])
-    console.log(type === '!quote');
-
-
-
-    switch (type) {
-      case '!TIP':
-        return <blockquote>TIP</blockquote>;
-
-      case '!FAQ':
-        return <blockquote>FAQ</blockquote>;
-
-      case '!question':
-        return <blockquote>question</blockquote>;
-
-      case '!quote':
-        return <blockquote>quote</blockquote>;
-
-      case null:
-        return <blockquote>Null</blockquote>;
-  
-      default:
-        return ;
-    }
+    // eslint-disable-next-line react/no-children-prop
+    return <CalloutBlockQuote children={children} />
   }
   
 
   const components = {
-    // TODO add something for quote block Callouts
-    blockquote: BlockQuoteRenderer,
     a: LinkRenderer,
+    blockquote: BlockQuoteRenderer,
     h2: HeadingRenderer,
     h3: HeadingRenderer,
     h4: HeadingRenderer,
