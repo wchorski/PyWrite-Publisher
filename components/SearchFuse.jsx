@@ -6,6 +6,7 @@ import {RiFileSearchLine} from 'react-icons/ri'
 import { AiFillFolder } from "react-icons/ai";
 import { TbMarkdown } from "react-icons/tb";
 import { StyledSearchQuery } from '../styles/SearchQuery.styled';
+import { StyledSearchBar } from '../styles/SearchBar.styled';
 
 export const SearchFuse = () => {
 
@@ -15,7 +16,8 @@ export const SearchFuse = () => {
     keys: [
       'name',
       'isDir',
-      'link'
+      'link',
+      'content'
     ],
     includeScore: true
   })
@@ -32,23 +34,23 @@ export const SearchFuse = () => {
   }
 
   return (<>
-    <div className="searchbar-cont">
-      <button aria-label='search button'>
+    <StyledSearchBar className="searchbar-cont">
+      {/* <button aria-label='search button'>
         <RiFileSearchLine />
-      </button>
+      </button> */}
       <input 
         value={searchQuery}
         onChange={handleSearch}
         type="text" 
         placeholder='[ / ] to search'
       />
-    </div>
+    </StyledSearchBar>
     
     <StyledSearchQuery className="searchquery-cont">
       <ul>
       {searchResults.map(res => {
         // console.log('res', res);
-        const {name, isDir, link} = res
+        const {name, isDir, link, excerpt} = res
         
 
         return(
@@ -62,8 +64,8 @@ export const SearchFuse = () => {
                   <strong>{name}</strong> 
                 </span>
 
-                <span className='content'>
-                  <p>here is a bunch of text to look and vew that can be short of whatever needs it to be at all</p>  
+                <span className='excerpt'>
+                  <p>{excerpt}</p>  
                 </span>
 
               <small>{link}</small>

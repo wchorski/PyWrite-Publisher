@@ -3,6 +3,17 @@ import styled from 'styled-components'
 
 export const StyledSearchQuery = styled.div`
   border: solid 1px grey;
+  border-radius: 5px;
+  margin-top: 1em;
+  position: absolute;
+  top: 0;
+  left: 20%;
+  /* background-color: blue; */
+  background-color: #202020cc;
+  backdrop-filter: blur(4px);
+  height: 90vh;
+  overflow-y: auto;
+  z-index: 999999;
 
   ul{
     list-style: none;
@@ -10,10 +21,11 @@ export const StyledSearchQuery = styled.div`
     margin: 0;
 
     li.search-result-item{
+      padding: 0;
 
       border-bottom: solid grey 1px;
       a{
-        padding: 1em 1em 2em 1em;
+        padding: 1em 1em 1.3em 1em;
         text-decoration: none;
 
         display: flex;
@@ -31,14 +43,15 @@ export const StyledSearchQuery = styled.div`
 
         svg{
           font-size: 30px;
-          margin-right: 10px;
+          margin-right: 12px;
         }
 
         span.title-meta{
           border-right: solid 1px yellow;
           margin-right: 1em;
           padding-right: 1em;
-          width: 17rem;
+          /* width: 17rem; */
+          width: 7em;
           display: inline-block;
           text-align: right;
           word-wrap: break-word;
@@ -48,9 +61,17 @@ export const StyledSearchQuery = styled.div`
           /* text-overflow: ellipsis; */
         }
 
-        span.content{
+        span.excerpt{
+          max-width: 20em;
+
           p{
             color: white;
+            font-size: 16px;
+            -webkit-line-clamp: 6;
+            word-break: break-all;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
           }
         }
 
@@ -60,6 +81,7 @@ export const StyledSearchQuery = styled.div`
           bottom: 0;
           left: 10px;
           opacity: 0;
+          font-size: 10px;
         }
       }
     }

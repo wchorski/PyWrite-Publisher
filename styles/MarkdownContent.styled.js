@@ -5,6 +5,15 @@ export const StyledMarkdownContent = styled.section`
 
   max-width: 1200px;
 
+  h1{
+    color: red;
+    text-decoration: line-through;
+  }
+
+  h2, h3, h4, h5, h6{
+    margin: 3em 0 0 0;
+  }
+
   h2:before {
     content: "# ";
     width:20px;

@@ -47,7 +47,7 @@ const toggleHeadingActive = () => {
 const Headings = ({ headings, activeId  }) => (
   <ul>
     {headings.map((heading) => (
-      <li key={heading.id} className={heading.id === activeId ? "active" : ""}>
+      <li key={heading.id + Math.random() * 1000} className={heading.id === activeId ? "active" : ""}>
         <a 
           href={`${heading.id}`}
           onClick={(e) => {
@@ -63,7 +63,7 @@ const Headings = ({ headings, activeId  }) => (
         {heading.items.length > 0 && (
           <ul>
             {heading.items.map((child) => (
-              <li key={child.id} className={child.id === activeId ? "active" : ""}>
+              <li key={child.id + Math.random() * 1000} className={child.id === activeId ? "active" : ""}>
                 <a 
                   href={`${child.id}`}
                   onClick={(e) => {

@@ -21,7 +21,7 @@ import { TbMarkdown } from "react-icons/tb";
 import { useState, useEffect } from "react"; 
 import { Layout_Markdown } from "components/Layouts";
 import { TableOfContents } from 'components/TableOfContents';
-import { SearchFuse } from 'components/SearchFuse';
+// import { SearchFuse } from 'components/SearchFuse';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
 import { StyledMarkdownContent } from '../../styles/MarkdownContent.styled';
@@ -180,8 +180,6 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
             <aside >
               {!isLoading && (<>
                 <TableOfContents key={slug}/>
-
-                <SearchFuse />
                 </>)}
               {isLoading && (
                 <p>LOADING...</p>

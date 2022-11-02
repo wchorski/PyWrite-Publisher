@@ -39,6 +39,7 @@ export function buildVaultTree(src) {
           parentDir: src, 
           parentLink: parentPath.join('/'), 
           link: entryPath.join('/'),
+          excerpt: "folder 📁"
         }
 
 
@@ -48,20 +49,25 @@ export function buildVaultTree(src) {
       } else if(fs.existsSync(srcPath) && fs.lstatSync(srcPath).isFile()) {
         
         const splitPath = (Os.platform() === 'win32') ? srcPath.split('\\') : srcPath.split('/')
-        splitPath.shift(); splitPath.shift(); splitPath.unshift('/vault') //? remove '..' & 'vaultOriginal'   |   add 'vault'
-        const entryPath = splitPath.slice()
-        splitPath.pop() //? remove last array item (the current file || dir)
-        const parentPath = splitPath
-        
+        const linkPath = splitPath.slice()
+        linkPath.shift(); linkPath.shift(); linkPath.unshift('/vault') //? remove '..' & 'vaultOriginal'   |   add 'vault'
+        const currLinkPath = linkPath.slice()
+        linkPath.pop() //? remove last array item (the current file || dir)
+        const parentPath = linkPath
+
+        const excerpt = fs.readFileSync(splitPath.join('/'), 'utf8')
 
         const currFile = {
           name: entry.name,
           isDir: false,
           parentDir: src, 
           parentLink: parentPath.join('/'), 
-          link: entryPath.join('/'),
+          link: currLinkPath.join('/'),
+          excerpt: cleanSearchExcerpt(excerpt),
           children: null
         }
+
+        console.log('currFile, ', currFile);
 
         vaultTree.push(currFile)
       }
@@ -82,6 +88,20 @@ export function buildVaultTree(src) {
     console.warn('*** END');
   } 
         
+}
+
+function cleanSearchExcerpt(excerpt){
+  const cleanedExcerpt = excerpt.replaceAll('*', '')
+                                .replaceAll('>', '')
+                                .replaceAll('#', '')
+                                .replaceAll('=', '')
+                                .replaceAll(/(?<=\().*(?=\))/g, '')
+                                .replaceAll('[', '')
+                                .replaceAll(']', '')
+                                .replaceAll('(', '')
+                                .replaceAll(')', '')
+
+  return cleanedExcerpt
 }
 
 export function unFlatten(data){

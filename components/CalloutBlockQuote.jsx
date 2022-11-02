@@ -25,11 +25,11 @@ export const CalloutBlockQuote = ({children}) => {
 
     if(child.props.href){
       // eslint-disable-next-line react/no-children-prop, react/jsx-key
-      return <MarkdownLink href={child.props.href} children={child.props.children}/>
+      return <MarkdownLink href={child.props.href} children={child.props.children} key={child.props.href}/>
     }
   })
 
-  console.log('contentArray: ', contentArray);
+  // console.log('contentArray: ', contentArray);
 
   const quote = children[1].props.children[0]
   // const quote = contentArray[0]
@@ -169,7 +169,8 @@ export const CalloutBlockQuote = ({children}) => {
         break;
     }
   } else if(!type){
-    console.log('no type');
+    // console.log('no type');
+    return null
   }
   
   return (

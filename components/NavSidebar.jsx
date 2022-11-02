@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import imageLoader from "libs/imageLoader"
 import { NavTree } from './NavTree'
+import { SearchFuse } from 'components/SearchFuse';
 import { AiOutlineShrink, AiOutlineExpandAlt } from "react-icons/ai";
 import { StyledNavSidebar } from "styles/NavSidebar.styled";
 
@@ -52,6 +53,8 @@ export const NavSidebar = () => {
               </Link>
           </li>
         </ul>
+
+        <SearchFuse />
         
         <NavTree />
       </nav>
