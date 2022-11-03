@@ -14,6 +14,14 @@ export const StyledSearchQuery = styled.div`
   height: 90vh;
   overflow-y: auto;
   z-index: 999999;
+  box-shadow: #000000a8 4px 9px 16px 3px;
+  transition: .5s;
+  opacity: 0;
+
+
+  &.open{
+    opacity: 1;
+  }
 
   ul{
     list-style: none;
@@ -40,50 +48,51 @@ export const StyledSearchQuery = styled.div`
             opacity: 1;
           }
         }
+      }
+      
+      svg{
+        font-size: 30px;
+        margin-right: 12px;
+      }
 
-        svg{
-          font-size: 30px;
-          margin-right: 12px;
-        }
+      span.title-meta{
+        border-right: solid 1px yellow;
+        margin-right: 1em;
+        padding-right: 1em;
+        /* width: 17rem; */
+        width: 7em;
+        display: inline-block;
+        text-align: right;
+        word-wrap: break-word;
 
-        span.title-meta{
-          border-right: solid 1px yellow;
-          margin-right: 1em;
-          padding-right: 1em;
-          /* width: 17rem; */
-          width: 7em;
-          display: inline-block;
-          text-align: right;
-          word-wrap: break-word;
+        line-clamp: 4;
+        /* overflow: hidden; */
+        /* text-overflow: ellipsis; */
+      }
 
-          line-clamp: 4;
-          /* overflow: hidden; */
-          /* text-overflow: ellipsis; */
-        }
+      span.excerpt{
+        max-width: 20em;
 
-        span.excerpt{
-          max-width: 20em;
-
-          p{
-            color: white;
-            font-size: 16px;
-            -webkit-line-clamp: 6;
-            word-break: break-all;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-          }
-        }
-
-
-        small{
-          position: absolute;
-          bottom: 0;
-          left: 10px;
-          opacity: 0;
-          font-size: 10px;
+        p{
+          color: white;
+          font-size: 16px;
+          -webkit-line-clamp: 6;
+          word-break: break-all;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
         }
       }
+
+
+      small{
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        opacity: 0;
+        font-size: 10px;
+      }
+      
     }
   }
 `

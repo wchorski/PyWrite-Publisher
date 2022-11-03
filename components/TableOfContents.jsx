@@ -38,7 +38,7 @@ const getNestedHeadings = (headingElements) => {
 
 const toggleHeadingActive = () => {
   const allHeadings = document.querySelectorAll('h2, h3, h4, h5, h6')
-  console.log(allHeadings);
+  // console.log(allHeadings);
   allHeadings.forEach(element => {
     element.classList.remove('active')
   });
@@ -47,15 +47,15 @@ const toggleHeadingActive = () => {
 const Headings = ({ headings, activeId  }) => (
   <ul>
     {headings.map((heading) => (
-      <li key={heading.id + Math.random() * 1000} className={heading.id === activeId ? "active" : ""}>
+      <li key={heading.id} className={heading.id === activeId ? "active" : ""}>
         <a 
           href={`${heading.id}`}
           onClick={(e) => {
             e.preventDefault();
             const headID = document.querySelector(`#${heading.id}`)
-            headID.scrollIntoView({behavior: "smooth"});
+            headID.scrollIntoView({behavior: "smooth"})
             toggleHeadingActive()
-            headID.classList.toggle('active');
+            headID.classList.toggle('active')
           }}
         >
           {heading.title}
@@ -63,15 +63,15 @@ const Headings = ({ headings, activeId  }) => (
         {heading.items.length > 0 && (
           <ul>
             {heading.items.map((child) => (
-              <li key={child.id + Math.random() * 1000} className={child.id === activeId ? "active" : ""}>
+              <li key={child.id} className={child.id === activeId ? "active" : ""}>
                 <a 
                   href={`${child.id}`}
                   onClick={(e) => {
-                    e.preventDefault();
+                    e.preventDefault()
                     const headID = document.querySelector(`#${child.id}`)
-                    headID.scrollIntoView({behavior: "smooth"});
+                    headID.scrollIntoView({behavior: "smooth"})
                     toggleHeadingActive()
-                    headID.classList.toggle('active');
+                    headID.classList.toggle('active')
                   }}
                 >
                   {child.title}

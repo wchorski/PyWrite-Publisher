@@ -11,6 +11,22 @@ codename: Obsidian Pywrite
 0. `npm run build`
 
 
+## Markdown Tips
+```md
+create unique headers per page.
+### Dogs 
+### Cats ✔
+
+Do not repeate same header on the same page
+### Fish 
+### Fish 🚫 
+
+even if it's a smaller header
+### Birds 
+#### Birds 🚫 
+```
+
+
 #todo 
 - [ ]
 

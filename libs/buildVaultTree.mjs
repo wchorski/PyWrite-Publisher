@@ -100,6 +100,9 @@ function cleanSearchExcerpt(excerpt){
                                 .replaceAll(']', '')
                                 .replaceAll('(', '')
                                 .replaceAll(')', '')
+                                .replaceAll('`', '')
+                                .replaceAll('|', '')
+                                .replaceAll('-', '')
 
   return cleanedExcerpt
 }

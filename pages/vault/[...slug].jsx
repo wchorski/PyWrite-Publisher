@@ -58,18 +58,23 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
       // </a>
       <>{children}</>
     );
+
   
     // TODO check for headers with same string and incriment anchor
     switch (level) {
       case 1:
-        return <h1 id={`${anchor}`}>{container(children)}</h1>;
+        return <h1 id={`${anchor}`}> {container(children)} </h1>;
       case 2:
-        return <h2 id={`${anchor}`}>{container(children)}</h2>;
+        return <h2 id={`${anchor}`}> {container(children)} </h2>;
       case 3:
-        return <h3 id={`${anchor}`}>{container(children)}</h3>;
+        return <h3 id={`${anchor}`}> {container(children)} </h3>;
+      case 4:
+        return <h4 id={`${anchor}`}> {container(children)} </h4>;
+      case 5:
+        return <h5 id={`${anchor}`}> {container(children)} </h5>;
   
       default:
-        return <h6 id={`${anchor}`}>{container(children)}</h6>;
+        return <h6 id={`${anchor}`}> {container(children)} </h6>;
     }
   };
 

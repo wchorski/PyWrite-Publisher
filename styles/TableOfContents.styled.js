@@ -63,15 +63,14 @@ export const StyledTableOfContents = styled.div`
         content: "#";
         width:10px;
         height:20px;
-        /* background:red; */
         color: #ffffff59;
-        display: block;
-        float: left;
-        margin-right: 5px;
+        /* display: block; */
+        /* float: left; */
+        /* margin-right: 5px; */
       } 
-      li ul{
+      /* li ul{
         padding-left: 1em;
-      }
+      } */
 
     }
   }
