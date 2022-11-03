@@ -10,7 +10,6 @@ import { StyledSearchBar } from '../styles/SearchBar.styled';
 
 export const SearchFuse = () => {
 
-  const componentRef = useRef(null);
   const queryEl = useRef(null);
   const inputEl = useRef(null);
 
@@ -40,33 +39,27 @@ export const SearchFuse = () => {
   }
 
   const handleKeyUp = (event) => {
-    // if(event.key === "/" || "Escape") console.log('A key was pressed: ', event.key)
-    // if(event.key === "/" )  inputElement.focus()
-    // if(event.key === "Escape")  inputElement.blur()
-    const el1 = inputEl.current
-    if(event.key === "/" )  el1.focus()
-    if(event.key === "Escape")  el1.blur()
+    const input = inputEl.current
+    if(event.key === "/" )  input.focus()
+    if(event.key === "Escape")  input.blur()
   };
 
   const handleInputFocusIn = (event) => {
-    // queryElement.classList.add('open')
-    const el0 = queryEl.current
-    el0.classList.add('open')
+    const query = queryEl.current
+    query.classList.add('open')
   }
   const handleInputFocusOut = (event) => {
-    // queryElement.classList.remove('open')
-    const el0 = queryEl.current
-    el0.classList.remove('open')
+    const query = queryEl.current
+    query.classList.remove('open')
   }
 
   useEffect(() => {
-
-
+    const input = inputEl.current
 
     window.addEventListener('keyup', handleKeyUp);
 
-    window.addEventListener('focusin', handleInputFocusIn)
-    window.addEventListener('focusout', handleInputFocusOut)
+    input.addEventListener('focusin', handleInputFocusIn)
+    input.addEventListener('focusout', handleInputFocusOut)
   
     // return () => {
     //   // cleanup component 
@@ -79,9 +72,6 @@ export const SearchFuse = () => {
 
   return (<>
     <StyledSearchBar className="searchbar-cont">
-      {/* <button aria-label='search button'>
-        <RiFileSearchLine />
-      </button> */}
       <input 
         ref={inputEl}
         id="searchInput"

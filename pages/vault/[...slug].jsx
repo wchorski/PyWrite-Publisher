@@ -28,6 +28,7 @@ import { StyledMarkdownContent } from '../../styles/MarkdownContent.styled';
 import { BreadCrumb } from '../../components/BreadCrumb';
 import { CalloutBlockQuote } from '../../components/CalloutBlockQuote';
 import { MarkdownLink } from '../../components/MarkdownLink';
+import { Graph } from '../../components/Graph';
 
 const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   // console.log('*** Slug: ', slug);
@@ -185,6 +186,8 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
             <aside >
               {!isLoading && (<>
                 <TableOfContents key={slug}/>
+
+                <Graph />
                 </>)}
               {isLoading && (
                 <p>LOADING...</p>
