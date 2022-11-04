@@ -2,6 +2,7 @@ import React from 'react'
 import { NavSidebar } from 'components/NavSidebar'
 // import { TableOfContents } from 'components/TableOfContents';
 import Footer from './Footer'
+import {GraphD3} from './GraphD3'
 import { StyledMainCont } from 'styles/MainCont.styled'
 
 export function Layout_Full_Width ( {children}: {children: React.ReactNode} ) {
@@ -31,6 +32,7 @@ export function Layout_Markdown ( {children}: {children: React.ReactNode} ) {
         <NavSidebar />
 
         <StyledMainCont className="content-cont">
+          <GraphD3 />
           {children}
           <Footer />
         </StyledMainCont>
