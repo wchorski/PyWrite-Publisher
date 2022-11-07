@@ -18,22 +18,35 @@ export const GraphD3 = () => {
   }
 
   function onHoverOver(e){
-    const circles = d3.selectAll('circle')
     // circles.attr('fill', '#377729')
-
+    
     const friendLinks = e.currentTarget.__data__.friends
     
+    const circles = d3.selectAll('circle')
     circles._groups[0].forEach(circle => {
       friendLinks.includes(circle.__data__.id)
         ? d3.select(circle).attr('fill', colorDef)
         : d3.select(circle).attr('fill', colorShade)
     })
+    
+    const lines = d3.selectAll('line')
+    lines._groups[0].forEach(line => {
+      console.log('e.currentTarget.id, ', e.currentTarget.__data__.id);
+      console.log('line.source.__data__, ', line.__data__.source.id);
+      (e.currentTarget.__data__.id === line.__data__.source.id) 
+        ? d3.select(line).attr('stroke', colorHi)
+        : d3.select(line).attr('stroke', colorShade)
+    })
+    // console.log('lines: ', lines._groups[0])
+
 
     d3.select(e.currentTarget).attr('fill', colorHi)
   }
   function onHoverOut(e){
     const circles = d3.selectAll('circle')
     circles.attr('fill', colorDef)
+    const lines = d3.selectAll('line')
+    lines.attr('stroke', colorDef)
     d3.select(e.currentTarget).attr('fill', node => node.color || 'white')
   }
                       
