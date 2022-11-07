@@ -17,10 +17,12 @@ export const StyledSearchQuery = styled.div`
   box-shadow: #000000a8 4px 9px 16px 3px;
   transition: .5s;
   opacity: 0;
+  pointer-events: none;
 
 
   &.open{
     opacity: 1;
+    pointer-events: auto;
   }
 
   ul{

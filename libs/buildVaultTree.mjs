@@ -63,11 +63,12 @@ export function buildVaultTree(src) {
           parentDir: src, 
           parentLink: parentPath.join('/'), 
           link: currLinkPath.join('/'),
+          internalLinks: findInternalLinks(excerpt),
           excerpt: cleanSearchExcerpt(excerpt),
           children: null
         }
-
-        console.log('currFile, ', currFile);
+        // TODO turn this back on for debugging
+        // console.log('currFile, ', currFile.link);
 
         vaultTree.push(currFile)
       }
@@ -95,7 +96,8 @@ function cleanSearchExcerpt(excerpt){
                                 .replaceAll('>', '')
                                 .replaceAll('#', '')
                                 .replaceAll('=', '')
-                                .replaceAll(/(?<=\().*(?=\))/g, '')
+                                // TODO do i need to use the U flag?
+                                .replaceAll(/(?<=\]\().*(?=\))/g, '')
                                 .replaceAll('[', '')
                                 .replaceAll(']', '')
                                 .replaceAll('(', '')
@@ -105,6 +107,25 @@ function cleanSearchExcerpt(excerpt){
                                 .replaceAll('-', '')
 
   return cleanedExcerpt
+}
+
+function findInternalLinks(content){
+  const regex = /(?<=\]\().*(?=\))/g
+  const linksArray = content.match(regex)
+
+  if(linksArray){
+    const internalLinks = linksArray.map(link => {
+      if(link.match(/http/)) return null;
+    
+      // console.log('link: ', link)
+      return '/vault/' + link
+    })
+    // console.log('internalLinks: ', internalLinks);
+    return internalLinks
+
+  } else {
+    return null
+  }
 }
 
 export function unFlatten(data){
@@ -148,72 +169,3 @@ export function unFlatten(data){
     console.log("vaultTree.json file has been saved.");
   })
 }
-
-
-// build something like
-
-// const vaultTree = {
-//   name: "Root",
-//   isFolder: true,
-//   items: [
-//     {
-//       name: "public",
-//       isFolder: true,
-//       items: [
-//         {
-//           name: "Data",
-//           isFolder: true,
-//           items: [
-//             {
-//               name: "folderData.js",
-//               isFolder: false,
-//               items: []
-//             }
-//           ]
-//         },
-//         {
-//           name: "index.html",
-//           isFolder: false,
-//           items: []
-//         }
-//       ]
-//     },
-//     {
-//       name: "src",
-//       isFolder: true,
-//       items: [
-//         {
-//           name: "components",
-//           isFolder: true,
-//           items: [
-//             {
-//               name: "Folder.js",
-//               isFolder: false,
-//               items: []
-//             }
-//           ]
-//         },
-//         {
-//           name: "App.js",
-//           isFolder: false,
-//           items: []
-//         },
-//         {
-//           name: "index.js",
-//           isFolder: false,
-//           items: []
-//         },
-//         {
-//           name: "styles.css",
-//           isFolder: false,
-//           items: []
-//         }
-//       ]
-//     },
-//     {
-//       name: "package.json",
-//       isFolder: false,
-//       items: []
-//     }
-//   ]
-// };

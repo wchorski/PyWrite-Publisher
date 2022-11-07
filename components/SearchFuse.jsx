@@ -14,8 +14,6 @@ export const SearchFuse = () => {
   const inputEl = useRef(null);
 
   const [searchQuery, setSearchQuery] = useState('')
-  const [queryElement, setqueryElement] = useState()
-  const [inputElement, setinputyElement] = useState()
 
   const fuse = new Fuse(jsonData, {
     keys: [
