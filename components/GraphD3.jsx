@@ -31,8 +31,8 @@ export const GraphD3 = () => {
     
     const lines = d3.selectAll('line')
     lines._groups[0].forEach(line => {
-      console.log('e.currentTarget.id, ', e.currentTarget.__data__.id);
-      console.log('line.source.__data__, ', line.__data__.source.id);
+      // console.log('e.currentTarget.id, ', e.currentTarget.__data__.id);
+      // console.log('line.source.__data__, ', line.__data__.source.id);
       (e.currentTarget.__data__.id === line.__data__.source.id) 
         ? d3.select(line).attr('stroke', colorHi)
         : d3.select(line).attr('stroke', colorShade)
@@ -49,14 +49,32 @@ export const GraphD3 = () => {
     lines.attr('stroke', colorDef)
     d3.select(e.currentTarget).attr('fill', node => node.color || 'white')
   }
+
+  function zoomed({transform}) {
+    // circle.attr("transform", d => `translate(${transform.apply(d)})`);
+    // svgraf.attr('transform', d3.event.transform)
+    const circles = d3.selectAll('circle')
+    circles.attr("transform", d => `translate(${transform.apply(d)})`);
+    console.log('i zoomy');
+  }
+
                       
                       
   useEffect(() => {
 
+    // const svgrandpa = d3.select('#svgraf')
+    // const svgraf = svgrandpa.append('svgraf')
     const svgraf = d3.select('#svgraf')
 
+    // const width = +svgrandpa.attr('width')
+    // const height = +svgrandpa.attr('height')
     const width = +svgraf.attr('width')
     const height = +svgraf.attr('height')
+    svgraf.call(d3.zoom()
+      .extent([[0, 0], [width, height]])
+      .scaleExtent([1, 8])
+      .on("zoom", () => zoomed))
+      
     const centerX = width /2
     const centerY = height /2
 
