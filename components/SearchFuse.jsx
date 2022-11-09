@@ -46,25 +46,24 @@ export const SearchFuse = () => {
     const query = queryEl.current
     query.classList.add('open')
   }
-  const handleInputFocusOut = (event) => {
+  const handleInputFocusOut = (e) => {
     const query = queryEl.current
-    query.classList.remove('open')
+    console.log(e.target.classList);
+
+    (!e.target.classList.contains('qitem'))
+      ? query.classList.remove('open') 
+      : console.warn('no qitem class found');
   }
 
   useEffect(() => {
     const input = inputEl.current
 
     window.addEventListener('keyup', handleKeyUp);
+    window.addEventListener('pointerdown', handleInputFocusOut);
 
     input.addEventListener('focusin', handleInputFocusIn)
-    input.addEventListener('focusout', handleInputFocusOut)
-  
-    // return () => {
-    //   // cleanup component 
-    //   window.removeEventListener('keydown', handleKeyDown);
-    //   window.removeEventListener('focusin', handleInputFocusIn)
-    //   window.removeEventListener('focusout', handleInputFocusOut)
-    // }
+    // input.addEventListener('focusout', handleInputFocusOut)
+
   }, [])
   
 
@@ -73,6 +72,7 @@ export const SearchFuse = () => {
       <input 
         ref={inputEl}
         id="searchInput"
+        className='qitem'
         value={searchQuery}
         onChange={handleSearch}
         type="text" 
@@ -88,21 +88,21 @@ export const SearchFuse = () => {
         
 
         return(
-          <li key={link} className='search-result-item'>
+          <li key={link} className='search-result-item qitem'>
 
-            <a href={link}> 
+            <a href={link} className='qitem'> 
 
                 {isDir ? <AiFillFolder /> : <TbMarkdown />}
 
-                <span className='title-meta'>
-                  <strong>{name}</strong> 
+                <span className='title-meta qitem'>
+                  <strong className='title-meta qitem'>{name}</strong> 
                 </span>
 
-                <span className='excerpt'>
+                <span className='excerpt qitem'>
                   <p>{excerpt}</p>  
                 </span>
 
-              <small>{link}</small>
+              <small className='qitem'>{link}</small>
             </a>
           </li>
         )

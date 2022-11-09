@@ -26,6 +26,12 @@ even if it's a smaller header
 #### Birds 🚫 
 ```
 
+```md
+do NOT use links in headers
+## Clean Header ✔
+## [bad header](https://www.windows93.net/) 👎
+```
+
 
 #todo 
 - [ ]

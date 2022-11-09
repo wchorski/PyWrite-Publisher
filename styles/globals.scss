@@ -137,6 +137,11 @@ a {
   padding: 0 1em;
 }
 
+li.task-list-item:has(input:checked){
+  opacity: .6;
+  text-decoration:line-through;
+}
+
 strike{
   color: var(--c-strike);
 }
@@ -172,6 +177,12 @@ hr{
   border: solid rgba(148, 148, 148, 0.418) 1px;
 }
 
+// * right aside - graph & table
+aside .GraphNTable{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px; 
+}
 
 // * markdown content
 
@@ -292,4 +303,18 @@ table{
   list-style: none;
   padding-left: 0;
   margin-top: 0;
+}
+
+
+ul.folder-contents{
+  list-style: none;
+  
+  
+  li{
+    margin-bottom: .2em;
+    svg{
+      font-size: 20px;
+      margin-right: .3em;
+    }
+  }
 }

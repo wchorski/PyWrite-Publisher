@@ -9,7 +9,7 @@ export const StyledSearchQuery = styled.div`
   top: 0;
   left: 20%;
   /* background-color: blue; */
-  background-color: #202020cc;
+  background-color: #303030cc;
   backdrop-filter: blur(4px);
   height: 90vh;
   overflow-y: auto;

@@ -184,11 +184,12 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
             </div>
 
             <aside >
-              {!isLoading && (<>
-                <TableOfContents key={slug}/>
-
-                <GraphD3 />
-                </>)}
+              {!isLoading && (
+                <div className='GraphNTable'>
+                  <GraphD3 />
+                  <TableOfContents key={slug}/>
+                </div>
+              )}
               {isLoading && (
                 <p>LOADING...</p>
               )}

@@ -2,14 +2,41 @@ import styled from 'styled-components'
 
 
 export const StyledTableOfContents = styled.div`
-  position: sticky;
-  position: -webkit-sticky; /* For Safari */
-  top: 0px; 
+  /* position: sticky;
+  position: -webkit-sticky;
+  top: 0px;  */
 
-  /* Give table of contents a scrollbar */
   max-height: calc(100vh - 40px);
   overflow: auto;
-  margin-left: 1em;
+  /* margin-left: 1em; */
+  p.icon-label{
+
+    color: #5e5e5e;
+    font-size: 1rem;
+    overflow: hidden;
+    text-align: center;
+
+    &:before,
+    &:after {
+      background-color: #5e5e5e;
+      content: "-";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+    }
+
+    &:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+
+    &:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+  }
 
   & > hr {
     margin-top: 0;
@@ -21,6 +48,7 @@ export const StyledTableOfContents = styled.div`
   }
 
   nav {
+    margin-bottom: 1.5em;
 
     a {
       color: grey;

@@ -1,4 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
+import { HiOutlineQueueList } from "react-icons/hi2";
+import { VscListTree } from "react-icons/vsc";
 import { StyledTableOfContents } from '../styles/TableOfContents.styled'
 
 const useHeadingsData = () => {
@@ -135,8 +137,8 @@ export const TableOfContents = () => {
   
   return (
     <StyledTableOfContents>
-      <hr />
-        <h5>Table of Contents</h5>
+
+        <p className='icon-label'> <VscListTree /> Table of Contents </p>
         <nav aria-label="Table of contents">
           <Headings headings={nestedHeadings} activeId={activeId}/>
         </nav>

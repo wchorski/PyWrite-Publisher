@@ -47,15 +47,16 @@ export const StyledNavSidebar = styled.div`
 }
 
 ul.folder-contents{
-  list-style: none;
+list-style: none;
 
 
-  li{
-    margin-bottom: .2em;
-    svg{
-      font-size: 20px;
-      margin-right: .3em;
-    }
+li{
+  margin-bottom: .2em;
+  svg{
+    font-size: 20px;
+    margin-right: .3em;
   }
+}
+  
   
 `

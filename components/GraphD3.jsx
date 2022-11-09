@@ -2,6 +2,7 @@ import React, {useRef, useEffect} from 'react'
 import { useRouter } from "next/router";
 import * as d3 from 'd3'
 import {nodes, links, MANY_BODY_STRENGTH } from '../libs/nodeProcessor'
+import { BiNetworkChart } from "react-icons/bi";
 import { StyledGraph } from "styles/Graph.styled";
 
 
@@ -159,6 +160,7 @@ export const GraphD3 = () => {
   return (
 
       <StyledGraph className='graph'>
+        <p className='icon-label'> <BiNetworkChart />  graph </p>
         <svg ref={svgraf} id="svgraf" width="300" height="300" >
           <g ref={graf} id="graf"></g>
         </svg>

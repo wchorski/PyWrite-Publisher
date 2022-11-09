@@ -2,6 +2,37 @@ import styled from 'styled-components'
 
 
 export const StyledGraph = styled.div`
+
+  margin-bottom: 1em;
+  p.icon-label{
+
+    color: #5e5e5e;
+    font-size: 1rem;
+    overflow: hidden;
+    text-align: center;
+
+    &:before,
+    &:after {
+      background-color: #5e5e5e;
+      content: "-";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 50%;
+    }
+
+    &:before {
+      right: 0.5em;
+      margin-left: -50%;
+    }
+
+    &:after {
+      left: 0.5em;
+      margin-right: -50%;
+    }
+  }
+
   svg#svgraf{
     background-color: black;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
