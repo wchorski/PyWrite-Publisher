@@ -10,10 +10,10 @@ const colors = [
 const MAIN_NODE_SIZE = 20
 const CHILD_NODE_SIZE = 7
 const LEAF_NODE_SIZE = 3
-const DEFAULT_DISTANCE = 100
+const DEFAULT_DISTANCE = 10
 const MAIN_NODE_DISTANCE = 50
 const LEAF_NODE_DISTANCE = 0
-export const MANY_BODY_STRENGTH = -30
+export const MANY_BODY_STRENGTH = -100
 
 export const nodes = []
 export const links = []

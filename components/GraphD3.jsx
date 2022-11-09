@@ -2,15 +2,13 @@ import React, {useRef, useEffect} from 'react'
 import { useRouter } from "next/router";
 import * as d3 from 'd3'
 import {nodes, links, MANY_BODY_STRENGTH } from '../libs/nodeProcessor'
+import { StyledGraph } from "styles/Graph.styled";
 
-
-const colorDef = '#bdba2c'
-const colorShade = '#383712'
-const colorHi = 'yellow'
 
 export const GraphD3 = () => {
 
   const svgraf = useRef(null);
+  const graf = useRef(null);
 
   const router = useRouter()
   function onSvgLink(target){
@@ -18,75 +16,85 @@ export const GraphD3 = () => {
   }
 
   function onHoverOver(e){
-    // circles.attr('fill', '#377729')
-    
-    const friendLinks = e.currentTarget.__data__.friends
+
+    const targetFriends = e.currentTarget.__data__.friends
     
     const circles = d3.selectAll('circle')
     circles._groups[0].forEach(circle => {
-      friendLinks.includes(circle.__data__.id)
-        ? d3.select(circle).attr('fill', colorDef)
-        : d3.select(circle).attr('fill', colorShade)
+      targetFriends.includes(circle.__data__.id)
+        ? d3.select(circle).classed("shaded", false).classed("active", true)
+        : d3.select(circle).classed("shaded", true).classed("active", false)
     })
     
     const lines = d3.selectAll('line')
     lines._groups[0].forEach(line => {
-      // console.log('e.currentTarget.id, ', e.currentTarget.__data__.id);
-      // console.log('line.source.__data__, ', line.__data__.source.id);
       (e.currentTarget.__data__.id === line.__data__.source.id) 
-        ? d3.select(line).attr('stroke', colorHi)
-        : d3.select(line).attr('stroke', colorShade)
+        ? d3.select(line).classed("active", true)
+        : d3.select(line).classed("active", false)
     })
-    // console.log('lines: ', lines._groups[0])
+    const texts = d3.selectAll('text')
+    texts._groups[0].forEach(txt => {
+      targetFriends.includes(txt.__data__.id) || e.currentTarget.__data__.id === txt.__data__.id
+        ? d3.select(txt).classed("shaded", false)
+        : d3.select(txt).classed("shaded", true)
+    })
 
 
-    d3.select(e.currentTarget).attr('fill', colorHi)
+    d3.select(e.currentTarget).classed("shaded", false).classed("active", true)
   }
   function onHoverOut(e){
-    const circles = d3.selectAll('circle')
-    circles.attr('fill', colorDef)
-    const lines = d3.selectAll('line')
-    lines.attr('stroke', colorDef)
-    d3.select(e.currentTarget).attr('fill', node => node.color || 'white')
+    d3.selectAll('circle').classed("shaded", false).classed("active", false)
+    d3.selectAll('line').classed("active", false)
+    d3.selectAll('text').classed("shaded", false)
+
+    d3.select(e.currentTarget).classed("default", false)
   }
 
-  function zoomed({transform}) {
-    // circle.attr("transform", d => `translate(${transform.apply(d)})`);
-    // svgraf.attr('transform', d3.event.transform)
-    const circles = d3.selectAll('circle')
-    circles.attr("transform", d => `translate(${transform.apply(d)})`);
-    console.log('i zoomy');
-  }
+  function onZoomed(e) {
+    console.log('i zoomy, ', e.transform);
 
-                      
+    const z = e.transform.k
+
+    // todo make this smoother
+    switch (true) {
+      case (z > 1):
+        d3.selectAll('text').style('opacity', '1')
+        break;
+      case (z < 1  && z > .7):
+        d3.selectAll('text').style('opacity', '.5')
+        break;
+      case (z < .7):
+        d3.selectAll('text').style('opacity', '0')
+        break;
+    }
+
+    d3.select('#graf')
+		.attr('transform', e.transform);
+  }
+                  
                       
   useEffect(() => {
 
-    // const svgrandpa = d3.select('#svgraf')
-    // const svgraf = svgrandpa.append('svgraf')
     const svgraf = d3.select('#svgraf')
+    const g = d3.select('#graf')
 
-    // const width = +svgrandpa.attr('width')
-    // const height = +svgrandpa.attr('height')
     const width = +svgraf.attr('width')
     const height = +svgraf.attr('height')
     svgraf.call(d3.zoom()
-      .extent([[0, 0], [width, height]])
-      .scaleExtent([1, 8])
-      .on("zoom", () => zoomed))
+      .on("zoom", onZoomed))
       
     const centerX = width /2
     const centerY = height /2
 
 
     const simulation = d3.forceSimulation(nodes)
-                      .force("charge", d3.forceManyBody().strength(MANY_BODY_STRENGTH))
-                      .force("link",   d3.forceLink(links))
-                      .force("center", d3.forceCenter(centerX, centerY))
+                          .force("charge", d3.forceManyBody().strength(MANY_BODY_STRENGTH))
+                          .force("link",   d3.forceLink(links))
+                          .force("center", d3.forceCenter(centerX, centerY))
 
     const dragNode = d3.drag().on('drag', (event, node) => {
-      node.x = event.x // fx keep node in place after drag
-      node.y = event.y // fy keep node in place after drag
+      node.fx = event.x // fx keep node in place after drag. x does not
+      node.fy = event.y // fy keep node in place after drag
       simulation.alpha(1) 
       simulation.restart()
     })
@@ -99,32 +107,25 @@ export const GraphD3 = () => {
     // });
                         
                       
-    const lines = svgraf.selectAll('line')
+    const lines = g.selectAll('line')
                       .data(links)
                       .enter()
                       .append('line')
-                      .attr('fill', 'white')
-                      .attr('stroke', link => link.color || 'white')
 
-    const circles = svgraf.selectAll('circle')
+    const circles = g.selectAll('circle')
                           .data(nodes)
                           .enter()
                           .append('circle')
-                          .attr('fill', node => node.color || 'white')
                           .attr('r', node => node.size)
-                          .style('cursor', 'pointer')
                           .attr('href', node => node.id)
                           .call(dragNode)
 
-    const text = svgraf.selectAll('text')
+    const text = g.selectAll('text')
                           .data(nodes)
                           .enter()
                           .append('text')
-                          .attr('text-anchor', 'middle')
+                          // .attr('text-anchor', 'middle')
                           .attr('alignnment-baseline', 'middle')
-                          .attr('fill', 'black')
-                          .style('pointer-events', 'none')
-                          .style('font-size', '7px')
                           .text(node => node.name)
 
       
@@ -156,11 +157,12 @@ export const GraphD3 = () => {
 
 
   return (
-    <div className="graph">
-      <h1>GraphD3</h1>
-      <svg ref={svgraf} id="svgraf" width="300" height="300" style={{backgroundColor: "gray"}}>
 
-      </svg>
-    </div>
+      <StyledGraph className='graph'>
+        <svg ref={svgraf} id="svgraf" width="300" height="300" >
+          <g ref={graf} id="graf"></g>
+        </svg>
+      </StyledGraph>
+    
   )
 }

@@ -24,11 +24,11 @@ import { TableOfContents } from 'components/TableOfContents';
 // import { SearchFuse } from 'components/SearchFuse';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
-import { StyledMarkdownContent } from '../../styles/MarkdownContent.styled';
-import { BreadCrumb } from '../../components/BreadCrumb';
-import { CalloutBlockQuote } from '../../components/CalloutBlockQuote';
-import { MarkdownLink } from '../../components/MarkdownLink';
-import { Graph } from '../../components/Graph';
+import { StyledMarkdownContent } from 'styles/MarkdownContent.styled';
+import { BreadCrumb } from 'components/BreadCrumb';
+import { CalloutBlockQuote } from 'components/CalloutBlockQuote';
+import { MarkdownLink } from 'components/MarkdownLink';
+import { GraphD3 } from 'components/GraphD3';
 
 const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   // console.log('*** Slug: ', slug);
@@ -187,7 +187,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
               {!isLoading && (<>
                 <TableOfContents key={slug}/>
 
-                <Graph />
+                <GraphD3 />
                 </>)}
               {isLoading && (
                 <p>LOADING...</p>
