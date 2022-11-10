@@ -7,7 +7,7 @@ const { readdir } = require('fs').promises;
 import matter from "gray-matter";
 
 import ReactMarkdown from 'react-markdown'
-const wikiLinkPlugin = require('remark-wiki-link');
+// const wikiLinkPlugin = require('remark-wiki-link');
 // import directive from "remark-directive";
 
 import remarkFrontmatter from 'remark-frontmatter'
@@ -29,6 +29,7 @@ import { BreadCrumb } from 'components/BreadCrumb';
 import { CalloutBlockQuote } from 'components/CalloutBlockQuote';
 import { MarkdownLink } from 'components/MarkdownLink';
 import { GraphD3 } from 'components/GraphD3';
+import { MarkdownImage } from '../../components/MarkdownImage';
 
 const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   // console.log('*** Slug: ', slug);
@@ -88,9 +89,15 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
     // eslint-disable-next-line react/no-children-prop
     return <CalloutBlockQuote children={children} />
   }
+
+  const ImageRenderer = (paragraph) => {
+    // eslint-disable-next-line react/no-children-prop
+    return <MarkdownImage paragraph={paragraph} />
+  }
   
 
   const components = {
+    // img: (<h1>supfam Image</h1>),
     a: LinkRenderer,
     blockquote: BlockQuoteRenderer,
     h2: HeadingRenderer,
@@ -98,9 +105,12 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
     h4: HeadingRenderer,
     h5: HeadingRenderer,
     h6: HeadingRenderer,
+    // TODO could also process ==highlighting== here with some regex
+    p: ImageRenderer,
     code({node, inline, className, children, ...props}) {
       const match = /language-(\w+)/.exec(className || '')
-      return !inline && match ? (
+      return !inline && match 
+      ? (
         <div className="codeblock-cont">
           <span className='code-language'>{match[1]}</span>
           <SyntaxHighlighter
@@ -114,6 +124,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
         </div>
         
       ) : (
+        // TODO style default block
         <code className={className} {...props}>
           {children}
         </code>
@@ -186,7 +197,8 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
             <aside >
               {!isLoading && (
                 <div className='GraphNTable'>
-                  <GraphD3 />
+                  {/* // TODO put graph back  */}
+                  {/* <GraphD3 /> */}
                   <TableOfContents key={slug}/>
                 </div>
               )}

@@ -47,8 +47,9 @@ export const SearchFuse = () => {
     query.classList.add('open')
   }
   const handleInputFocusOut = (e) => {
+    // TODO fix error "Uncaught TypeError: queryEl.current is not a function"
     const query = queryEl.current
-    console.log(e.target.classList);
+    // console.log(e.target.classList);
 
     (!e.target.classList.contains('qitem'))
       ? query.classList.remove('open') 
