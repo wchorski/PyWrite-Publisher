@@ -90,15 +90,18 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
     return <CalloutBlockQuote children={children} />
   }
 
-  const ImageRenderer = (paragraph) => {
+  const ImageRenderer = (element) => {
     // eslint-disable-next-line react/no-children-prop
-    return <MarkdownImage paragraph={paragraph} />
+    return <MarkdownImage element={element} />
+    // return <h2>lol</h2>
   }
   
 
   const components = {
     // img: (<h1>supfam Image</h1>),
-    a: LinkRenderer,
+    // p: ImageRenderer,
+    img: ImageRenderer,
+    // a: LinkRenderer,
     blockquote: BlockQuoteRenderer,
     h2: HeadingRenderer,
     h3: HeadingRenderer,
@@ -106,7 +109,6 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
     h5: HeadingRenderer,
     h6: HeadingRenderer,
     // TODO could also process ==highlighting== here with some regex
-    p: ImageRenderer,
     code({node, inline, className, children, ...props}) {
       const match = /language-(\w+)/.exec(className || '')
       return !inline && match 

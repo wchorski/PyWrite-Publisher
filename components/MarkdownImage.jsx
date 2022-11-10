@@ -1,48 +1,57 @@
 // ? credit https://amirardalan.com/blog/use-next-image-with-react-markdown
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import { BsArrowReturnRight } from "react-icons/bs";
 
-export const MarkdownImage = (input) => {
+export const MarkdownImage = (element) => {
 
-  const [ratio, setRatio] = useState(16/9) // default to 16:9
+  const [ratio, setRatio] = useState(1/1) // default to 16:9
+  const [trueSrc, setTrueSrc] = useState('')
   
-  const { node } = input.paragraph
+  const image = element.element
 
-  if (node.children[0].tagName === "img") {
-    const image = node.children[0]
-    const metastring = image.properties.alt
-    const alt = metastring?.match(/.*(?=\|)/)[0]
-    const metaWidth = metastring.match(/(?<=\|).*/)[0]
-    const width = metaWidth ? metaWidth : "200"
-    const isPriority = metastring?.toLowerCase().match('{priority}')
+  const metastring = image.alt
+  const altMeta = metastring?.match(/.*(?=\|)/)
+  const alt = altMeta ? altMeta[0] : "no caption"
+  const metaWidth = metastring?.match(/(?<=\|).*/)
+  const width = metaWidth ? metaWidth[0] : "200"
+  const isPriority = metastring?.toLowerCase().match('{priority}')
+
+  //? add external image sources in next.config.js
+
+  useEffect(() => {
+    const newSrc = ((/^http/).test(image.src))
+      ? image.src
+      : '/' + image.src 
+
+    setTrueSrc(newSrc)
+  }, [image.src])
+  
 
 
-    return (
+  return (
+
       <div className="imgWrapper">
+        <Image
+          className="nextImg"
+          src={`${trueSrc}`}
+          alt={alt}
+          priority={isPriority}
 
-          <Image
-            className="nextImg"
-            src={`/${image.properties.src}`}
-            alt={alt}
-            priority={isPriority}
-
-            // set the dimension (affected by layout)
-            width={width}
-            height={width / ratio}
-            layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
-            onLoadingComplete={({ naturalWidth, naturalHeight }) => 
-              setRatio(naturalWidth / naturalHeight)
-            }
-          />
-            {alt ? 
-              <small className="caption" aria-label={alt}>
-                <span><BsArrowReturnRight /> {alt}</span>
-              </small> 
-            : null}
-   
+          // set the dimension (affected by layout)
+          width={width}
+          height={width / ratio}
+          layout="fixed" // you can use "responsive", "fill" or the default "intrinsic"
+          onLoadingComplete={({ naturalWidth, naturalHeight }) => 
+            setRatio(naturalWidth / naturalHeight)
+          }
+          onError={() => setTrueSrc('/placeholder-img.jpg')}
+        />
+          {alt ? 
+            <small className="caption" aria-label={alt}>
+              <span><BsArrowReturnRight /> {alt}</span>
+            </small> 
+          : null}
       </div>
-    )
-  }
-  return <p>{input.paragraph.children}</p>
+  )
 }
