@@ -52,7 +52,7 @@ export const GraphD3 = () => {
   }
 
   function onZoomed(e) {
-    console.log('i zoomy, ', e.transform);
+    // console.log('i zoomy, ', e.transform);
 
     const z = e.transform.k
 

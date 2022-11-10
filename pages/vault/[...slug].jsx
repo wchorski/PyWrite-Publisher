@@ -91,17 +91,14 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   }
 
   const ImageRenderer = (element) => {
-    // eslint-disable-next-line react/no-children-prop
     return <MarkdownImage element={element} />
-    // return <h2>lol</h2>
   }
   
 
   const components = {
-    // img: (<h1>supfam Image</h1>),
     // p: ImageRenderer,
     img: ImageRenderer,
-    // a: LinkRenderer,
+    a: LinkRenderer,
     blockquote: BlockQuoteRenderer,
     h2: HeadingRenderer,
     h3: HeadingRenderer,
@@ -200,7 +197,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
               {!isLoading && (
                 <div className='GraphNTable'>
                   {/* // TODO put graph back  */}
-                  {/* <GraphD3 /> */}
+                  <GraphD3 />
                   <TableOfContents key={slug}/>
                 </div>
               )}
@@ -272,7 +269,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
 export const getStaticPaths = async () => {
 
   
-  const filePathStrings = await getFiles('./vaultClean/')
+  const filePathStrings = await getFiles('./MarkdownVault/')
   // console.log('-- filePathStrings: ', filePathStrings);
   
   const filePathArrays = filePathStrings.map(filepath => {
@@ -301,7 +298,7 @@ export const getStaticProps = async ({params: {slug}}) => {
 
   try { 
     // check to see if .md file exists
-    const markdown =  fs.readFileSync(join('./vaultClean/', joinedSlug), 'utf8').toString()
+    const markdown =  fs.readFileSync(join('./MarkdownVault/', joinedSlug), 'utf8').toString()
     const frontM = matter(markdown);
 
     return{
@@ -316,7 +313,7 @@ export const getStaticProps = async ({params: {slug}}) => {
   } catch (err) {
     // if not an .md file it means it's a FOLDER 
     const folderChildren = []
-    fs.readdirSync(join('./vaultClean/', joinedSlug), { withFileTypes: true }).forEach((entry) => {
+    fs.readdirSync(join('./MarkdownVault/', joinedSlug), { withFileTypes: true }).forEach((entry) => {
 
       folderChildren.push(entry.name)
 

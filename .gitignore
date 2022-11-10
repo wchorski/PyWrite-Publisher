@@ -3,9 +3,11 @@
 
 vaultOriginal/*
 !vaultOriginal/README.md
-vaultClean/*
 vaultTest
+vaultClean/*
 !vaultClean/README.md
+MarkdownVault/*
+!MarkdownVault/README.md
 tmp
 
 # dependencies

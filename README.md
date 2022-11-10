@@ -19,17 +19,27 @@ create unique headers per page.
 
 Do not repeate same header on the same page
 ### Fish 
-### Fish 🚫 
+### Fish ❌ 
 
 even if it's a smaller header
 ### Birds 
-#### Birds 🚫 
+#### Birds ❌
 ```
 
 ```md
 do NOT use links in headers
 ## Clean Header ✔
-## [bad header](https://www.windows93.net/) 👎
+## [bad header](https://www.windows93.net/) ❌
+```
+
+>[!warning] all attachments in `./MarkdownVault/_attachments` will all be publicaly available
+
+```md
+keep all attacments in `./MarkdownVault/_attachments/` directory
+`./MarkdownVault/_attachments/camel.jpg` ✔
+`./MarkdownVault/_attachments/reptiles/lizard.jpg` ❌
+
+
 ```
 
 

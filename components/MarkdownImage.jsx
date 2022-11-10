@@ -7,6 +7,7 @@ export const MarkdownImage = (element) => {
 
   const [ratio, setRatio] = useState(1/1) // default to 16:9
   const [trueSrc, setTrueSrc] = useState('')
+  const [isLoading, setisLoading] = useState(true)
   
   const image = element.element
 
@@ -25,12 +26,15 @@ export const MarkdownImage = (element) => {
       : '/' + image.src 
 
     setTrueSrc(newSrc)
+    setisLoading(false)
+
   }, [image.src])
   
 
 
-  return (
-
+  
+  return (<>
+    {!isLoading && (
       <div className="imgWrapper">
         <Image
           className="nextImg"
@@ -53,5 +57,10 @@ export const MarkdownImage = (element) => {
             </small> 
           : null}
       </div>
-  )
+    )}
+
+    {isLoading && (
+      <strong>LOADING...</strong>
+    )}
+  </>)
 }
