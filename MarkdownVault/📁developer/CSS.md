@@ -1,8 +1,25 @@
+### if parent has input that is checked
+in a todo list, I wanted to cross out or strikethrough all children if the input was checked
+```html
+<li class="task-list-item">
+	<input type="checkbox" disabled checked>
+	front page with growing sprout garden. flowers are clickable graph view?
+</li>
+```
+
+```css
+li.task-list-item:has(input:checked){
+
+  opacity: .6;
+  text-decoration:line-through;
+}
+```
+
 ### Centered header label with horizontal line on sides
-check out the `graph ` and  `Table of Contents` lables in this screenshot 
+[helpful tutorial (iqcode.com)](https://iqcode.com/code/css/css-technique-for-a-horizontal-line-with-icons-in-the-middle#:~:text=CSS%20technique%20for%20a%20horizontal%20line%20with%20icons,line-through%3B%20%7D%20View%20another%20examples%20Add%20Own%20solution)
+check out the `graph ` and  `Table of Contents` labels in this screenshot 
 
-![helpme | 400](_attachments/Pasted%20image%2020221109140342.png)
-
+![sections with headers   |     500](_attachments/Pasted%20image%2020221109140342.png)
 with the power of `:before` & `:after` you too can make this stylish "strike through" effect
 
 ```scss

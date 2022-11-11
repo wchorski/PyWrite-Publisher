@@ -1,0 +1,1 @@
+i.e. credentials or credibility. I'm gonna be saying this word a lot in my career so I might as well have fun with it.

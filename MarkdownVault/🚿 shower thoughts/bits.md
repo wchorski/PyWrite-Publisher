@@ -1,0 +1,5 @@
+- [ ] that lunch time beer thats 32 oz got u tipsy going back to freeman 
+- [ ] front loaded friend 
+- [ ]  announcing you'll have a short brief at the beginning speech defeats the purpose 
+- [ ] "all girls / guys be like" is less offensive than "you have these traits 
+- [ ] dj "how you feeling tonight? " sorry I didn't catch that... honestly no way of hearing what ur saying ![[]]

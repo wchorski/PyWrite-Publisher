@@ -1,0 +1,1 @@
+person who pushes societal norms for a reaction 

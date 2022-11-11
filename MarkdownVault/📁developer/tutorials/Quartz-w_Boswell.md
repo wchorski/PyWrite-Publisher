@@ -11,7 +11,7 @@
 	- install [Rust](https://www.rust-lang.org/tools/install)
 	- `cd ./libs/obsidian-export`
 	- `cargo build`
-6. clone [Obsidian-Hugo](%5Bjackyzha0/hugo-obsidian)in `libs` folder
+6. clone [Obsidian-Hugo](jackyzha0/hugo-obsidian.md)in `libs` folder
 	- install [How to Install Go on Windows](https://golangdocs.com/install-go-windows)
 	- add to machine `PATH`
 

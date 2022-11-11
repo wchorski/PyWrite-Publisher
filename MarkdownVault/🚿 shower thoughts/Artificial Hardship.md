@@ -1,0 +1,1 @@
+Can hardship be artificially produced? Reversely, can a person live in artificial prosperity?

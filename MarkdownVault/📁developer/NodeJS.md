@@ -1,5 +1,24 @@
 ## Tips & Tricks
 
+### get file's update / modified time
+[How to get a file's last modified date in Node.js? - The Web Dev](https://thewebdev.info/2022/03/05/how-to-get-a-files-last-modified-date-in-node-js/#:~:text=To%20get%20a%20file%E2%80%99s%20last%20modified%20date%20in,to%20get%20the%20last%20modified%20date%20for%20asynchronously.)
+```js
+// sync
+fs.stat("/dir/file.txt", (err, stats) => {
+  const {
+    mtime
+  } = stats;
+  console.log(mtime);
+});
+
+// async
+const stats = fs.statSync("/dir/file.txt");
+const {
+  mtime
+} = stats;
+console.log(mtime);
+```
+
 ### does the path lead to a file or directory? - [source](https://stackoverflow.com/a/15630832/15579591)
 ```js
 if(fs.existsSync(srcPath) && fs.lstatSync(srcPath).isDirectory()){

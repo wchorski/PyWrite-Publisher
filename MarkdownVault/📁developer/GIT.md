@@ -21,8 +21,9 @@ Git init
 
 
 
-### create and change to new branch
-`git checkout -b <branchname>`
+### change  branch
+`git checkout -b <branchname>` --> create new and change to
+`git checkout <branchname>` --> change to existing 
 
 ### remove unwanted add
 `git restore --staged <filename>`
