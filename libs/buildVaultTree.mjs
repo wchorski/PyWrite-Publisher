@@ -70,7 +70,7 @@ export function buildVaultTree(src) {
           children: null
         }
         // TODO turn this back on for debugging
-        // console.log('currFile, ', currFile.link);
+        console.log('-- File Processed --> ', currFile.link);
 
         vaultTree.push(currFile)
       }

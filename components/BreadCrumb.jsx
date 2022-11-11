@@ -7,6 +7,7 @@ export const BreadCrumb = ({slug}) => {
   const [slugArray, setSlugArray] = useState([])
 
   useEffect(() => {
+    
     setSlugArray(slug.split('/').filter(Boolean))
   
     // return () => {

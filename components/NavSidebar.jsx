@@ -34,7 +34,7 @@ export const NavSidebar = () => {
 
         <ul>
           <li>
-            <Link href={'/vault/📁developer'}>
+            <Link href={'/'}>
               <a > 
                 <Image 
                   loader={imageLoader}
@@ -48,9 +48,9 @@ export const NavSidebar = () => {
 
           </li>
           <li>
-              <Link href={'/vault/🚿shower_thoughts'}>
+              {/* <Link href={'/vault/🚿shower_thoughts'}>
                 <a>🚿</a>
-              </Link>
+              </Link> */}
           </li>
         </ul>
 

@@ -1,12 +1,11 @@
 import { SearchFuse } from 'components/SearchFuse'
-import imageLoader from 'libs/imageLoader'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import { RiPlantFill } from "react-icons/ri";
 import { RecentNotes } from "../components/RecentNotes";
 import styles from '../styles/Home.module.css'
+
 
 
 const Home: NextPage = () => {
@@ -45,5 +44,7 @@ const Home: NextPage = () => {
     </div>
   )
 }
+
+
 
 export default Home
