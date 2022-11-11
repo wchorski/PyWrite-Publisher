@@ -1,14 +1,11 @@
 const process = require('process');
 const __basedir = process.cwd();
-// import { __rootDir } from "root-path.mjs";
 import fs from 'fs'
 const { resolve, join } = require('path');
 const { readdir } = require('fs').promises;
 import matter from "gray-matter";
 
 import ReactMarkdown from 'react-markdown'
-// const wikiLinkPlugin = require('remark-wiki-link');
-// import directive from "remark-directive";
 
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
@@ -17,11 +14,9 @@ import Head from 'next/head'
 import Link from 'next/link';
 import { AiFillFolderOpen } from "react-icons/ai";
 import { TbMarkdown } from "react-icons/tb";
-// import Link from "next/link";
 import { useState, useEffect } from "react"; 
 import { Layout_Markdown } from "components/Layouts";
 import { TableOfContents } from 'components/TableOfContents';
-// import { SearchFuse } from 'components/SearchFuse';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneDark as syntaxStyle} from 'react-syntax-highlighter/dist/cjs/styles/prism' //? use cjs instead of esm modules
 import { StyledMarkdownContent } from 'styles/MarkdownContent.styled';
@@ -32,9 +27,6 @@ import { GraphD3 } from 'components/GraphD3';
 import { MarkdownImage } from '../../components/MarkdownImage';
 
 const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
-  // console.log('*** Slug: ', slug);
-
-  // const {title, date, desc, description} = frontmatter
 
   const [isLoading, setIsLoading] = useState(true)
 
@@ -131,10 +123,6 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
     },
   }
 
-  // TODO don't need this is not initially cleaning vault
-  const cleanTitle = fileTitle.replaceAll('_.', ' ')
-
-
   useEffect(() => {
 
 
@@ -149,8 +137,6 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
   return (
     <>
       <Head>
-        {/*  A title element received an array with more than 1 element as children. In browsers title Elements can only have Text Nodes as children */}
-        {/* <title> {frontmatter.title ? frontmatter.title  : cleanTitle} </title>  */}
         <title> Dev Garden </title>
         <meta name={frontmatter?.desc} content="tawtaw" />
         <link rel="icon" href="/favicon.ico" />
@@ -166,7 +152,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
                 <h1 className='markdown-title'>{
                   frontmatter?.title 
                   ? frontmatter?.title
-                  : cleanTitle
+                  : fileTitle
                 }</h1>
               </div>
               <hr className='title-bottom-line'/>
@@ -216,7 +202,7 @@ const Post = ( {slug, frontmatter, fileTitle, markdown, folderChildren} ) => {
                 <h1 className='markdown-title'>{
                   frontmatter?.title 
                   ? frontmatter?.title
-                  : cleanTitle
+                  : fileTitle
                 }</h1>
               </div>
               <hr className='title-bottom-line'/>

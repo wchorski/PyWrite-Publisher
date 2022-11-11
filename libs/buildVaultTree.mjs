@@ -50,15 +50,17 @@ export function buildVaultTree(src) {
         
         const splitPath = (Os.platform() === 'win32') ? srcPath.split('\\') : srcPath.split('/')
         const linkPath = splitPath.slice()
-        linkPath.shift(); linkPath.shift(); linkPath.unshift('/vault') //? remove '..' & 'vaultOriginal'   |   add 'vault'
+        linkPath.shift(); linkPath.shift(); linkPath.unshift('/vault') //? remove '..' & '/MarkdownVault'   |   add 'vault'
         const currLinkPath = linkPath.slice()
         linkPath.pop() //? remove last array item (the current file || dir)
         const parentPath = linkPath
 
         const excerpt = fs.readFileSync(splitPath.join('/'), 'utf8')
+        const mtime = fs.statSync(splitPath.join('/')).mtime;
 
         const currFile = {
           name: entry.name,
+          dateMod: mtime,
           isDir: false,
           parentDir: src, 
           parentLink: parentPath.join('/'), 

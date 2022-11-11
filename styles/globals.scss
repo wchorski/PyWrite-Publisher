@@ -161,6 +161,15 @@ button {
   cursor: pointer;
 }
 
+.pressStart{
+  a{
+    border: solid white 1px;
+    border-radius: 5px;
+    padding: .3em;
+    font-size: 3em;
+  }
+}
+
 
 /* TODO look into dark / light auto switch */
 @media (prefers-color-scheme: dark) {
