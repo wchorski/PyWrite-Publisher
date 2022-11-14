@@ -1,0 +1,21 @@
+
+:root{
+
+  --c-1: #f7ae9c;
+  --c-2: #3d5243;
+  --c-3: #4e483d;
+  --c-bold: #ffffbd;
+  --c-nav: #4d6454;
+  --c-dark: #ffffff;
+  --c-light: #000000;
+  --c-code: #282c34;
+  --c-code-txt: #cccbbe;
+  --c-bg: #4d6454;
+  --c-head: #332f19;
+  --c-strike: #808080;
+  
+  --width-cont: 1000px;
+
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

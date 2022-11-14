@@ -30,7 +30,7 @@ export const BreadCrumb = ({slug}) => {
 
           return (
             <li key={index}>
-              <Link href={`/vault${currSlug.join('/')}/${route}`}>{route}</Link>
+              <Link href={`/vault/${currSlug.join('/')}/${route}`}>{route}</Link>
             </li>
           )
         })}
