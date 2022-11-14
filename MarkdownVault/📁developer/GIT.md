@@ -53,8 +53,12 @@ git push origin master
 ### fix commit author
 
 ## global login via terminal
-[login to github from terminal Code Example (iqcode.com)](https://iqcode.com/code/shell/login-to-github-from-terminal)
+- [login to github from terminal Code Example (iqcode.com)](https://iqcode.com/code/shell/login-to-github-from-terminal)
+- [How to Set Git Username and Password in GitBash? - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-set-git-username-and-password-in-gitbash/)
 ```shell
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
+git config --global user.password "1234321"
+
+git config --global credential.helper store
 ```

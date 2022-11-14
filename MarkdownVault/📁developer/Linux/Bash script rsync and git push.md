@@ -1,6 +1,7 @@
 I'm proud of my little shell script that copies over files via rsync and commits those files to my git repo. This script auto publishes my digital garden made with [Obsidian Publish with NextJS](📁developer/Projects📐/Obsidian%20Publish%20with%20NextJS.md)
 
->[!note] you'll want to login to git globally. Also, it will ask for your password when your first run this script
+>[!note] 
+>you'll want to login to git globally. Also, it will ask for your password when your first run this script [global login via terminal](📁developer/GIT.md#global%20login%20via%20terminal)
 
 ```bash
 #! /bin/bash
@@ -26,4 +27,4 @@ git commit -m "auto published: $DATE"
 git push
 ```
 
-Now you should be able to stick this in your 
+Now you should be able to stick this in your [Crontab](📁developer/Linux/Crontab.md) to run on a schedule 
