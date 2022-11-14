@@ -1,5 +1,4 @@
 ## Developer
-[📁 link to folder](📁developer)
 
 ### The Basics
 - [CSS](📁developer/CSS.md)
@@ -8,7 +7,6 @@
 ---
 
 ## 🚿 shower thoughts
-[📁 link to folder](🚿%20shower%20thoughts)
 
 ### Psychology
 - [Dunning-Kruger Effect](🚿%20shower%20thoughts/Psycology/Dunning-Kruger%20Effect.md)

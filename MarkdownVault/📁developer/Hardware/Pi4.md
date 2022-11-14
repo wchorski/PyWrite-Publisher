@@ -23,7 +23,7 @@ A great start for anyone who wants to start running digital services
               `"""
 ```
 
-Surprised that it isn't **Raspberry Pi OS**? I run the Debian 64 bit version as recommended by [Home Assistant](📁developer/Home%20Lab%20🏠/Home%20Assistant.md) **Supervised** install
+Surprised that it isn't **Raspberry Pi OS**? Instead I run the Debian 64 bit version as recommended by [Home Assistant](📁developer/Home%20Lab%20🏠/Home%20Assistant.md) **Supervised** install. I'm a little bummed I don't get the cool Raspberry ascii art from `neofetch`, but honestly, the developer experience is pretty much identical 
 
 ---
 ## Programs & Apps

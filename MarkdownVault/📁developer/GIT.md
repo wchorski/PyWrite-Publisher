@@ -22,15 +22,15 @@ Git init
 
 
 ### change  branch
-`git checkout -b <branchname>` --> create new and change to
-`git checkout <branchname>` --> change to existing 
+- `git checkout -b <branchname>` --> create new and change to
+- `git checkout <branchname>` --> change to existing 
 
 ### remove unwanted add
-`git restore --staged <filename>`
+- `git restore --staged <filename>`
 
 ### stash
-`git stash`
-`git stash pop`
+- `git stash`
+- `git stash pop`
 
 ### link repo with existing local files
 
@@ -47,7 +47,7 @@ git push origin master
 
 ### git repo inside a git repo?
 
-`git submodule add <url> <directory>`
+- `git submodule add <url> <directory>`
 `git submodule add https://github.com/wchorski/myrepo ./directory`
 
 ### fix commit author
