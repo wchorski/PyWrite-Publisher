@@ -55,10 +55,23 @@ git push origin master
 ## global login via terminal
 - [login to github from terminal Code Example (iqcode.com)](https://iqcode.com/code/shell/login-to-github-from-terminal)
 - [How to Set Git Username and Password in GitBash? - GeeksforGeeks](https://www.geeksforgeeks.org/how-to-set-git-username-and-password-in-gitbash/)
+- [Git - git-credential-store Documentation (git-scm.com)](https://git-scm.com/docs/git-credential-store#_storage_format)
 ```shell
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 git config --global user.password "1234321"
-
 git config --global credential.helper store
 ```
+
+or before you push a commit try this out instead
+```shell
+git config credential.helper store
+git push http://example.com/repo.git
+Username: <type your username>
+Password: <type your password>
+
+# several days later
+$ git push http://example.com/repo.git
+# your credentials are used automatically
+```
+

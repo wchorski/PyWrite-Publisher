@@ -1,7 +1,7 @@
 #! /bin/bash
 
 WORKDIR="/mnt/uasis5/digital-gardens/pywriter-dev"
-DATE=`date -d "$DATE" +"%Y %b, %d [%H:%M]"`
+DATE=`date +"%Y %b, %d [%H:%M]"`
 BRANCH="pywriter-dev"
 
 SOURCE="/mnt/uasis5/node/filesystem-livesync-pywriter4/dat/vault"
