@@ -48,6 +48,13 @@ git push origin master
 ### git repo inside a git repo?
 
 - `git submodule add <url> <directory>`
-`git submodule add https://github.com/wchorski/myrepo ./directory`
+- `git submodule add https://github.com/wchorski/myrepo ./directory`
 
 ### fix commit author
+
+## global login via terminal
+[login to github from terminal Code Example (iqcode.com)](https://iqcode.com/code/shell/login-to-github-from-terminal)
+```shell
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```

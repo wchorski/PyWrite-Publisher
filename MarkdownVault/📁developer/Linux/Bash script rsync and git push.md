@@ -1,3 +1,8 @@
+I'm proud of my little shell script that copies over files via rsync and commits those files to my git repo. This script auto publishes my digital garden made with [Obsidian Publish with NextJS](📁developer/Projects📐/Obsidian%20Publish%20with%20NextJS.md)
+
+>[!note] you'll want to login to git globally. Also, it will ask for your password when your first run this script
+
+```bash
 #! /bin/bash
 
 WORKDIR="/mnt/uasis5/digital-gardens/pywriter-dev"
@@ -19,3 +24,6 @@ git checkout $BRANCH
 git add .
 git commit -m "auto published: $DATE"
 git push
+```
+
+Now you should be able to stick this in your 

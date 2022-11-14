@@ -49,10 +49,10 @@ codename: **Obsidian Pywrite**
 	- [x] could use typesense, but need to run separate server
 	- [x] [Fuse.js](https://fusejs.io/) [video tut]([How to Add Search to a React App with Fuse.js - YouTube](https://www.youtube.com/watch?v=GZl-yEz4_qw))
 - [ ] home page
-	- [ ] recently added notes carousel
+	- [x] recently added notes carousel
 	- [ ] ==style== front page with growing sprout garden. flowers are clickable graph view?
 - [x] folders have their own page that shows all internal link structure
-	- [ ] make it obvious what's a folder and what's a file
+	- [x] make it obvious what's a folder and what's a file
 - [x] Covert **Markdown** to show in NextJS
 - [x] import and use frontmatter optionally 
 - [x](daveceddia.com))
@@ -70,19 +70,17 @@ codename: **Obsidian Pywrite**
 	- [x] comma `,` = `%2C`
 	- [x] only sanatize inside `( ... )` using regex
 	- [x] add `/vault/` in front of every link to make it absolute for NextJS routing
-- [ ] automate menu nav to match ./pages directory 
+- [x] automate menu nav to match ./pages directory 
 - [x] ==create `aside` with page heading shortcuts==
 	- [x] gather all heading tags after hydration (use `isLoading` for react-markdown)
 	- [x] build out  smooth scrolling sticky `aside` list 
 	- [x] link that connects current route `/vault/MarkdownPage` with `#TheHeading`\
 	- [x] highlight active heading anchor
 - [x] append `<h1>` of pretty filename to top of any file that doesn't have `title:` metadata 
-- [ ] use rsync to copy over vault
-- [ ] use **chokedar** to watch and update app's vault 
+- [x] use rsync to copy over vault
 - [x] pretty up any **slug** (exp: change 'space' to underscore, '&' to 'and', etc) (possibly do this after file has been found, then pretty the URL for user. sounds dangerous tho)
 - [x] emoji's work in URL thank god
 - [x] shortcut `/` that focus search bar
-- [ ] delete / remove files folders when not building from scratch
 - [x] drop a `index.jsx` in root of any `./vault` directory with a spread of links to child files
 - [ ] create a loading animation
 - [x] can i fix dynamic routing with `./pages/[...folder]/[...slug]`? - NO, CATCH ALLs CAN ONLY BE AT END
