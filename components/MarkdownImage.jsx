@@ -2,12 +2,13 @@
 import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import { BsArrowReturnRight } from "react-icons/bs";
+import { StyledImage } from '../styles/Image.styled';
 
 export const MarkdownImage = (element) => {
 
   const [ratio, setRatio] = useState(1/1) // default to 16:9
   const [trueSrc, setTrueSrc] = useState('')
-  const [isLoading, setisLoading] = useState(true)
+  const [isLoaded, setisLoaded] = useState(false)
   
   const image = element.element
 
@@ -26,7 +27,7 @@ export const MarkdownImage = (element) => {
       : '/' + image.src 
 
     setTrueSrc(newSrc)
-    setisLoading(false)
+    setisLoaded(true)
 
   }, [image.src])
   
@@ -34,8 +35,9 @@ export const MarkdownImage = (element) => {
 
   
   return (<>
-    {!isLoading && (
-      <div className="imgWrapper">
+    {isLoaded && (
+
+      <StyledImage>
         <Image
           className="nextImg"
           src={`${trueSrc}`}
@@ -56,10 +58,11 @@ export const MarkdownImage = (element) => {
               <span><BsArrowReturnRight /> {alt}</span>
             </small> 
           : null}
-      </div>
+      </StyledImage>
+
     )}
 
-    {isLoading && (
+    {!isLoaded && (
       <strong>LOADING...</strong>
     )}
   </>)

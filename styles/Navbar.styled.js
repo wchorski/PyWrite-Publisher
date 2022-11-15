@@ -4,7 +4,8 @@ import styled from 'styled-components'
 export const StyledNavBar = styled.div`
 
   a.active{
-    background-color: var(--c-2);
+    outline: solid var(--c-1) 2px;
+    color: var(--c-txt);
   }
 
   

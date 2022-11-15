@@ -77,7 +77,7 @@ export const StyledTableOfContents = styled.div`
     }
 
     li > a:hover {
-      color: white;
+      color: var(--c-2);
     }
 
     ul{
@@ -91,7 +91,7 @@ export const StyledTableOfContents = styled.div`
         content: "#";
         width:10px;
         height:20px;
-        color: #ffffff59;
+        color: var(--c-strike);
         /* display: block; */
         /* float: left; */
         /* margin-right: 5px; */
@@ -101,5 +101,9 @@ export const StyledTableOfContents = styled.div`
       } */
 
     }
+  }
+
+  .tags-cont{
+    padding-bottom: 1em;
   }
 `

@@ -54,6 +54,7 @@ export const StyledMarkdownContent = styled.section`
   .codeblock-cont{
     position: relative;
     box-shadow: #0000004a 0px 0px 8px 1px;
+    border-radius: 5px;
   
     .code-language{
       position: absolute;
@@ -61,7 +62,6 @@ export const StyledMarkdownContent = styled.section`
       right: 0;
       padding: 5px 10px;
       background-color: var(--c-2);
-      border-radius: 0px 5px 0px 5px;
     }
   }
 

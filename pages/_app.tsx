@@ -1,25 +1,39 @@
-import { useState } from "react";
-import '../styles/globals.scss'
+import { useState, useEffect } from "react";
+// import '../styles/globals.scss'
 // import  '../styles/theme.css'
-import { ThemeProvider } from "styled-components"
-import { lightTheme, darkTheme, GlobalStyles } from "../styles/ThemeConfig" 
+// import { ThemeProvider } from "styled-components"
+import { GlobalStyles } from "../styles/ThemeConfig" 
 
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-  const [theme, setTheme] = useState("dark") 
+  // const [theme, setTheme] = useState("dark") 
+  const [isLoaded, setisLoaded] = useState(false) 
 
-  const toggleTheme = () => {
-    theme == 'light' ? setTheme('dark') : setTheme('light')
-}
+  // const toggleTheme = () => {
+  //   theme == 'light' ? setTheme('dark') : setTheme('light')
+  // }
+
+  useEffect(() => {
+    // const prefTheme = window.matchMedia(`(prefers-color-scheme: dark)`).matches ? 'dark' : 'light'
+    // setTheme(prefTheme)
+    setisLoaded(true)
+  }, [])
+  
 
   return (
-    <ThemeProvider theme={theme == 'light' ? lightTheme : darkTheme}>
+    <>
+    {isLoaded && (<>
       <GlobalStyles />
-      <button onClick={toggleTheme}>Switch Theme</button>
+      {/* <button onClick={toggleTheme} className="theme">Switch Theme</button> */}
       <Component {...pageProps} />
-    </ThemeProvider>
+      </>)}
+      
+      {!isLoaded && (
+        <p>Loading...</p>
+      )}
+    </>
   )
 }
 

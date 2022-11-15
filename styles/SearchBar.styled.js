@@ -35,7 +35,9 @@ export const StyledSearchBar = styled.div`
     font-size: .75rem;
     color: var(--c-1);
     content: "/";
-    border: 1px solid #737373;
+    border: 1px solid var(--c-strike);
+    background-color: var(--c-3);
+
     border-radius: 0.25rem;
   }
 

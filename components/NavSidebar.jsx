@@ -28,7 +28,7 @@ export const NavSidebar = () => {
     {/* <StyledNavSidebar> */}
 
       <nav>
-        <button onPointerDown={toggleNav}>
+        <button onPointerDown={toggleNav} className='navSize'>
           {isOpen ? <AiOutlineExpandAlt /> : <AiOutlineShrink />}
         </button>
 

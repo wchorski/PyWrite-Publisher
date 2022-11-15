@@ -5,8 +5,8 @@ export const StyledNavSidebar = styled.div`
 
 
   border-right: solid rgb(59, 59, 59) 1px;
-  background-color: #1d1b1a;
-  box-shadow: #000000 -10px 3px 10px inset;
+  background-color: var(--c-nav);
+  box-shadow: #00000054 -10px 3px 10px inset;
   min-width: 5em;
   transition: .3s;
   /* height: 100%; */
@@ -44,19 +44,7 @@ export const StyledNavSidebar = styled.div`
       text-align: center;
     }
   }
-}
-
-ul.folder-contents{
-list-style: none;
 
 
-li{
-  margin-bottom: .2em;
-  svg{
-    font-size: 20px;
-    margin-right: .3em;
-  }
-}
-  
   
 `

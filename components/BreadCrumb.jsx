@@ -28,9 +28,11 @@ export const BreadCrumb = ({slug}) => {
               : null
           });
 
+          const joinedSlug = (`/vault/${currSlug.join('/')}/${route}`).replace('//', '/')
+
           return (
             <li key={index}>
-              <Link href={`/vault/${currSlug.join('/')}/${route}`}>{route}</Link>
+              <Link href={joinedSlug}>{route}</Link>
             </li>
           )
         })}
