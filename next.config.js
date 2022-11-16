@@ -8,11 +8,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.dog.ceo',
-        port: '',
+        port: '80',
         pathname: '/**',
       },
     ]
-  }
+  },
+  output: 'standalone',
 }
 
 

@@ -3,8 +3,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { RiPlantFill } from "react-icons/ri";
-import { RecentNotes } from "../components/RecentNotes";
-import styles from '../styles/Home.module.css'
+import { RecentNotes } from "components/RecentNotes";
+import styles from 'styles/Home.module.css'
 
 
 

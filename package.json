@@ -1,9 +1,10 @@
 {
   "name": "nextjs-obsidian-publish",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "init": "node ./libs/init.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

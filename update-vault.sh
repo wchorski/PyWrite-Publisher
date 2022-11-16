@@ -1,6 +1,6 @@
 #! /bin/bash
 
-WORKDIR="/mnt/uasis5/digital-gardens/pywriter-dev"
+WORKDIR="/mnt/uasis5/digital-gardens/dev-garden"
 DATE=`date +"%Y %b, %d [%H:%M]"`
 BRANCH="pywriter-dev"
 
@@ -15,7 +15,10 @@ rsync -av --exclude-from="$SOURCE/$IGNORE" $SOURCE/ $DESTIN/
 cp $SOURCE/$INDEX $DESTIN/index.md
 rm $DESTIN/$IGNORE
 
-echo $DATE > update.log
+echo $DATE > log/update.log
+
+docker-compose build --no-cache
+docker-compose up --force-recreate -d
 
 # git checkout $BRANCH
 # git add .

@@ -4,6 +4,7 @@ export const StyledCallout = styled.blockquote`
 
   /* background-color: blue; */
   padding: 0;
+  margin-left: 0;
   /* border: 1px solid ${props => props.color ? props.color : "white"}; */
   border: none;
   border-left: 5px solid ${props => props.color ? props.color : "white"};

@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from 'react'
 import Link from 'next/link'
 import { format } from 'date-fns'
-import {StyledRecentNotes} from '../styles/RecentNotes.styled'
-import jsonData from '../public/vaultTreeFlat.json'
+import {StyledRecentNotes} from 'styles/RecentNotes.styled'
+import jsonData from 'public/vaultTreeFlat.json'
 
 export const RecentNotes = () => {
 

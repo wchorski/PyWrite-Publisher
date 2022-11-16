@@ -1,12 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react'
 import Fuse  from "fuse.js";
-// import jsonData from '../public/fakeNotesDB.json'
-import jsonData from '../public/vaultTreeFlat.json'
+// import jsonData from 'public/fakeNotesDB.json'
+import jsonData from 'public/vaultTreeFlat.json'
 import {RiFileSearchLine} from 'react-icons/ri'
 import { AiFillFolder } from "react-icons/ai";
 import { TbMarkdown } from "react-icons/tb";
-import { StyledSearchQuery } from '../styles/SearchQuery.styled';
-import { StyledSearchBar } from '../styles/SearchBar.styled';
+import { StyledSearchQuery } from 'styles/SearchQuery.styled';
+import { StyledSearchBar } from 'styles/SearchBar.styled';
 
 export const SearchFuse = () => {
 

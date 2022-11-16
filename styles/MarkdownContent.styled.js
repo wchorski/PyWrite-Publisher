@@ -25,9 +25,10 @@ export const StyledMarkdownContent = styled.section`
     margin-right: 5px;
   } 
   h3:before {
-    content: "## ";
-    width:20px;
+    content: "##";
+    width:30px;
     height:20px;
+    letter-spacing: -10px;
     /* background:red; */
     color: #ffffff59;
     display: block;
@@ -36,8 +37,9 @@ export const StyledMarkdownContent = styled.section`
   } 
   h4:before {
     content: "### ";
-    width:20px;
+    width:40px;
     height:20px;
+    letter-spacing: -10px;
     /* background:red; */
     color: #ffffff59;
     display: block;

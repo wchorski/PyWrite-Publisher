@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
   @media (prefers-color-scheme: dark){
     :root{
       --c-1: goldenrod;
-      --c-2: indianred;
+      --c-2: #7f83ad;
       --c-3: #3e2e11; 
 
       --c-nav: #141414;
@@ -21,6 +21,7 @@ export const GlobalStyles = createGlobalStyle`
       --c-body: #282623;
       --c-bold: #ffffbd;
       --c-ital: rgb(179, 179, 179);
+      --c-h2: #a3a5bd;
     }
     html {
       color-scheme: dark;
@@ -29,7 +30,7 @@ export const GlobalStyles = createGlobalStyle`
   @media (prefers-color-scheme: light){
     :root{
       --c-1: goldenrod;
-      --c-2: indianred;
+      --c-2: #7f83ad;
       --c-3: #3e2e11;
 
       --c-nav: #575757;
@@ -105,6 +106,10 @@ export const GlobalStyles = createGlobalStyle`
       margin-top: -16px;
     }
   }
+  h1{color: var(--c-txt); font-size: 50px}
+  h2{color: var(--c-h2); font-size: 35px}
+  h3{color: var(--c-2); font-size: 30px}
+
   a{
     color: var(--c-1);
     transition: .3s;
@@ -167,6 +172,11 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration:line-through;
   }
 
+  blockquote{
+    border: 1px solid var(--c-1);
+    border-left: 5px solid var(--c-1);
+    padding: 0 1em;
+  }
   code{
     background-color: var(--c-code);
     color: var(--c-code-txt);
@@ -211,6 +221,30 @@ export const GlobalStyles = createGlobalStyle`
     display: flex;
     height: 100vh;
     margin-right: auto;
+  }
+
+  .pressStart{
+    a{
+      border: solid white 1px;
+      border-radius: 5px;
+      padding: .3em;
+      font-size: 3em;
+    }
+  }
+
+  // * right aside - graph & table
+  aside .GraphNTable{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px; 
+  }
+
+  // * markdown content
+
+  .contains-task-list{
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
   }
 
   // * TABLES

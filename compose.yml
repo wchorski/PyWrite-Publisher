@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+ # nginx built inside
+  app:
+    image: nextjs-dev-garden:latest
+    restart: unless-stopped
+    build:
+      dockerfile: Dockerfile
+    # using Docker's DNS via nginx-prox-mgmt-3_default
+    # ports:
+    #   - 4050:3000
+    environment:
+      - NEXT_PUBLIC_TITLE=Pywriter | Dev Garden
+      - NEXT_PUBLIC_SUBTITLE=Welcome to my Dev Garden
+      # - NEXT_PUBLIC_VAULTROOT=./MarkdownVault
+    # shouldn't need volumes because a static site need to be built from the ground up
+    # volumes:
+    #   - ./MarkdownVault:/app/MarkdownVault
+
+    networks:
+      - dev-garden-network
+      - nginx-prox-mgmt-3_default # add to ngnix-prox-mgmt network for Docker DNS
+
+networks:    
+  dev-garden-network:
+    driver: bridge   
+  nginx-prox-mgmt-3_default: # so we can call service by DNS
+    driver: bridge

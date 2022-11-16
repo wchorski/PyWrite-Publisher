@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import { HiOutlineQueueList } from "react-icons/hi2";
 import { VscListTree } from "react-icons/vsc";
-import { StyledTableOfContents } from '../styles/TableOfContents.styled'
+import { StyledTableOfContents } from 'styles/TableOfContents.styled'
 
 const useHeadingsData = () => {
   const [nestedHeadings, setNestedHeadings] = useState([]);
@@ -125,7 +125,7 @@ const useIntersectionObserver = (setActiveId) => {
     headingElements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

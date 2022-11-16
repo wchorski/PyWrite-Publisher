@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Link  from "next/link";
-import { StyledBreadCrum } from '../styles/BreadCrumb.styled';
+import { StyledBreadCrum } from 'styles/BreadCrumb.styled';
 
 export const BreadCrumb = ({slug}) => {
 

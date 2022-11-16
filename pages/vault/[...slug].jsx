@@ -4,7 +4,7 @@ import fs from 'fs'
 const { resolve, join } = require('path');
 const { readdir } = require('fs').promises;
 import matter from "gray-matter";
-import { MarkdownToReact } from '../../components/MarkdownToReact';
+import { MarkdownToReact } from 'components/MarkdownToReact';
 
 const Post = ( {slug, frontmatter, fileTitle, dateMod, markdown, folderChildren} ) => {
 

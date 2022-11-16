@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as Os from 'os'
+import { __rootDir } from "../root-path.mjs";
 
 
 // const vaultTree = {
@@ -78,7 +79,7 @@ export function buildVaultTree(src) {
 
     // console.log('vaultTree: ', vaultTree);
     const jsonString = JSON.stringify(vaultTree)
-    fs.writeFileSync('../public/vaultTreeFlat.json', jsonString, 'utf8', function (err) {
+    fs.writeFileSync(__rootDir+'/public/vaultTreeFlat.json', jsonString, 'utf8', function (err) {
       if (err) return console.warn("An error occured while writing vaultTreeFlat.json Object to File. ", err);
    
       console.log("vaultTreeFlat.json file has been saved.");
@@ -164,7 +165,7 @@ export function unFlatten(data){
 
   // const jsonString = JSON.stringify(tree)
 
-  fs.writeFileSync('../public/vaultTree.json', jsonString, 'utf8', function (err) {
+  fs.writeFileSync(__rootDir+'/public/vaultTree.json', jsonString, 'utf8', function (err) {
 
     if (err) return console.warn("An error occured while writing vaultTree.json Object to File. ", err);
  

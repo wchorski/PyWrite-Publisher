@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-// import '../styles/globals.scss'
-// import  '../styles/theme.css'
 // import { ThemeProvider } from "styled-components"
-import { GlobalStyles } from "../styles/ThemeConfig" 
+import { GlobalStyles } from "styles/ThemeConfig" 
 
 import type { AppProps } from 'next/app'
 
@@ -24,15 +22,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-    {isLoaded && (<>
       <GlobalStyles />
       {/* <button onClick={toggleTheme} className="theme">Switch Theme</button> */}
-      <Component {...pageProps} />
-      </>)}
-      
-      {!isLoaded && (
-        <p>Loading...</p>
-      )}
+
+      {isLoaded && <Component {...pageProps} />}
+
+      {!isLoaded && <p>Loading...</p>}
     </>
   )
 }

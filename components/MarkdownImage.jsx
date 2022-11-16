@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import { BsArrowReturnRight } from "react-icons/bs";
-import { StyledImage } from '../styles/Image.styled';
+import { StyledImage } from 'styles/Image.styled';
 
 export const MarkdownImage = (element) => {
 

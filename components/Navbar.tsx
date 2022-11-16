@@ -1,12 +1,12 @@
 import React from 'react'
 // import { useSession, signIn, signOut } from "next-auth/react"
-// import ROLES_LIST from '../config/roles_list'
+// import ROLES_LIST from 'config/roles_list'
 // import Link from 'next/link'
 import LinkActive from './LinkActive'
 
 // import { BsEmojiHeartEyes } from 'react-icons/bs'
 
-import { StyledNavBar } from '../styles/Navbar.styled'
+import { StyledNavBar } from 'styles/Navbar.styled'
 
 export const Navbar = () => {
 

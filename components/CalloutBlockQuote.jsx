@@ -7,7 +7,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { CgAbstract } from "react-icons/cg";
 import { MdTipsAndUpdates, MdOutlineLiveHelp } from "react-icons/md";
 import { GrStatusGood } from "react-icons/gr";
-import { StyledCallout } from '../styles/CalloutBlockquote.styled'
+import { StyledCallout } from 'styles/CalloutBlockquote.styled'
 import { MarkdownLink } from './MarkdownLink';
 
 export const CalloutBlockQuote = ({children}) => {

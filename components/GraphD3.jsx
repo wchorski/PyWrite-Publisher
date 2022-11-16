@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from 'react'
 import { useRouter } from "next/router";
 import * as d3 from 'd3'
-import {nodes, links, MANY_BODY_STRENGTH } from '../libs/nodeProcessor'
+import {nodes, links, MANY_BODY_STRENGTH } from 'libs/nodeProcessor'
 import { BiNetworkChart } from "react-icons/bi";
 import { StyledGraph } from "styles/Graph.styled";
 
@@ -153,6 +153,8 @@ export const GraphD3 = () => {
     // return () => {
     //   second
     // }
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [svgraf])
   
 
