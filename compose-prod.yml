@@ -16,10 +16,8 @@ services:
       - NEXT_PUBLIC_SUBTITLE=Welcome to my Dev Garden
       - UMAMI_WEBSITE_ID=
       - UMAMI_SRC=http://<yourdomain>
-      # - NEXT_PUBLIC_VAULTROOT=./MarkdownVault
-    # shouldn't need volumes because a static site need to be built from the ground up
-    # volumes:
-    #   - ./MarkdownVault:/app/MarkdownVault
+    volumes:
+      - ./MarkdownVault:/app/MarkdownVault
 
     networks:
       - dev-garden-network

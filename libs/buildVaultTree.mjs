@@ -1,7 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import * as Os from 'os'
-import { __rootDir } from "../root-path.mjs";
+// import { __rootDir } from "../root-path.mjs";
 
 
 // const vaultTree = {
@@ -22,11 +22,15 @@ export function buildVaultTree(src) {
 
   try{
     fs.readdirSync(src, { withFileTypes: true }).forEach(entry => {
+
       let srcPath = path.join(src, entry.name);
+      console.log('*** ENTRY NAME = ', entry.name);
+      if(entry.name === '_attachments') return null
+      
 
       if(fs.existsSync(srcPath) && fs.lstatSync(srcPath).isDirectory()){
         const splitPath = (Os.platform() === 'win32') ? srcPath.split('\\') : srcPath.split('/')
-        splitPath.shift(); splitPath.shift(); splitPath.unshift('/vault') //? remove '..' & 'vaultOriginal'   |   add 'vault'
+        splitPath.shift(); splitPath.unshift('/vault') //? remove '..' & 'MarkdownVault'   |   add 'vault'
         const entryPath = splitPath.slice()
         splitPath.pop() //? remove last array item (the current file || dir)
         const parentPath = splitPath
@@ -43,7 +47,7 @@ export function buildVaultTree(src) {
           excerpt: "folder 📁"
         }
 
-
+        console.log('Folder link = ', entryPath.join('/'));
         vaultTree.push(currFolder)
         buildVaultTree(srcPath)
 
@@ -51,7 +55,7 @@ export function buildVaultTree(src) {
         
         const splitPath = (Os.platform() === 'win32') ? srcPath.split('\\') : srcPath.split('/')
         const linkPath = splitPath.slice()
-        linkPath.shift(); linkPath.shift(); linkPath.unshift('/vault') //? remove '..' & '/MarkdownVault'   |   add 'vault'
+        linkPath.shift();  linkPath.unshift('/vault') //? remove '..' & 'MarkdownVault'   |   add 'vault'
         const currLinkPath = linkPath.slice()
         linkPath.pop() //? remove last array item (the current file || dir)
         const parentPath = linkPath
@@ -71,7 +75,8 @@ export function buildVaultTree(src) {
           children: null
         }
         // TODO turn this back on for debugging
-        console.log('-- File Processed --> ', currFile.link);
+        // console.log('-- File Processed --> ', currFile.link);
+        console.log('file link = ', currLinkPath.join('/'));
 
         vaultTree.push(currFile)
       }
@@ -79,7 +84,7 @@ export function buildVaultTree(src) {
 
     // console.log('vaultTree: ', vaultTree);
     const jsonString = JSON.stringify(vaultTree)
-    fs.writeFileSync(__rootDir+'/public/vaultTreeFlat.json', jsonString, 'utf8', function (err) {
+    fs.writeFileSync('public/vaultTreeFlat.json', jsonString, 'utf8', function (err) {
       if (err) return console.warn("An error occured while writing vaultTreeFlat.json Object to File. ", err);
    
       console.log("vaultTreeFlat.json file has been saved.");
@@ -165,7 +170,7 @@ export function unFlatten(data){
 
   // const jsonString = JSON.stringify(tree)
 
-  fs.writeFileSync(__rootDir+'/public/vaultTree.json', jsonString, 'utf8', function (err) {
+  fs.writeFileSync('public/vaultTree.json', jsonString, 'utf8', function (err) {
 
     if (err) return console.warn("An error occured while writing vaultTree.json Object to File. ", err);
  

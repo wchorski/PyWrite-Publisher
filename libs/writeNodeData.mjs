@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import { __rootDir } from "../root-path.mjs";
+// import { __rootDir } from "../root-path.mjs";
 
 export function writeNodeJSON(json){
 
@@ -22,7 +22,7 @@ export function writeNodeJSON(json){
       })
     })
   
-    fs.writeFileSync(__rootDir+'/public/nodeData.json', JSON.stringify(nodeArray), 'utf8', function (err) {
+    fs.writeFileSync('public/nodeData.json', JSON.stringify(nodeArray), 'utf8', function (err) {
       if (err) return console.warn("An error occured while writing nodeData.json Object to File. ", err);
       console.log("nodeData.json file has been saved.");
     })
