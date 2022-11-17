@@ -15,7 +15,7 @@ export function moveAttachments(sourceDir, targetDir){
         fs.rename(srcPath, trgPath, err => {
           if (err) { console.warn(err); }
 
-          else { console.log(`Moved ${source} to ${target}`); }
+          else { console.log(`Moved ${sourceDir} to ${targetDir}`); }
 
         });
 

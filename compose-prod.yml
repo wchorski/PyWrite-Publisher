@@ -14,8 +14,8 @@ services:
     environment:
       - NEXT_PUBLIC_TITLE=Pywriter | Dev Garden
       - NEXT_PUBLIC_SUBTITLE=Welcome to my Dev Garden
-      - UMAMI_WEBSITE_ID=939c8f4c-7f2e-47d3-8392-d0a59916a152
-      - UMAMI_SRC=http://ice.lan:9001/umami.js
+      - UMAMI_WEBSITE_ID=
+      - UMAMI_SRC=http://<yourdomain>
       # - NEXT_PUBLIC_VAULTROOT=./MarkdownVault
     # shouldn't need volumes because a static site need to be built from the ground up
     # volumes:

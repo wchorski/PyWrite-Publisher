@@ -6,7 +6,7 @@ BRANCH="pywriter-dev"
 
 SOURCE="/mnt/uasis5/node/filesystem-livesync-pywriter4/dat/vault"
 IGNORE="ignore-dev.md"
-DESTIN="/mnt/uasis5/digital-gardens/pywriter-dev/MarkdownVault"
+DESTIN="/mnt/uasis5/digital-gardens/dev-garden/MarkdownVault"
 INDEX="📁developer/index.md"
 
 cd $WORKDIR
@@ -17,8 +17,8 @@ rm $DESTIN/$IGNORE
 
 echo $DATE > log/update.log
 
-docker-compose build --no-cache
-docker-compose up --force-recreate -d
+docker compose build --no-cache
+docker compose up --force-recreate -d
 
 # git checkout $BRANCH
 # git add .
