@@ -1,11 +1,6 @@
-// const { promises: fs } = require("fs")
-// const fs = require("fs")
 import * as fs from 'fs'
 import * as path from 'path'
-// import { __rootDir } from "../root-path.mjs";
-// const path = require("path")
-// import * as fs from 'fs';
-// import * as path from 'path';
+
 
 
 export function cleanVault(src, dest) {

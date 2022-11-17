@@ -6,7 +6,6 @@ import jsonData from 'public/vaultTreeFlat.json'
 
 export const RecentNotes = () => {
 
-  const [today, setToday] = useState()
   const [recentData, setrecentData] = useState([])
 
   function getRecentData(data) {
@@ -17,7 +16,7 @@ export const RecentNotes = () => {
     data.map(note => {
       const dateMod = new Date(note.dateMod)
 
-      console.log('note, ', note);
+      // console.log('note, ', note);
       if(dateMod.getTime() < threshold.getTime() ){
 
         setrecentData((prev) => [...prev, note])
@@ -26,7 +25,6 @@ export const RecentNotes = () => {
   }
 
   useEffect(() => {
-    setToday(new Date())
 
     getRecentData(jsonData)
 

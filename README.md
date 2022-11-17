@@ -11,6 +11,13 @@ codename: *Obsidian.md Pyrite Publisher*
 0. interactive table of contents
 0. markdown images (external and internally hosted)
 
+## ⚙ Development Setup
+1. copy any notes into `./MarkdownVault/`
+2. include file `./MarkdownVault/index.md`
+3. npm i
+4. npm run init
+5. npm run dev
+
 ## 🏭 Production Setup
 1. copy any notes into `./MarkdownVault/`
 
@@ -24,9 +31,12 @@ codename: *Obsidian.md Pyrite Publisher*
     - fileA2.md
 ```
 
-2. (optional) include a `./MarkdownVault/index.md` that acts as the glossery of your notes
-3. run `node ./libs/init.mjs`
-4. `npm run build`
+2. include a `./MarkdownVault/index.md` that acts as the glossery of your notes
+3. if building with docker
+  - `docker compose up -d`
+4. else 
+  -  `npm run init`
+  -  `npm run build`
 
 
 ## 👇 Markdown Tips 
