@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyles />
-      <Script async defer data-website-id={process.env.UMAMI_WEBSITE_ID} src={process.env.UMAMI_SRC}></Script>
+      {/* <Script async defer data-website-id={process.env.UMAMI_WEBSITE_ID} src={process.env.UMAMI_SRC}></Script> */}
       {/* <button onClick={toggleTheme} className="theme">Switch Theme</button> */}
 
       {isLoaded && <Component {...pageProps} />}
