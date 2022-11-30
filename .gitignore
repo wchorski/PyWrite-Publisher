@@ -3,9 +3,8 @@ MarkdownVault/*
 !MarkdownVault/index.md
 
 compose.yml
-public/vaultTree.json
-public/vaultTreeFlat.json
-public/nodeData.json
+
+
 
 tmp
 
