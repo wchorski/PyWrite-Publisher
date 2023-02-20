@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const StyledMainCont = styled.main`
 
-  background-color: var(--c-body);
+  /* background-color: var(--c-body); */
   /* max-width: var(--width-cont); */
   /* margin: 0 auto;  */
   margin-right: auto; 

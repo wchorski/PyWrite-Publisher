@@ -1,13 +1,13 @@
 #! /bin/bash
 
-WORKDIR="/mnt/uasis5/digital-gardens/dev-garden"
+WORKDIR="/mnt/uasis5/digital-gardens/dnd-garden"
 DATE=`date +"%Y %b, %d [%H:%M]"`
-BRANCH="pywriter-dev"
+BRANCH="pywriter-dnd"
 
-SOURCE="/mnt/uasis5/node/filesystem-livesync-pywriter4/dat/vault"
-IGNORE="ignore-dev.md"
-DESTIN="/mnt/uasis5/digital-gardens/dev-garden/MarkdownVault"
-INDEX="📁developer/index.md"
+SOURCE="/mnt/uasis5/node/filesystem-livesync-dnd/dat/vault"
+IGNORE="ignore-dnd.md"
+DESTIN="/mnt/uasis5/digital-gardens/dnd-garden/MarkdownVault"
+INDEX="index.md"
 
 cd $WORKDIR
 

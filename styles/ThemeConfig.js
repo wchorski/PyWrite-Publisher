@@ -5,11 +5,11 @@ export const GlobalStyles = createGlobalStyle`
 
   @media (prefers-color-scheme: dark){
     :root{
-      --c-1: goldenrod;
-      --c-2: #7f83ad;
-      --c-3: #3e2e11; 
+      --c-1: #${process.env.NEXT_PUBLIC_CSS_COLOR_1};
+      --c-2: #${process.env.NEXT_PUBLIC_CSS_COLOR_2};
+      --c-3: #${process.env.NEXT_PUBLIC_CSS_COLOR_3}; 
 
-      --c-nav: #141414;
+      --c-nav: #${process.env.NEXT_PUBLIC_CSS_COLOR_NAV};
       --c-dark: #ffffff;
       --c-light: #000000;
       --c-code: #2c3540;
@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
       --c-strike: #808080;
 
       --c-txt: white;
-      --c-body: #282623;
+      --c-body: #${process.env.NEXT_PUBLIC_CSS_COLOR_BODY};
       --c-bold: #ffffbd;
       --c-ital: rgb(179, 179, 179);
       --c-h2: #a3a5bd;
@@ -29,11 +29,11 @@ export const GlobalStyles = createGlobalStyle`
   }
   @media (prefers-color-scheme: light){
     :root{
-      --c-1: goldenrod;
-      --c-2: #7f83ad;
-      --c-3: #3e2e11;
+      --c-1: #${process.env.NEXT_PUBLIC_CSS_COLOR_1};
+      --c-2: #${process.env.NEXT_PUBLIC_CSS_COLOR_2};
+      --c-3: #${process.env.NEXT_PUBLIC_CSS_COLOR_3}; 
 
-      --c-nav: #575757;
+      --c-nav: #${process.env.NEXT_PUBLIC_CSS_COLOR_NAV};
       --c-dark: #ffffff;
       --c-light: #000000;
       --c-code: #4b5557;;
