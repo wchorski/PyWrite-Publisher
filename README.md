@@ -10,6 +10,13 @@ codename: *Obsidian.md Pyrite Publisher*
 0. file tree navigation
 0. interactive table of contents
 0. markdown images (external and internally hosted)
+1. fuzzy site search
+
+## 📷 Screenshots
+![pywriter-publisher-04](https://github.com/wchorski/PyWrite-Publisher/assets/33769609/94a5adb9-761a-461c-8e5a-3053fa0323ab)
+![pywriter-publisher-03](https://github.com/wchorski/PyWrite-Publisher/assets/33769609/33d9381a-ef53-4787-983a-904163a5ea7f)
+![pywriter-publisher-02](https://github.com/wchorski/PyWrite-Publisher/assets/33769609/860c7cc8-1f43-4b3e-9bcf-66d51b9b3d78)
+![pywriter-publisher-01](https://github.com/wchorski/PyWrite-Publisher/assets/33769609/13c27627-3330-487d-8f9f-b281e150caf1)
 
 ## ⚙ Development Setup
 1. copy any notes into `./MarkdownVault/`
